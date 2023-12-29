@@ -1,1 +1,1 @@
-Repositorio para el proyecto Xanerie
+Repositorio para el proyecto Xanerie.
