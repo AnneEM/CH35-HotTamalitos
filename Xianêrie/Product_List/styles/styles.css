@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --soft-pink: #FAD9C9;
+    --dark-pink: #E8B893;
+    --salmon: #EBCE98;
+    --soft-green: #CACB9C;
+    --main-ocre: #C6A043;
+    --main-text: #2E2D28;
+    --main-beige: #FAF4E4;
+    --main-white: #FFFFFF;
+    --especial-font: 'Playfair Display', serif;
+    --montserrat-font: 'Montserrat', sans-serif;
+    --roboto-font: 'Roboto', sans-serif;
+}
+
+body{
+    font-family: var(--montserrat-font);
+}
+
+.title{
+    font-family: var(--montserrat-font);
+    position:relative;
+    margin: 4% 8% 10px;
+    font-weight: bolder;
+    /* font-size:x-large; */
+}
+
+.carousel-item{
+    min-height: 280px;
+    max-height: 900px;
+}
+
+
+.grid-tipo-piel{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "area1 area2 area3";
+    width: auto;
+    height: auto;
+    border:solid --bs-dark-bg-subtle 1px;
+    font-family: var(--montserrat-font);
+    color: var(--main-white);
+    justify-content: center;
+    margin: 4%;
+    gap: 20px;
+}
+
+.local-link{
+    text-decoration: none;
+    color: white;
+}
+.local-link:hover{
+    color:#CACB9C;
+}
+
+.responsive{
+    background-color: var(--main-ocre);
+    border-radius: 8px;
+    text-align: center;
+    padding: 8px;
+}
+
+#skin1{
+    grid-area: area1;
+}
+#skin2{
+    grid-area: area2;
+}
+#skin3{
+    grid-area: area3;
+}
+
+.skin-title{
+    font-family: var(--montserrat-font);
+    background-color: var(--main-text);
+    color: var(--main-white);
+    margin: 0% 4%;
+    padding: 8px 8%;
+    border-radius: 5px;
+}
+
+
+.todo-tipo{
+    border: solid var(--salmon) 2px;
+    margin: 3% 10% 4%;
+    display: grid;
+    grid-template-columns:auto auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .todo-tipo {
+        grid-template-columns: auto;
+    }
+}
+
+.img1{
+    margin: 0%;
+    height: 300px;
+}
+
+.precio{
+    display: flex;
+    justify-content: center;
+    font-family: var(--montserrat-font);
+    font-weight: bold;
+}
+
+.btn-class{
+    display: flex;
+    justify-content: center;
+}
+.btn-cart{
+    font-family: var(--montserrat-font);
+    background-color: var(--main-beige);
+    color: var(--main-text);
+    border: solid 1px;
+    border-radius: 8px;
+    padding: 5px 15px;
+}
+.btn-cart:hover{
+    background-color: var(--main-ocre);
+    color: var(--main-white);
+}
