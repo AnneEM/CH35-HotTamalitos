@@ -35,10 +35,6 @@ h2{
     margin-bottom: 0px;
 }
 
-.contenedor_btn_ing{
-
-
-}
 
 /* .img_down{
     background-image:url(../src/assets/img_join_downpg.jpg);
@@ -112,8 +108,7 @@ button:hover{
     padding-bottom: 0;
     text-align: center;
     justify-content: end;
-    /* display: flex;
-    justify-content: center; */
+
 }
 
 .contendor_btn_vermas{
