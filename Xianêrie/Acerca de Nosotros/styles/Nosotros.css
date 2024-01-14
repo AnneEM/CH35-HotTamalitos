@@ -1,0 +1,153 @@
+:root {
+    --soft-pink: #FAD9C9;
+    --dark-pink: #E8B893;
+    --salmon: #EBCE98;
+    --soft-green: #CACB9C;
+    --main-ocre: #C6A043;
+    --main-text: #2E2D28;
+    --main-beige: #FAF4E4;
+    --main-white: #FFFFFF;
+    --especial-font: 'Playfair Display', serif;
+    --montserrat-font: 'Montserrat', sans-serif;
+    --roboto-font: 'Roboto', sans-serif;
+}
+
+h1, h2{
+    font-family: var(--montserrat-font);
+    color: var(--main-beige);
+}
+
+h1{
+    font-size: 80px;
+    font-weight:bolder;
+    display: flex;
+    text-align:start;
+}
+
+h2{
+    font-size: 50px;
+    font-weight:600;
+    padding-top: 350px;
+}
+
+.img_up{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.contenedor_btn_ing{
+
+
+}
+
+/* .img_down{
+    background-image:url(../src/assets/img_join_downpg.jpg);
+    background-repeat:no-repeat;
+    background-size: 100%;
+    padding: 50%;
+} */
+
+.btn_ingredientes{
+    height: 50px;
+    display:inline-block;
+    padding:0px 20px;
+    font-family: var(--montserrat-font);
+    font-size: 15px;
+    color: var(--main-white);
+    background-color: transparent;
+    border: solid var(--main-white) 1px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    top: 500px;
+
+}
+
+.btn_vermas{
+    height: 50px;
+    display:inline-block;
+    padding:0px 20px;
+    font-family: var(--montserrat-font);
+    font-size: 15px;
+}
+
+.btn_vermas{
+    color: var(--main-white);
+    background-color: transparent;
+    border: solid var(--main-white) 1px;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+button:hover{
+    border: none;
+    background-color: rgba(255,255,255,.2);
+    transition: background-color 0.5s;
+    font-weight: 500;
+}
+
+.col-5{
+    padding: 0px 0px 0px;
+    margin: 0px 0px 0px;
+}
+.col-7{
+    background-color: #C6A043;
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor2{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.texto2{
+    background-color: var(--main-text);
+    color:var(--main-beige);
+    font-family: var(--roboto-font);
+    font-size: 20px;
+    text-align:justify;
+    padding: 100px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    text-align: center;
+    justify-content: end;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.contendor_btn_vermas{
+    background-color: #2E2D28;
+    padding-top: 0px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.texto3{
+    background-color: #FAF4E4;
+    font-family: var(--montserrat-font);
+    margin-bottom: 0px;
+    padding-bottom: 20px ;
+    padding-top: 15px;
+    font-size: 45px;
+    display: flex;
+    text-align: start;
+}
+
+.linksContainer{
+    background-color: #FAF4E4;   
+    padding-bottom: 100px;
+}
+
+.links{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+#link{
+    color: #2E2D28;
+    text-decoration: none;
+    text-align: center;
+}
