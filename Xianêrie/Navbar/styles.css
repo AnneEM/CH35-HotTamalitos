@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.lupa {
+        width: 20px; 
+        height: auto;
+}
+
+.search-bar input {
+    border: none;
+    border-radius: 4px;
+    padding: 7px;
+    flex-grow: 1;
+    width: 300px;
+}
+
+
+.search-bar button {
+    border: 0;
+    background-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+    
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #F4F4E4;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-list li a{
+    text-decoration: none;
+    color: #2E2D28
+}
+
+.nav-list li a:hover {
+    background-color: #FAD9C9;
+    padding: 5px;
+}
+/*Aquí no entiendo como desplegar la lista*/
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+ul .dropbtn:hover .dropdown-content {
+    display: block;
+}
+
+/*Fin de la nota*/
+
+.abrir-menu {
+    display: none;
+}
+
+.cerrar-menu {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .abrir-menu, 
+    .cerrar-menu{
+        display: block;
+        border: 0;
+        font-size: 1.2rem;
+        background-color: transparent;
+        cursor: pointer;
+
+    }
+
+    .nav{
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #CAC9BC;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list{
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .nav-list li a{
+        color: #2E2D28;
+    }
+}
