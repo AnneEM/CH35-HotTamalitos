@@ -79,7 +79,6 @@ button{
 #cabecera {
     width: 100%;
     height: 640px;
-    border: solid greenyellow;
     display: flex;
     flex-direction: column;
 
@@ -87,7 +86,6 @@ button{
 
 /* Imagen */
 #contenerdor--cabecera {
-    border: solid red;
     width: 100%;
     height: 640px;
     position: relative;
@@ -104,22 +102,18 @@ button{
 /* Textos */
 
 #info--cabecera {
-    border: solid blue;
     position: relative;
     width: 48%;
     margin-left: 60px;
+    margin-top: 2%;
     display: flex;
     flex-direction: column;
     text-align: left;
     color: var(--main-white);
 }
 
-#title--cabecera {
-    border: solid rgb(7, 3, 5);
-}
 
 #special--text {
-    border: solid #C6A043;
     line-height: 90px;
     letter-spacing: 1;
     font-family: var(--especial-font);
@@ -127,14 +121,9 @@ button{
     font-size: 80px;
 }
 
-#text--cabecera{
-    border: rgb(0, 255, 0) solid;
-}
-
 /*Boton*/
 
 #contenedorbtn--cabecera{
-    border: #C6A043 solid;
     width: 100%;
     display: flex;
     justify-content: end;
@@ -145,7 +134,6 @@ button{
 */
 
 #productos{
-    border: solid green;
     width: 100%;
     height: 880px;
     background-color: var(--main-beige);
@@ -157,7 +145,6 @@ button{
 
 /*Titulo*/
 #contenedortitle--productos{
-    border: solid saddlebrown;
     width:100%;
     display: flex;
     margin-top: 25px;
@@ -171,24 +158,14 @@ button{
 
 /*Carrusell*/
 #carrusell--productos{
-    border: solid purple;
     height: 550px;
     width: 90%;
     margin-top: 25px;
 }
 
-/* .tarjetas--productos{
-    border: solid purple;
-    width: 380px;
-    height: 550px;
-    background-color: var(--main-white);
-    border-radius: 15px;
-    box-shadow: 0px 8px 8px 0px rgba(159,136,111,0.35);
-} */
 
 /*boton*/
 #contenedorbtn--productos{
-    border: solid gold;
     margin-top: 50px;
     display: flex;
     justify-content: center;
@@ -219,7 +196,6 @@ button{
 }
 
 #contenedor--formulas{
-    border: solid palevioletred;
     width: 100%;
     height: auto;
     padding-left: 7%;
@@ -231,7 +207,6 @@ button{
 }
 
 #text--formulas{
-    border: solid rgb(252, 161, 128);
     height: 70%;
     width: 100%;
     list-style: none;
@@ -249,7 +224,6 @@ button{
 }
 
 #contenedorvinculo--formulas{
-    border: solid seagreen;
     width: 100%;
     display: flex;
     justify-content: right;
@@ -270,7 +244,6 @@ button{
 
 *SECTION 4, TIPO DE PIEL*/
 #tipospiel{
-    border: solid purple;
     width: 100%;
     height: 215px;
     display: flex;
@@ -279,26 +252,22 @@ button{
 }
 
 #contenedortext--tipospiel{
-    border: solid chocolate;
     margin-top: 25px;
     padding-left: 60px;
     padding-right: 60px;
 }
 
 #title--tipospiel{
-    border: solid greenyellow;
     margin-top: 0px;
     text-align: center;
 }
 
 #text--tipospiel{
-    border: solid slateblue;
     margin-top: 30px;
     text-align: center;
 }
 
 #media--tipospiel{
-    border: solid red;
     width: 100%;
     height: 400px;
     position: relative;
@@ -308,7 +277,6 @@ button{
 }
 
 #contenedorimg--tipospiel{
-    border: solid  yellow;
     width: 100%;
     height: 400px;
     position: absolute;
@@ -322,7 +290,6 @@ button{
 }
 
 #contenedor--tipospiel{
-    border: solid blue;
     position: relative;
     width: 100%;
     height: auto;
@@ -338,7 +305,6 @@ button{
 *SECTION 5, COMPROMISO
 */
 #compromiso{
-    border: solid grey;
     position: relative;
     width: 100%;
     background-color: var(--main-white);
@@ -347,7 +313,6 @@ button{
 }
 
 #info--compromiso{
-    border: solid #fa8072;
     position: relative;
     line-height: 20px;
     padding-left: 60px;
@@ -357,18 +322,15 @@ button{
 }
 
 #title--compromiso{
-    border: solid black;
     margin-top: 0px;
 }
 
 #subtitle--compromiso{
-    border: cornflowerblue solid;
     margin-top: 35px;
     font-size: 20px;
 }
 
 #text--compromiso{
-    border: crimson solid;
     position: relative;
 }
 
@@ -380,10 +342,10 @@ button{
     flex-direction: column;
     justify-content: center;
     justify-items: center;
+    margin-bottom: 2%;
 }
 
 #contenedorbullet--compromiso{
-    border: solid rebeccapurple;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -392,7 +354,6 @@ button{
 }
 
 #bullet--compromiso{
-    border: goldenrod solid;
     text-align: center;
     color: var(--main-white);
     font-weight: 500;
