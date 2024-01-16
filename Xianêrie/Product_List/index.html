@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- CSS -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="icon" type="image/png" href="./src/assets/Logo_xanerie.png" />
+    <link rel="stylesheet" href="../Navbar/styles.css">
+<!-- Icono pestaña -->    
+    <link rel="icon" href="./src/assets/xanerie.png">
+<!-- Bootstrap -->    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="./src/index.js" async></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" alt="iconos">
     
+
     <title>Lista de productos</title>
 </head>
 
 <body>
-    <div class="col-12 bg-dark-pink text-center text-main-white">¡Envíos a todo México!</div>
 
+   <div id="navBar1"></div>
+    
+    <div class="col-12 bg-dark-pink text-center text-main-white">¡Envíos a todo México!</div>
     <h3 class="title">Nuestros productos</h3>
 
 <!-- Carousel -->
     <div class="container-lg my-3">
         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+
             <!-- Carousel indicators -->
             <ol class="carousel-indicators">
                 <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
@@ -33,11 +41,11 @@
                 <div class="carousel-item active">
                     <img src="./src/assets/collage1.png" class="d-block w-100" alt="Slide 1" >
                 </div>
-                <div class="carousel-item">
-                    <img src="./src/assets/purifica.png" class="d-block w-100" alt="Slide 2" >
+                 <div class="carousel-item">
+                    <img src="./src/assets/collage2.jpg" class="d-block w-100" alt="Slide 2" >
                 </div>
                 <div class="carousel-item">
-                    <img src="./src/assets/revitaliza.png" class="d-block w-100" alt="Slide 3" >
+                    <img src="./src/assets/xanerie_revitaliza.JPG" class="d-block w-100" alt="Slide 3" >
                 </div>
             </div>
 
@@ -53,110 +61,225 @@
 
 <!-- Productos -->
 
-    <div class="grid-tipo-piel">
-        <a href="#skin-title1" class="local-link">
-            <div class="responsive">Todo tipo de piel</div>
-        </a>
+<div class="grid-tipo-piel">
+    <a href="#skin-title1" class="local-link">
+        <div class="responsive">Todo tipo de piel</div>
+    </a>
+    <a href="#skin-title2" class="local-link">
         <div class="responsive" id="skin2">Piel seca</div>
+    </a>
+    <a href="#skin-title3" class="local-link">
         <div class="responsive" id="skin3">Piel mixta / grasa</div>
-    </div>
+    </a>
+</div>
     
-    <div class="skin-title" id="skin-title1">Todo tipo de piel</div>
-    
-    <div class="todo-tipo">
-        <div class="producto1"> <img src="./src/assets/pr_jabon_facial.png" alt="jabon" class="img1">
+<div class="skin-title" id="skin-title1">Todo tipo de piel</div>
+
+<!-- Producto 1 -->
+    <div class="producto">
+        <div class="img"> <img src="./src/assets/pr1_jabon_facial.png" alt="producto1" class="img">
         </div>
-    
-        <div class="producto1">
-            <h4>Limpiador facial</h4>
+
+        <div>
+            <h3>Limpiador facial</h3>
             <p>Es ideal para todo tipo de piel. Limpia profundamente tu rostro sin resevarlo, manteniendo su función de
-                barrera protectora. <br><h6>Ingredientes.</h4>Decil glucosido, caprilato de poliglicerilo, cocoglucosido, oleato
-                de glicerilo, extracto de aloe vera (Aloe barbadensis miller), urea, glicerina, agua de Hamamelis, agua
-                destilada, benzoato de sodio.</p>
+                barrera protectora. <br>
+            <h6>Ingredientes.</h6>Decil glucosido, caprilato de poliglicerilo, cocoglucosido, oleato
+            de glicerilo, extracto de aloe vera (Aloe barbadensis miller), urea, glicerina, agua de Hamamelis, agua
+            destilada, benzoato de sodio.<br>80 mL.</p>
         </div>
         <div class="precio">$ 230.00</div>
-        <div class="btn-class"><button type="submit" class="btn-cart">Agregar al carrito</button></div>
-    
+        <div class="bttn">
+            <button type="submit" class="btn--solidbk">Agregar al carrito</button>
+        </div>
     </div>
+    
+<div class="linea"></div>
+
+<!-- Producto 2 -->
+    <div class="producto">
+        <div class="texto">
+            <h3>Exfoliante</h3>
+            <p>Exfolia suavemente tu piel sin dañarla, contiene micropartículas esféricas biodegradables. <br>
+            <h6>Ingredientes.</h6>
+            Agua destilada, aceite vegetal (Helianthus annuus), alcohol cetearílico, urea, propilenglicol, pantenol
+            (Provitamina B5), dimeticona, cáscara de nuez en polvo, diestearato de glicol, carbón activado, polisorbato 20,
+            fenoxietanol, sorbato de potasio. <br>30 g.</p>
+        </div>
+        <div class="img" id="img"> <img src="./src/assets/pr2_exfoliante_facial.png" alt="producto2" class="img">
+        </div>
+        <div class="bttn">
+            <button type="submit" class="btn--solidbk">Agregar al carrito</button>
+        </div>
+        <div class="precio">$ 180.00</div>
+    </div>
+    
+<div class="linea"></div>
+
+<!-- Producto 3 -->
+    <div class="producto">
+        <div class="img"> <img src="./src/assets/pr3_mascarilla_hidratante.png" alt="producto3" class="img">
+        </div>
+
+        <div>
+            <h3>Mascarilla hidratante</h3>
+            <p>Contiene ingredientes naturales como miel orgánica al 15%, que junto con el ácido hialurónico fortalecerá e hidratará tu piel.  <br>
+            <h6>Ingredientes.</h6>Agua destilada de rosas, (Aloe barbadensis miller), miel, glicerina, dexpantenol, agua destilada, pentilenglicol, urea, serina, trehalosa, poliacrilato de glicerilo, caprilil glicol, ácido hialurónico, alginato de sodio, pululano, fosfato disódico, fosfato de potasio, benzoato de sodio.<br>30 g.</p>
+        </div>
+        <div class="precio">$ 250.00</div>
+        <div class="bttn">
+            <button type="submit" class="btn--solidbk">Agregar al carrito</button>
+        </div>
+    </div>
+
+<div class="skin-title" id="skin-title2">Piel seca</div>
+
+<!-- Producto 4 -->
+    <div class="producto">
+        <div class="img"> <img src="./src/assets/pr4_serum_revitaliza.png" alt="producto4" class="img">
+        </div>
+
+        <div>
+            <h3>Sérum <span id="marca">Revitaliza</span></h3>
+            <p>Formulado para pieles que han sufrido estragos por el tiempo. El sérum Revitaliza contiene ingredientes eficaces en la reparación intensa de la piel.   <br>
+            <h6>Ingredientes.</h6>Agua destilada, acetil tetrapeptido 9 y 11, extracto de argan (Argania spinosa), dexpantenol (provitamina B5), polisorbato 20, glicerina, alginato, pentilenglicol, urea, serina, trehalosą, poliacrilato de glicerina, caprilil glicol, ácido hialurónico, fenoxietanol.<br>30 mL.</p>
+        </div>
+        <div class="precio">$ 500.00</div>
+        <div class="bttn">
+            <button type="submit" class="btn--solidbk">Agregar al carrito</button>
+        </div>
+    </div>
+
+<div class="linea"></div>
+
+<!-- Producto 5 -->
+    <div class="producto">
+        <div class="texto">
+            <h3>Sérum <span id="marca">Revitaliza</span> <br>Reparación nocturna</h3>
+            <p>Formulado para la reparación nocturna intensive en la piel que ha sufrido estragos por el tiempo. <br>
+            <h6>Ingredientes.</h6>
+            Agua destilada, acetil tetrapeptido 9 y 11, extracto de semilla de Makti (Vigna aconitifoilia), dexpantenol (provitamina B5), polisorbato 20, glicerina, alginato, pentilenglicol, urea, serina, trehalosa, poliacrilato de glicerina, caprilil glicol, ácido hialurónico, fenoxietanol. <br>30 mL.</p>
+        </div>
+        <div class="img" id="img"> <img src="./src/assets/pr5_serum_revitaliza_noctuno.png" alt="producto5" class="img">
+        </div>
+        <div class="bttn">
+            <button type="submit" class="btn--solidbk">Agregar al carrito</button>
+        </div>
+        <div class="precio">$ 600.00</div>
+    </div>
+
+<div class="linea"></div>
+
+<!-- Producto 6 -->
+    <div class="producto">
+        <div class="img"> <img src="./src/assets/pr6_crema_facial_revitaliza.png" alt="producto6" class="img">
+        </div>
+
+        <div>
+            <h3>Crema facial <span id="marca">Revitaliza</span></h3>
+            <p>Revitaliza tu piel y disminuye los signos de la edad utilizando la crema facial.   <br>
+            <h6>Ingredientes.</h6>Agua destiladą, glicerina, extracto de harina de avena sativa, dexpantenol (provitamina B5), aceite mineral, palmitato de isopropilo, acetil tetrapétido 9 y 11, aceite de rosa mosqueta (Rosa eglanteria), ácido esteárico, monoestearato de glicerilo, polisorbato 20, alcohol cetílico, trietanolamina, escualeno, diazolidinilureą metilparabeno, propilparabeno, fragancia, carbómero, pentilenglicol, urea, serina, trehalosa, poliacrilato de glicerilo, caprilil glicol, ácido hialurónico, alginato de sodio, pululano, fosfato disódico, fosfato de potasio, benzoato de sodio BHT, EDTA. <br>50 g.</p>
+        </div>
+        <div class="precio">$ 580.00</div>
+        <div class="bttn">
+            <button type="submit" class="btn--solidbk">Agregar al carrito</button>
+        </div>
+    </div>
+
+<div class="linea"></div>
+
+<!-- Producto 7 -->
+    <div class="producto">
+        <div class="texto">
+            <h3>Contorno de ojos</h3>
+            <p>Mantén tu mirada joven, fresca y radiante utilizando el contorno de ojos de Xanêrie. <br>
+            <h6>Ingredientes.</h6>
+            Agua destilada, glicerina, extracto de harina de avena sativa, dexpantenol (provitamina B5), aceite de rosa mosqueta (Rosa eglanteria), aceite mineral, palmitato de isopropilo, extracto de fucus (Fucus vesiculosus), ácido esteárico, monoestearato de glicerilo, polisorbato 20, alcohol cetílico, trietanolamina, escualeno, diazolidinilureą, metilparabeno, propilparabeno, fragancia, carbómero, pentilenglicol, urea, serina, trehalosą, poliacrilato de glicerilo, caprilil glicol, ácido hialurónico, alginato de sodio, pululano, fosfato disódico, fosfato de potasio, benzoato de sodio BHT, EDTA. <br>10 g.</p>
+        </div>
+        <div class="img" id="img"> <img src="./src/assets/pr7_contorno_ojos.png" alt="producto7" class="img">
+        </div>
+        <div class="bttn">
+            <button type="submit" class="btn--solidbk">Agregar al carrito</button>
+        </div>
+        <div class="precio">$ 250.00</div>
+    </div>
+
+<div class="skin-title" id="skin-title3">Piel mixta / grasa</div>
+
+<!-- Producto 8 -->
+<div class="producto">
+    <div class="img"> <img src="./src/assets/pr8_Tonico_facial.png" alt="producto8" class="img">
+    </div>
+    <div>
+        <h3>Tónico facial</h3>
+        <p>Tonifica la piel sin resecarla. Refresca tu piel e incorpora antioxidantes en tu rutina con el tónico facial de Xanêrie.   <br>
+        <h6>Ingredientes.</h6>Destilado de Hamamelis virginiana, destilado de agua de rosas, extracto de argán (Argania spinosa), glicerina, dexpantenol (provitamina B5), benzoato de sodio. <br>80 mL.</p>
+    </div>
+    <div class="precio">$ 200.00</div>
+    <div class="bttn">
+        <button type="submit" class="btn--solidbk">Agregar al carrito</button>
+    </div>
+</div>
+
+<div class="linea"></div>
+
+<!-- Producto 9 -->
+<div class="producto">
+    <div class="texto">
+        <h3>Sérum <span id="marca">Purifica</span></h3>
+        <p>Ideal para piel mixta- grasa. Contiene ingredientes naturales cuyos beneficios han sido evaluados <em>in vitro.</em> <br>
+        <h6>Ingredientes.</h6>Agua destilada, extracto de boldo (Peumus boldus), extracto de argán (Argania spinosa), glicerina, alginata, pentilenglicol, urea, serina, trehalosa, poliacrilato de glicerina, caprilil glicol, ácido hialurónico, pantenol (provitamina 85), polisorbato 20, fenoxietanol.<br>30 mL.</p>
+    </div>
+    <div class="img" id="img"> <img src="./src/assets/pr9_Purifica_serum.png" alt="producto9" class="img">
+    </div>
+    <div class="bttn">
+        <button type="submit" class="btn--solidbk">Agregar al carrito</button>
+    </div>
+    <div class="precio">$ 450.00</div>
+</div>
+
+<div class="linea"></div>
+
+<!-- Producto 10 -->
+<div class="producto">
+    <div class="img"> <img src="./src/assets/pr10_serum_purifica_nocturno.png" alt="producto10" class="img">
+    </div>
+    <div>
+        <h3>Sérum <span id="marca">Purifica</span><br>Reparación nocturna</h3>
+        <p>Repara tu piel intensamente durante la noche, contiene ingredientes naturales que ayudan a restaurar la piel mixta grasa.  <br>
+        <h6>Ingredientes.</h6>Agua destilada, pantenol (provitamina 85), extracto de boldo (Peumus baldus), extracto de semilla de makti (Vigna acontifolia), glicerina, alginato, pentilenglicol, urea, serina, trehalosa, pollacrilato de glicerina, capriiii glicol, hialuronato de sodio, propilenglicol, PEG-4, agar, acetato de tocoferol, alginata, polisarbato 20, BHT, quitosano, ácido glicólica, etilhexilglicerina, fenoxietanol. <br>30 mL.</p>
+    </div>
+    <div class="precio">$ 450.00</div>
+    <div class="bttn">
+        <button type="submit" class="btn--solidbk">Agregar al carrito</button>
+    </div>
+</div>
+
+<div class="linea"></div>
+
+<!-- Producto 11 -->
+<div class="producto">
+    <div class="texto">
+        <h3>Crema facial <span id="marca">Purifica</span></h3>
+        <p>Desarrollada para piel mixta-grasa, humecta e hidrata tu piel sin dejar sensación grasa. <br>
+        <h6>Ingredientes.</h6>Agua destilada, glicerina, extracto de harina de avena sativa, extracto de boldo (Peumus Boldus), extracto de semilla de makti (Vigna aconitifolia), dexpantenol (provitamina B5), aceite mineral, palmitato de isopropilo, ácido esteárico, monoestearato de glicerilo, polisorbato 20, alcohol cetilico, trietanolamina, escualeno, diazolidinilurea, metilparabeno, propilparabeno, fragancia, carbómero, pentilenglicol, urea, serina, trehalosa, poliacrilato de glicerilo, caprilil glicol, ácido hialurónico, alginato de sodio, pululano, fosfato disódico, fosfato de potasio, benzoato de sodio BHT, EDTA.<br>50 g.</p>
+    </div>
+    <div class="img" id="img"> <img src="./src/assets/pr11_crema_facial_purifica.png" alt="producto11" class="img">
+    </div>
+    <div class="bttn">
+        <button type="submit" class="btn--solidbk">Agregar al carrito</button>
+    </div>
+    <div class="precio">$ 450.00</div>
+</div>
+
+
 
 
 <!-- Footer -->
-<footer">
-<div class="container-fluid ">
-    <div class="row p-5 bg-soft-green text-main-text">
-        <div class="col-12  col-md-4 col-lg-4">
-            <div class="row">
-                <p class="h5">¿Tienes alguna duda?</p>
-                <p>
-                    <a href="mailto:correo@correo" class="text-decoration-none text-main-text">correo@correo</a>
-                    9:00 | 18:00
-                    <br>
-                    <a href="tel:+525556547885" class="text-decoration-none text-main-text">(+52)
-                        nn-nnnn-nnn</a>
-                </p>
-            </div>
-            <div class="row">
-                <p class="h5">Conecta con Xanêrie</p>
-                    <p>
-                    <a class="me-5 text-decoration-none" href="#" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/messenger.png">
-                    </a>
-                    <a class=" me-5 text-decoration-none" href="https://www.instagram.com/skinscience_monicg/" target="_blank"
-                        rel="noopener noreferrer" >
-                        <img src="../assets/instagram.png">
-                    </a>
-                    <a href="https://www.tiktok.com/@skinscience_monicg" target="_blank"
-                        rel="noopener noreferrer">
-                        <img src="../assets/tik-tok.png">
-                    </a>
-                </p>
-            </div>
-        </div>
 
+<div id="footer1"></div>
 
-        <div class="col-12  col-md-4 col-lg-4">
-            <div class="row">
-                <p class="h5">Más sobre Xanêrie</p>
-                <p>
-                    <a href="#" class="text-decoration-none text-main-text">Lee sobre xanêrie</a>
-                    <br>
-                    <a href="#" class="text-decoration-none text-main-text">Lee sobre nuestras fórmulas</a>
-                </p>
-            </div>
-            <div class="row">
-                <p class="h5">Sección informativa</p>
-                <p>
-                   <a href="#" class="text-decoration-none text-main-text">Q&A</a> 
-                    <br>
-                    <a href="#" class="text-decoration-none text-main-text">Términos y condiciones</a>
-                    <br>
-                    <a href="#" class="text-decoration-none text-main-text">Aviso de privacidad</a>
-                </p>
-            </div>
-        </div>
-
-
-        <div class="col-12  col-md-4 col-lg-4">
-            <form>
-                <p class="h5">Únete para enterarte de las últimas novedades</p>
-                <div class="mb-3">
-                    <label for="inputName" class="form-label">Tu nombre</label>
-                    <input type="text" class="form-control" id="inputName">
-                </div>    
-                <div class="mb-3">
-                    <label for="inputEmail" class="form-label">email</label>
-                    <input type="email" class="form-control" id="inputEmail">
-                </div>
-                <div class="text-end">
-                    <button type="submit" class="btn btn-main-text btn-lg">Únete</button>
-                </div>
-            </form>
-        </div>
-
-    </div>
-</div>
-</footer>
-
-
+    <script src="./src/index.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

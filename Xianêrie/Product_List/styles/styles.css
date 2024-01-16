@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display&family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display&family=Roboto:wght@400;500;700&family=Pinyon+Script&display=swap');
 
 :root {
     --soft-pink: #FAD9C9;
@@ -14,6 +14,14 @@
     --roboto-font: 'Roboto', sans-serif;
 }
 
+#marca{
+    font-family: 'Pinyon Script';
+}
+
+*::before, *::after{
+    box-sizing: border-box;
+}
+
 body{
     font-family: var(--montserrat-font);
 }
@@ -23,14 +31,17 @@ body{
     position:relative;
     margin: 4% 8% 10px;
     font-weight: bolder;
-    /* font-size:x-large; */
 }
 
 .carousel-item{
-    min-height: 280px;
-    max-height: 900px;
+    max-height: 700px;
+    max-width: auto;
 }
 
+.d-block{
+    max-height: 700px;
+    max-width: auto;
+    }
 
 .grid-tipo-piel{
     display: grid;
@@ -48,19 +59,28 @@ body{
     gap: 20px;
 }
 
+.responsive{
+    background-color: var(--main-ocre);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px;    
+}
+@media(max-width: 545px){
+    .responsive{
+        min-height: 70px;
+    }
+}
+
 .local-link{
     text-decoration: none;
     color: white;
 }
 .local-link:hover{
-    color:#CACB9C;
-}
-
-.responsive{
-    background-color: var(--main-ocre);
-    border-radius: 8px;
-    text-align: center;
-    padding: 8px;
+    color:var(--main-beige);
+    font-weight: bold;
 }
 
 #skin1{
@@ -82,10 +102,15 @@ body{
     border-radius: 5px;
 }
 
+.linea{
+    border: solid var(--main-text) 1px;
+    height: 1px;
+    width: auto;
+    margin: 3% 8%;
+}
 
-.todo-tipo{
-    border: solid var(--salmon) 2px;
-    margin: 3% 10% 4%;
+.producto{
+    margin: 3% 10% 3%;
     display: grid;
     grid-template-columns:auto auto;
     grid-template-rows: auto auto;
@@ -95,15 +120,48 @@ body{
     gap: 10px;
 }
 
+.producto:hover{
+    /* border: solid var(--salmon) 1px; */
+    box-shadow: 
+    /* Sombra derecha */ 20px 20px 60px 0px rgba(139, 139, 139, 0.15),
+    /* Sombra izquierda */-20px -20px 60px 0px rgba(139, 139, 139, 0.15);
+    transition: box-shadow 0.5s;
+}
+
 @media (max-width: 768px) {
-    .todo-tipo {
+    .d-block{
+        max-height: 500px;
+    }
+    .producto {
         grid-template-columns: auto;
+        grid-template-areas:
+        "img"
+        "texto"
+        "precio"
+        "bttn";
+        margin: 3% 3%;
+    }
+    .img{
+        grid-area: img;
+    }
+    .texto{
+        grid-area: texto;
+    }
+    .precio{
+        grid-area: precio;
+    }
+    .bttn{
+        grid-area:bttn;
     }
 }
 
-.img1{
+.img{
     margin: 0%;
     height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
 }
 
 .precio{
@@ -113,19 +171,43 @@ body{
     font-weight: bold;
 }
 
-.btn-class{
+button{
+    height: 50px;
+    display:inline-block;
+    padding:0px 20px;
+    font-family: var(--montserrat-font);
+    font-size: 15px;
+}
+
+.bttn{
     display: flex;
     justify-content: center;
 }
-.btn-cart{
-    font-family: var(--montserrat-font);
-    background-color: var(--main-beige);
-    color: var(--main-text);
-    border: solid 1px;
-    border-radius: 8px;
-    padding: 5px 15px;
-}
-.btn-cart:hover{
-    background-color: var(--main-ocre);
+
+.btn--whiteline{
     color: var(--main-white);
+    background-color: transparent;
+    border: solid var(--main-white) 1px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn--whiteline:hover{
+    border: none;
+    background-color: rgba(255,255,255,.2);
+    transition: background-color 0.5s;
+    font-weight: 500;
+}
+
+.btn--solidbk{
+    color: var(--main-white);
+    background-color: var(--main-text);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn--solidbk:hover{
+    background-color:var(--main-ocre);
+    transition: background-color 0.5s;
+    font-weight: 500;
 }
