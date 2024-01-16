@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+    <!--Css-->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css">
+     
+</head>
+<body>
+  <header>
+    <div class="col-12 bg-dark-pink text-center text-main-white">¡Envíos a todo México!</div>
+  </header>
+  <!-- Contenido de la página del carrito -->
+    <div class="container-fluid p-5 ">
+        <div class="row d-flex justify-content-around">
+          <!-- Primera columna -->
+          <div class="form-container col-12  col-md-8 col-xl-8 p-4 border border-2">
+            <h4>Datos de envío</h4>
+                <form class="row g-3">
+                  <div class=" col-6 ">
+                    <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+                  </div>
+                  <div class=" col-6 col-md-6 col-xl-6">
+                    <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+                  </div>
+                  <div class=" col-7 col-md-4 col-xl-4">
+                      <input type="text" class="form-control" id="inputEstado" placeholder="Estado">
+                    </div> 
+                    <div class=" col-5 col-md-4 col-xl-4">
+                      <input type="text" class="form-control" id="inputCiudad" placeholder="Ciudad">
+                    </div>
+                    <div class=" col-4 col-md-4 col-xl-4">
+                      <input type="text" class="form-control" id="inputCodigoPostal" placeholder="C.P">
+                    </div>
+                    <div class=" col-8 col-md-3 col-xl-3">
+                      <input type="text" class="form-control" id="inputColonia" placeholder="Colonia">
+                    </div>
+                    <div class=" col-8 col-md-6 col-xl-6">
+                      <input type="text" class="form-control" id="inputCalleNumero" placeholder="Calle y número">
+                    </div>
+                    <div class=" col-4 col-md-3 col-xl-3">
+                      <input type="text" class="form-control" id="inputNumInterior" placeholder="N° interior">
+                    </div>
+                    
+                    <div class="mt-4">
+                      <h4>Métodos de Pago</h4>
+                      <div class="d-flex justify-content-end align-items-center">
+
+                        <img src="../assets/visa.png" alt="Visa" class="icon-visa">
+                        <img src="../assets/mastercard.png" alt="MasterCard" class="icon-master">
+                      </div>
+                    </div>
+
+                    <div class=" col-12 ">
+                      <input type="text" class="form-control" id="inputNombre" placeholder="Nombre completo del titular de la cuenta">
+                    </div>
+                    <div class=" col-12 col-md-6 col-xl-6">
+                      <input type="text" class="form-control" id="numeroTarjeta" placeholder="Número de tarjeta">
+                    </div>
+                    <div class=" col-6 col-md-3 col-xl-3">
+                      <input type="text" class="form-control" id="fechaVencimiento" placeholder="MM/AA">
+                    </div>
+                    <div class=" col-6 col-md-3 col-xl-3">
+                      <input type="text" class="form-control" id="ccv" placeholder="CCV">
+                    </div>
+                  <div class="col-12 d-grid d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-main-text">Guardar</button>
+                  </div>
+                </form>
+          </div>
+
+          <!-- Columna dos -->
+          <div class="carrito-container col-12 col-md-3 col-xl-3">
+            <h4>Carrito</h4>
+            <div class="productos-carrito">
+
+            </div>
+            <hr>
+            <p>Subtotal</p>
+            <p>Envío</p>
+            <hr>
+            <p><strong>Total</strong></p>
+            <div class="col-12 d-grid d-md-flex justify-content-md-end">
+              <button type="submit" class="btn btn-main-text">Comprar</button>
+            </div>
+          </div>
+      </div>
+  </div>
+  <!-- Footer -->
+    <footer>
+      <div class="container-fluid ">
+        <div class="row p-5 bg-soft-green text-main-text">
+            <div class="col-12  col-md-4 col-lg-4">
+                <div class="row">
+                    <p class="h5">¿Tienes alguna duda?</p>
+                    <p>
+                        <a href="mailto:correo@correo" class="text-decoration-none text-main-text">correo@correo</a>
+                        9:00 | 18:00
+                        <br>
+                        <a href="tel:+525620417120" class="text-decoration-none text-main-text">(+52)
+                            56-2041-7120</a>
+                    </p>
+                </div>
+                <div class="row">
+                    <p class="h5">Conecta con Xanêrie</p>
+                        <p>
+                        <a class="me-5 text-decoration-none" href="http://wa.me/525620417120" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/whatsapp.png">
+                        </a>
+                        <a class=" me-5 text-decoration-none" href="https://www.instagram.com/xanerie?igsh=MTNpdXRybWZ2ZDR6OA%3D%3D" target="_blank"
+                            rel="noopener noreferrer" >
+                            <img src="../assets/instagram.png">
+                        </a>
+                        <a href="https://www.tiktok.com/@xanerie" target="_blank"
+                            rel="noopener noreferrer">
+                            <img src="../assets/tik-tok.png">
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-12  col-md-4 col-lg-4">
+                <div class="row">
+                    <p class="h5">Más sobre Xanêrie</p>
+                    <p>
+                        <a href="#" class="text-decoration-none text-main-text">Lee sobre xanêrie</a>
+                        <br>
+                        <a href="#" class="text-decoration-none text-main-text">Lee sobre nuestras fórmulas</a>
+                    </p>
+                </div>
+                <div class="row">
+                    <p class="h5">Sección informativa</p>
+                    <p>
+                       <a href="#" class="text-decoration-none text-main-text">Q&A</a> 
+                        <br>
+                        <a href="#" class="text-decoration-none text-main-text">Términos y condiciones</a>
+                        <br>
+                        <a href="#" class="text-decoration-none text-main-text">Aviso de privacidad</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-12  col-md-4 col-lg-4">
+                <form>
+                    <p class="h5">Únete para enterarte de las últimas novedades</p>
+                    <div class="mb-3">
+                        <label for="inputName" class="form-label">Tu nombre</label>
+                        <input type="text" class="form-control" id="inputName">
+                    </div>    
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">email</label>
+                        <input type="email" class="form-control" id="inputEmail">
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-main-text btn-lg">Únete</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    </footer>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
