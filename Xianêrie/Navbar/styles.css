@@ -44,7 +44,7 @@ header {
 .nav-list {
     list-style-type: none;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .nav-list li a{
