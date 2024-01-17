@@ -33,6 +33,7 @@
 }
 
 
+
 header {
     display: flex;
     align-items: center;
@@ -44,7 +45,7 @@ header {
 .nav-list {
     list-style-type: none;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .nav-list li a{
@@ -118,7 +119,6 @@ ul .drop-list:hover .dropdown-content {
         background-color: #CAC9BC;
         padding: 2rem;
         box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-        z-index: 99;
     }
 
     .nav.visible {
@@ -133,6 +133,13 @@ ul .drop-list:hover .dropdown-content {
 
     .nav-list li a{
         color: #2E2D28;
+    }
+
+    .search-bar input {
+        border: none;
+        border-radius: 5px;
+        padding: 7px;
+        width: 150px;
     }
 }
 
