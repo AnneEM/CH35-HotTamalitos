@@ -20,41 +20,9 @@
     <!--*HEADER-->
     <div class="col-12 bg-dark-pink text-center text-main-white">¡Envíos a todo México!</div>
     <!--*NAVBAR Y LATEST PROMO-->
-    <header>
-        <div class="logo">Xanêrie</div>
-
-        <!--Botones para menu desplegable-->
-        <button class="abrir-menu" id="abrir"><i class="bi bi-justify"></i></button>
-        <nav class="nav" id="nav">
-            <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
-            <ul class="nav-list">
-
-                <!--Lista Desplegable-->
-                <li><a href="#" class="dropbtn">Productos</a>
-                    <div class="dropdown-content">
-                        <a href="#">Todas las pieles</a>
-                        <a href="#">Piel Seca</a>
-                        <a href="#">Piel mixta / grasa</a>
-                    </div>
-                </li>
-
-                <li><a href="#">Cuenta</a></li>
-                <li><a href="#">Cesta</a></li>
-
-                <!--Barra de navegación-->
-                <li>
-                    <div class="search-bar">
-                        <input type="text" placeholder="Buscar...">
-                        <button type="button"><img class="lupa" src="./assets/lupa.png" alt="Buscar"></button>
-                    </div>
-                </li>
-
-
-
-
-            </ul>
-        </nav>
-    </header>
+    
+        <div id="navBar1"></div>
+    
 
     <!--*INICIA PAGINA-->
     <section id="cabecera"> <!--*SECTION 1, CABECERA -->
@@ -183,87 +151,12 @@
     </section>
 
     <!--*FOOTER-->
-    <footer">
-        <div class="container-fluid ">
-            <div class="row p-5 bg-soft-green text-main-text">
-                <div class="col-12  col-md-4 col-lg-4">
-                    <div class="row">
-                        <p class="h5">¿Tienes alguna duda?</p>
-                        <p>
-                            <a href="mailto:correo@correo" class="text-decoration-none text-main-text">correo@correo</a>
-                            9:00 | 18:00
-                            <br>
-                            <a href="tel:+525620417120" class="text-decoration-none text-main-text">(+52)
-                                56-2041-7120</a>
-                        </p>
-                    </div>
-                    <div class="row">
-                        <p class="h5">Conecta con Xanêrie</p>
-                        <p>
-                            <a class="me-5 text-decoration-none" href="http://wa.me/525620417120" target="_blank"
-                                rel="noopener noreferrer">
-                                <img src="../assets/whatsapp.png">
-                            </a>
-                            <a class=" me-5 text-decoration-none"
-                                href="https://www.instagram.com/xanerie?igsh=MTNpdXRybWZ2ZDR6OA%3D%3D" target="_blank"
-                                rel="noopener noreferrer">
-                                <img src="../assets/instagram.png">
-                            </a>
-                            <a href="https://www.tiktok.com/@xanerie" target="_blank" rel="noopener noreferrer">
-                                <img src="../assets/tik-tok.png">
-                            </a>
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="col-12  col-md-4 col-lg-4">
-                    <div class="row">
-                        <p class="h5">Más sobre Xanêrie</p>
-                        <p>
-                            <a href="#" class="text-decoration-none text-main-text">Lee sobre xanêrie</a>
-                            <br>
-                            <a href="#" class="text-decoration-none text-main-text">Lee sobre nuestras fórmulas</a>
-                        </p>
-                    </div>
-                    <div class="row">
-                        <p class="h5">Sección informativa</p>
-                        <p>
-                            <a href="#" class="text-decoration-none text-main-text">Q&A</a>
-                            <br>
-                            <a href="#" class="text-decoration-none text-main-text">Términos y condiciones</a>
-                            <br>
-                            <a href="#" class="text-decoration-none text-main-text">Aviso de privacidad</a>
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="col-12  col-md-4 col-lg-4">
-                    <form>
-                        <p class="h5">Únete para enterarte de las últimas novedades</p>
-                        <div class="mb-3">
-                            <label for="inputName" class="form-label">Tu nombre</label>
-                            <input type="text" class="form-control" id="inputName">
-                        </div>
-                        <div class="mb-3">
-                            <label for="inputEmail" class="form-label">email</label>
-                            <input type="email" class="form-control" id="inputEmail">
-                        </div>
-                        <div class="text-end">
-                            <button type="submit" class="btn btn-main-text btn-lg">Únete</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-
+    <div id="footer1"></div>
 
         <!-- * Bootstrap script-->
         <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <!--Scripts java-->
-        <script src="../Navbar/java.js"></script>
+        <script defer src="../navbar_footer.js"></script>
 </body>
 
 </html>
