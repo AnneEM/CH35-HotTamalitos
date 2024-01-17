@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display&family=Roboto:wght@400;500;700&family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display&family=Roboto:wght@400;500;700&family=Pinyon+Script&display=swap');
 
 :root {
     --soft-pink: #FAD9C9;
@@ -20,6 +20,10 @@
 
 *::before, *::after{
     box-sizing: border-box;
+}
+
+body{
+    font-family: var(--montserrat-font);
 }
 
 .title{
@@ -105,7 +109,7 @@
     margin: 3% 8%;
 }
 
-.producto{
+.item-producto{
     margin: 3% 10% 3%;
     display: grid;
     grid-template-columns:auto auto;
@@ -116,7 +120,7 @@
     gap: 10px;
 }
 
-.producto:hover{
+.item-producto:hover{
     /* border: solid var(--salmon) 1px; */
     box-shadow: 
     /* Sombra derecha */ 20px 20px 60px 0px rgba(139, 139, 139, 0.15),
@@ -128,7 +132,7 @@
     .d-block{
         max-height: 500px;
     }
-    .producto {
+    .item-producto {
         grid-template-columns: auto;
         grid-template-areas:
         "img"
@@ -167,8 +171,6 @@
     font-weight: bold;
 }
 
-
-/* Botones */
 button{
     height: 50px;
     display:inline-block;
