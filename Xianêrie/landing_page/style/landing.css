@@ -156,6 +156,9 @@ button{
 
 #title--productos{
     margin-left: 60px;
+    font-weight: 600;
+    font-family: var(--montserrat-font);
+    font-size: 30px;
 }
 
 
@@ -224,6 +227,8 @@ button{
     line-height: 85px;
     display: flex;
     justify-content: left;
+    font-family: var(--montserrat-font);
+    font-size: 20px;
 }
 
 #contenedorvinculo--formulas{
@@ -263,6 +268,9 @@ button{
 #title--tipospiel{
     margin-top: 0px;
     text-align: center;
+    font-weight: 600;
+    font-family: var(--montserrat-font);
+    font-size: 30px;
 }
 
 #text--tipospiel{
@@ -326,6 +334,9 @@ button{
 
 #title--compromiso{
     margin-top: 0px;
+    font-weight: 600;
+    font-family: var(--montserrat-font);
+    font-size: 30px;
 }
 
 #subtitle--compromiso{
@@ -414,6 +425,11 @@ button{
     }
 
     /*SECTION 2*/
+    #title--productos{
+        font-size: 25px;
+    }
+
+
     #productos{
         height: 800px;
     }
@@ -440,6 +456,7 @@ button{
     
     .bullet--formulas{
         line-height: 30px;
+        font-size: 15px
     }
     
 
@@ -454,12 +471,20 @@ button{
     padding-right: 25px;
 }
 
+#title--tipospiel{
+    font-size: 25px;
+}
+
 #text--tipospiel{
     margin-top: 1.5%;
 }
 
 #media--tipospiel{
     margin-top: -10%;
+}
+
+#textbullet--tipospiel{
+    font-size: 20px;
 }
 
 /*SECTION 5 COMPROMISO*/
@@ -472,10 +497,14 @@ button{
 
 }
 
+#title--compromiso{
+    font-size: 25px;
+}
 
 #subtitle--compromiso{
     margin-top: 15px;
     font-size: 15px;
+    font-weight: 600;
 }
 
 #text--compromiso{
