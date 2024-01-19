@@ -23,3 +23,112 @@ h1 {
     font-family: var(--montserrat-font);
     font-weight: bold;
 }
+
+/* Botones de crear cuenta - iniciar sesión*/
+#btn--solidbk {
+    color: var(--main-white);
+    background-color: var(--main-text);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#btn--solidbk:hover {
+    border: none;
+    background-color: var(--main-ocre);
+    transition: background-color 0.5s;
+    font-weight: 500;
+}
+
+
+/* Estilos de bootstrap para formulario */
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .form-control {
+        transition: none;
+    }
+}
+
+.form-control[type=file] {
+    overflow: hidden;
+}
+
+.form-control[type=file]:not(:disabled):not([readonly]) {
+    cursor: pointer;
+}
+
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #FAD9C9;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #EBCE98;
+}
+
+.form-control::-webkit-date-and-time-value {
+    min-width: 85px;
+    height: 1.5em;
+    margin: 0;
+}
+
+.form-control::-webkit-datetime-edit {
+    display: block;
+    padding: 0;
+}
+
+.form-control::-moz-placeholder {
+    color: var(--bs-secondary-color);
+    opacity: 1;
+}
+
+.form-control::placeholder {
+    color: var(--bs-secondary-color);
+    opacity: 1;
+}
+
+.form-control:disabled {
+    background-color: var(--bs-secondary-bg);
+    opacity: 1;
+}
+
+.form-control::file-selector-button {
+    padding: 0.375rem 0.75rem;
+    margin: -0.375rem -0.75rem;
+    margin-inline-end: 0.75rem;
+    color: var(--bs-body-color);
+    background-color: var(--bs-tertiary-bg);
+    pointer-events: none;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    border-inline-end-width: var(--bs-border-width);
+    border-radius: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .form-control::file-selector-button {
+        transition: none;
+    }
+}
+
+.form-control:hover:not(:disabled):not([readonly])::file-selector-button {
+    background-color: var(--bs-secondary-bg);
+}
