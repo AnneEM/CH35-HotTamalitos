@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --soft-pink: #FAD9C9;
+    --dark-pink: #E8B893;
+    --salmon: #EBCE98;
+    --soft-green: #CACB9C;
+    --main-ocre: #C6A043;
+    --main-text: #2E2D28;
+    --main-beige: #FAF4E4;
+    --main-white: #FFFFFF;
+    --especial-font: 'Playfair Display', serif;
+    --montserrat-font: 'Montserrat', sans-serif;
+    --roboto-font: 'Roboto', sans-serif;
+}
+
+/* Footer */
+.container-footer{
+    background-color: var(--soft-green);
+    font-family: var(--montserrat-font);
+}
+.links-footer{
+    color:  var(--main-text);
+}
+.boton-unete{
+    background-color: var(--main-text);
+    color: var(--main-white);
+    border-radius: 8px;
+    height: 45px;
+    width: 100px;
+    font-size: large;
+}

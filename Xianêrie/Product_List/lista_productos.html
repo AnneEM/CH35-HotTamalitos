@@ -3,26 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- CSS -->
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="../Navbar/styles.css">
-<!-- Icono pestaña -->    
-    <link rel="icon" href="./src/assets/xanerie.png">
-<!-- Bootstrap -->    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" alt="iconos">
-    
-
     <title>Lista de productos</title>
+     <!--Css boostrap-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="../Footer/style.css">
+    <link rel="stylesheet" href="../Navbar/styles.css">
+
 </head>
 
 <body>
-
-    <div id="navBar1"></div>
-    
-    <div class="col-12 bg-dark-pink text-center text-main-white">¡Envíos a todo México!</div>
+     <!-- Navbar -->
+     <div id="navBar1"></div>
     <h3 class="title">Nuestros productos</h3>
 
 <!-- Carousel -->
@@ -82,8 +75,11 @@
 
 
 
-    <script src="./lista_productos.js"></script>
-    <script src="../navbar_footer.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!--Ligado con js de navbar y footer para no tener que copiar el html cada que se hagan modificaciones-->
+  <script defer src="../navbar_footer.js"></script>
+  <script src="./lista_productos.js"></script>
 </body>
+<!--footer-->
+<footer id="footer1"></footer>
 </html>
