@@ -5,9 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--CSS-->
-    <link rel="stylesheet" href="../style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../style.css" /> -->
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="../Navbar/styles.css" />
+    <link rel="stylesheet" href="../Footer/style.css">
 
     <title>Login</title>
 </head>
@@ -29,7 +31,7 @@
                 <br />
                 <h1>Crear una cuenta</h1>
             </div>
-            <form>
+            <form id="login">
                 <div class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="mb-3">
                         <label for="emailInput">Email:</label>
@@ -62,7 +64,7 @@
             </form>
             <div class="text-center row">
                 <button type="button"
-                    class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 btn btn-main-text btn-lg btn-block mb-2">
+                    class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 btn btn-main-text btn-lg mb-2" id="btn--solidbk">
                     Crear cuenta
                 </button>
             </div>
@@ -79,7 +81,7 @@
             </div>
             <div class="text-center row">
                 <button type="button"
-                    class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 btn btn-main-text btn-lg btn-block">
+                    class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 btn btn-main-text btn-lg btn-block" id="btn--solidbk">
                     Iniciar Sesión
                 </button>
             </div>
@@ -89,6 +91,7 @@
     <div id="footer1"></div>
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    
     <!--Ligado con js de navbar y footer para no tener que copiar el html cada que se hagan modificaciones-->
     <script defer src="../navbar_footer.js"></script>
 </body>

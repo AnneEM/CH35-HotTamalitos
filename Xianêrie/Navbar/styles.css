@@ -156,3 +156,8 @@ ul .drop-list:hover .dropdown-content {
 .localLink:hover{
     color: black;
 }
+.envios{
+    background-color: #E8B893;
+    color:  #FFFFFF;
+    text-align: center;
+}

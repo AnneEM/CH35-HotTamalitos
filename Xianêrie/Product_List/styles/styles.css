@@ -171,7 +171,7 @@ body{
     font-weight: bold;
 }
 
-button{
+.button-carrito{
     height: 50px;
     display:inline-block;
     padding:0px 20px;
