@@ -147,6 +147,13 @@ ul .drop-list:hover .dropdown-content {
         padding: 7px;
         width: 150px;
     }
+
+    .nav-list .alinear-text {
+        display: flex;
+        flex-direction: column;
+        margin-top: 7px;
+        gap: 1rem;
+    }
 }
 
 .localLink{
