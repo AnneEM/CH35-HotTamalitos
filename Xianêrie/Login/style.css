@@ -42,18 +42,18 @@ h1 {
 
 
 /* Estilos de bootstrap para formulario */
-.form-control {
+.form-login {
     display: block;
     width: 100%;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--bs-body-color);
+    color: var(--main-white);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: var(--bs-body-bg);
+    background-color: var(--main-white);
     background-clip: padding-box;
     border: var(--bs-border-width) solid var(--bs-border-color);
     border-radius: var(--bs-border-radius);
@@ -61,74 +61,70 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .form-control {
+    .form-login {
         transition: none;
     }
 }
 
-.form-control[type=file] {
+.form-login[type=file] {
     overflow: hidden;
 }
 
-.form-control[type=file]:not(:disabled):not([readonly]) {
+.form-login[type=file]:not(:disabled):not([readonly]) {
     cursor: pointer;
 }
 
-.form-control:focus {
-    color: var(--bs-body-color);
-    background-color: var(--bs-body-bg);
-    border-color: #FAD9C9;
+.form-login:focus {
+    color: var(--main-text);
+    background-color: var(--main-white);
+    /* border-color: #FAD9C9; */
+    border-color: var(--main-ocre);
     outline: 0;
-    box-shadow: 0 0 0 0.25rem #EBCE98;
+    box-shadow: 0 0 0 0.25rem var(--salmon);
 }
 
-.form-control::-webkit-date-and-time-value {
-    min-width: 85px;
-    height: 1.5em;
-    margin: 0;
+#noSoyRobot {
+    cursor: pointer;
+    background-color: var(--main-white);
+    appearance: none;
+    border: 0.5px solid #CACB9C;
+    scrollbar-shadow-color: var(--main-text);
+    transition: background-color 0.3s ease-in-out;
+
 }
 
-.form-control::-webkit-datetime-edit {
-    display: block;
-    padding: 0;
+#noSoyRobot:checked {
+    background-color: var(--dark-pink);
+    color: #2E2D28;
+    box-shadow: 0 0 0 0.25rem var(--salmon);
 }
 
-.form-control::-moz-placeholder {
-    color: var(--bs-secondary-color);
-    opacity: 1;
+#noSoyRobot:focus {
+    /* border-color: #FAD9C9; */
+    border-color: var(--salmon);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem var(--salmon);
 }
 
-.form-control::placeholder {
-    color: var(--bs-secondary-color);
-    opacity: 1;
+#aceptTermYCond {
+    cursor: pointer;
+    background-color: var(--main-white);
+    appearance: none;
+    border: 0.5px solid #CACB9C;
+    scrollbar-shadow-color: var(--main-text);
+    transition: background-color 0.3s ease-in-out;
+
 }
 
-.form-control:disabled {
-    background-color: var(--bs-secondary-bg);
-    opacity: 1;
+#aceptTermYCond:checked {
+    background-color: var(--dark-pink);
+    color: #2E2D28;
+    box-shadow: 0 0 0 0.25rem var(--salmon);
 }
 
-.form-control::file-selector-button {
-    padding: 0.375rem 0.75rem;
-    margin: -0.375rem -0.75rem;
-    margin-inline-end: 0.75rem;
-    color: var(--bs-body-color);
-    background-color: var(--bs-tertiary-bg);
-    pointer-events: none;
-    border-color: inherit;
-    border-style: solid;
-    border-width: 0;
-    border-inline-end-width: var(--bs-border-width);
-    border-radius: 0;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .form-control::file-selector-button {
-        transition: none;
-    }
-}
-
-.form-control:hover:not(:disabled):not([readonly])::file-selector-button {
-    background-color: var(--bs-secondary-bg);
+#aceptTermYCond:focus {
+    /* border-color: #FAD9C9; */
+    border-color: var(--salmon);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem var(--salmon);
 }
