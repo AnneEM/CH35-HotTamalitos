@@ -29,16 +29,16 @@ const listaProductos = [
       "id":"mascarilla-hidratante"
   },
   {
-      "nombre": "Sérum Revitaliza",
+      "nombre": "Sérum <span id='marca'>Revitaliza</span>",
       "img": "./src/assets/pr4_serum_revitaliza.png",
       "precio":"$ 500.00",
-      "descripcion":"ormulado para pieles que han sufrido estragos por el tiempo. El sérum Revitaliza contiene ingredientes eficaces en la reparación intensa de la piel.",
+      "descripcion":"Formulado para pieles que han sufrido estragos por el tiempo. El sérum Revitaliza contiene ingredientes eficaces en la reparación intensa de la piel.",
       "ingredientes":"Agua destilada, acetil tetrapeptido 9 y 11, extracto de argan (Argania spinosa), dexpantenol (provitamina B5), polisorbato 20, glicerina, alginato, pentilenglicol, urea, serina, trehalosą, poliacrilato de glicerina, caprilil glicol, ácido hialurónico, fenoxietanol.",
       "contenido":"30 mL.",
       "id":"serum-revitaliza"
   },
   {
-      "nombre": "Sérum Revitaliza - Reparación nocturna",
+      "nombre": "Sérum <span id='marca'>Revitaliza</span><br>Reparación nocturna",
       "img": "./src/assets/pr5_serum_revitaliza_noctuno.png",
       "precio":"$ 600.00",
       "descripcion":"Formulado para la reparación nocturna intensive en la piel que ha sufrido estragos por el tiempo.",
@@ -47,7 +47,7 @@ const listaProductos = [
       "id":"sr-reparacionNocturna"
   },
   {
-      "nombre": "Crema facial - Revitaliza",
+      "nombre": "Crema facial <span id='marca'>Revitaliza</span>",
       "img": "./src/assets/pr6_crema_facial_revitaliza.png",
       "precio":"$ 580.00",
       "descripcion":"Revitaliza tu piel y disminuye los signos de la edad utilizando la crema facial.",
@@ -74,7 +74,7 @@ const listaProductos = [
       "id":"tonico-facial"
   },
   {
-      "nombre": "Sérum Purifica",
+      "nombre": "Sérum <span id='marca'>Purifica</span>",
       "img": "./src/assets/pr9_Purifica_serum.png",
       "precio":"$ 450.00",
       "descripcion":"Ideal para piel mixta- grasa. Contiene ingredientes naturales cuyos beneficios han sido evaluados <em>in vitro.</em>",
@@ -83,7 +83,7 @@ const listaProductos = [
       "id":"serum-purifica"
   },
   {
-      "nombre": "Sérum Purifica - Reparación nocturna",
+      "nombre": "Sérum <span id='marca'>Purifica</span> <br>Reparación nocturna",
       "img": "./src/assets/pr10_serum_purifica_nocturno.png",
       "precio":"$ 450.00",
       "descripcion":"Repara tu piel intensamente durante la noche, contiene ingredientes naturales que ayudan a restaurar la piel mixta grasa.",
@@ -92,7 +92,7 @@ const listaProductos = [
       "id":"sp-reparacionNocturna"
   },
   {
-      "nombre": "Crema facial Purifica",
+      "nombre": "Crema facial <span id='marca'>Purifica</span>",
       "img": "./src/assets/pr11_crema_facial_purifica.png",
       "precio":"$ 450.00",
       "descripcion":"Desarrollada para piel mixta-grasa, humecta e hidrata tu piel sin dejar sensación grasa.",
