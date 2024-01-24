@@ -30,6 +30,8 @@ body{
 
 .border-salmon {
   border-color: var(--salmon); /* Asegúrate de definir el color que prefieras */
+  border: 2px solid var(--salmon);
+  font-family: var(--montserrat-font);
   }
 
 #titulo, #subtitulo, #texto{
