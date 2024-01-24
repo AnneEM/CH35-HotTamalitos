@@ -29,18 +29,20 @@ body{
 .title{
     font-family: var(--montserrat-font);
     position:relative;
-    margin: 4% 8% 10px;
+    margin: 1% 4% 10px;
     font-weight: bolder;
 }
 
-.carousel-item{
-    max-height: 700px;
-    max-width: auto;
+.container-img{
+    display: flex;
+    justify-content: center;
+    max-height: 610px;
+    max-width: 100%;
 }
 
-.d-block{
-    max-height: 700px;
-    max-width: auto;
+.w-100{
+    max-height: 600px;
+    max-width: 80%;
     }
 
 .grid-tipo-piel{
@@ -55,7 +57,7 @@ body{
     font-family: var(--montserrat-font);
     color: var(--main-white);
     justify-content: center;
-    margin: 4%;
+    margin: 2% 4%;
     gap: 20px;
 }
 
@@ -68,10 +70,18 @@ body{
     text-align: center;
     padding: 8px;    
 }
+
 @media(max-width: 545px){
-    .responsive{
-        min-height: 70px;
-    }
+    /* .grid-tipo-piel{
+       display: flex;
+       flex-direction: column;
+       max-width: 320px;
+       margin: 4% 20%;
+   } */
+   .responsive{
+       height: auto;
+       min-height: 90px;
+   }
 }
 
 .local-link{
@@ -129,9 +139,10 @@ body{
 }
 
 @media (max-width: 768px) {
-    .d-block{
-        max-height: 500px;
-    }
+    .w-100{
+        max-height: 600px;
+        max-width: 90%;
+        }
     .item-producto {
         grid-template-columns: auto;
         grid-template-areas:
@@ -171,7 +182,7 @@ body{
     font-weight: bold;
 }
 
-button{
+.button-carrito{
     height: 50px;
     display:inline-block;
     padding:0px 20px;

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- CSS -->
-    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="../Footer/style.css">
 <!-- Icono pestaña -->    
     <link rel="icon" href="./src/assets/xanerie.png">
 <!-- Bootstrap -->    
@@ -18,48 +18,45 @@
 </head>
 
 <body>
-
    
-<!-- Header -->
-    <div class="col-12 bg-dark-pink text-center text-main-white">¡Envíos a todo México!</div>
 <!-- Navbar -->
     <div id="navBar1"></div>
 
     <h1 class="title">Nuestros productos</h1>
 
 <!-- Carousel -->
-    <div class="container-lg my-3">
-        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+<div class="container-lg my-3">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
 
-            <!-- Carousel indicators -->
-            <ol class="carousel-indicators">
-                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-                <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-                <!-- <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li> -->
-            </ol>
+        <!-- Carousel indicators -->
+        <!-- <ol class="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+        </ol> -->
 
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./src/assets/collage1.png" class="d-block w-100" alt="Slide 1" >
-                </div>
-                 <div class="carousel-item">
-                    <img src="./src/assets/collage2.jpg" class="d-block w-100" alt="Slide 2" >
-                </div>
-                <!-- <div class="carousel-item">
-                    <img src="./src/assets/xanerie_revitaliza.JPG" class="d-block w-100" alt="Slide 3" >
-                </div> -->
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./src/assets/collage1.png" class="d-block w-100" alt="Slide 1" >
             </div>
-
-            <!-- Carousel controls -->
-            <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
+           <!--   <div class="carousel-item">
+                <img src="./src/assets/collage2.jpg" class="d-block w-100" alt="Slide 2" >
+            </div>
+            <div class="carousel-item">
+                <img src="./src/assets/xanerie_revitaliza.JPG" class="d-block w-100" alt="Slide 3" >
+            </div> -->
         </div>
+
+        <!-- Carousel controls -->
+        <!-- <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a> -->
     </div>
+</div>
 
 <!-- Productos -->
 
@@ -78,7 +75,7 @@
 <div class="skin-title" id="skin-title1">Todo tipo de piel</div>
 
 <!-- Producto 1 -->
-    <div class="producto">
+    <div class="item-producto">
         <div class="img"> <img src="./src/assets/pr1_jabon_facial.png" alt="producto1" class="img">
         </div>
 
@@ -99,7 +96,7 @@
 <div class="linea"></div>
 
 <!-- Producto 2 -->
-    <div class="producto">
+    <div class="item-producto">
         <div class="texto">
             <h3>Exfoliante</h3>
             <p>Exfolia suavemente tu piel sin dañarla, contiene micropartículas esféricas biodegradables. <br>
@@ -119,7 +116,7 @@
 <div class="linea"></div>
 
 <!-- Producto 3 -->
-    <div class="producto">
+    <div class="item-producto">
         <div class="img"> <img src="./src/assets/pr3_mascarilla_hidratante.png" alt="producto3" class="img">
         </div>
 
@@ -137,7 +134,7 @@
 <div class="skin-title" id="skin-title2">Piel seca</div>
 
 <!-- Producto 4 -->
-    <div class="producto">
+    <div class="item-producto">
         <div class="img"> <img src="./src/assets/pr4_serum_revitaliza.png" alt="producto4" class="img">
         </div>
 
@@ -155,7 +152,7 @@
 <div class="linea"></div>
 
 <!-- Producto 5 -->
-    <div class="producto">
+    <div class="item-producto">
         <div class="texto">
             <h3>Sérum <span id="marca">Revitaliza</span> <br>Reparación nocturna</h3>
             <p>Formulado para la reparación nocturna intensive en la piel que ha sufrido estragos por el tiempo. <br>
@@ -173,7 +170,7 @@
 <div class="linea"></div>
 
 <!-- Producto 6 -->
-    <div class="producto">
+    <div class="item-producto">
         <div class="img"> <img src="./src/assets/pr6_crema_facial_revitaliza.png" alt="producto6" class="img">
         </div>
 
@@ -191,7 +188,7 @@
 <div class="linea"></div>
 
 <!-- Producto 7 -->
-    <div class="producto">
+    <div class="item-producto">
         <div class="texto">
             <h3>Contorno de ojos</h3>
             <p>Mantén tu mirada joven, fresca y radiante utilizando el contorno de ojos de Xanêrie. <br>
@@ -209,7 +206,7 @@
 <div class="skin-title" id="skin-title3">Piel mixta / grasa</div>
 
 <!-- Producto 8 -->
-<div class="producto">
+<div class="item-producto">
     <div class="img"> <img src="./src/assets/pr8_Tonico_facial.png" alt="producto8" class="img">
     </div>
     <div>
@@ -226,7 +223,7 @@
 <div class="linea"></div>
 
 <!-- Producto 9 -->
-<div class="producto">
+<div class="item-producto">
     <div class="texto">
         <h3>Sérum <span id="marca">Purifica</span></h3>
         <p>Ideal para piel mixta- grasa. Contiene ingredientes naturales cuyos beneficios han sido evaluados <em>in vitro.</em> <br>
@@ -243,7 +240,7 @@
 <div class="linea"></div>
 
 <!-- Producto 10 -->
-<div class="producto">
+<div class="item-producto">
     <div class="img"> <img src="./src/assets/pr10_serum_purifica_nocturno.png" alt="producto10" class="img">
     </div>
     <div>
@@ -260,7 +257,7 @@
 <div class="linea"></div>
 
 <!-- Producto 11 -->
-<div class="producto">
+<div class="item-producto">
     <div class="texto">
         <h3>Crema facial <span id="marca">Purifica</span></h3>
         <p>Desarrollada para piel mixta-grasa, humecta e hidrata tu piel sin dejar sensación grasa. <br>

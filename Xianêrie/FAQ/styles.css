@@ -1,0 +1,63 @@
+:root {
+    --soft-pink: #FAD9C9;
+    --dark-pink: #E8B893;
+    --salmon: #EBCE98;
+    --soft-green: #CACB9C;
+    --main-ocre: #C6A043;
+    --main-text: #2E2D28;
+    --main-beige: #FAF4E4;
+    --main-white: #FFFFFF;
+    --especial-font: 'Playfair Display', serif;
+    --montserrat-font: 'Montserrat', sans-serif;
+    --roboto-font: 'Roboto', sans-serif;
+}
+
+h1, h2{
+    font-family: var(--montserrat-font);
+    color: var(--main-text);
+    
+}
+
+*{
+    background-color: var(--main-white);
+    font-family: var(--montserrat-font);
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.question {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.answer {
+    display: none;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: justify;
+    font-size: 1rem;
+}
+
+.titulo {
+    cursor: pointer;
+    font-weight: bold;
+}
+.termino {
+    display: none;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: justify;
+    font-size: 1rem;
+
+}
+
+.terminos-list{
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 1.5px solid var(--soft-pink); 
+    margin: 20px 0;
+}
