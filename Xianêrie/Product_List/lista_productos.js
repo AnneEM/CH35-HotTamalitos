@@ -133,7 +133,7 @@ listaProductos.forEach(producto => {
         </div>
         <div class="precio">${producto.precio}</div>
         <div class="bttn">
-          <button type="submit" class="btn--solidbk">Agregar al carrito</button>
+          <button type="submit" class="button-carrito btn--solidbk">Agregar al carrito</button>
         </div>
       </div>
       <div class="linea"></div>
