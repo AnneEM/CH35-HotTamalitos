@@ -25,7 +25,7 @@ h1 {
 }
 
 /* Botones de crear cuenta - iniciar sesión*/
-#btn--solidbk {
+#btn--solidbk, #btn--mostrarCrearCuenta {
     color: var(--main-white);
     background-color: var(--main-text);
     border: none;
@@ -33,12 +33,13 @@ h1 {
     cursor: pointer;
 }
 
-#btn--solidbk:hover {
+#btn--solidbk:hover, #btn--mostrarCrearCuenta:hover {
     border: none;
     background-color: var(--main-ocre);
     transition: background-color 0.5s;
     font-weight: 500;
 }
+
 
 
 /* Estilos de bootstrap para formulario */
@@ -60,10 +61,29 @@ h1 {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+/*Estilos para mostrar y ocultar las opciones de iniciar sesión o crear cuenta*/
+.container-form .formulario{
+    display: none;
+}
+
+.container-form .formulario:nth-child(1){
+    display: block;
+}
+
+
 @media (prefers-reduced-motion: reduce) {
     .form-login {
         transition: none;
+        color: var(--main-text);
     }
+}
+
+.form{
+    border: var(--main-text) solid;
+    border-radius: 3%;
+    border-width: 3px;
+    padding: 1em;
+    border-color: var(--soft-pink);
 }
 
 .form-login[type=file] {
