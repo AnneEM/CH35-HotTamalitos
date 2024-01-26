@@ -10,6 +10,7 @@ $('.toggle').click(function(){
     }, "slow");
 })
 
+
 ////////////////funciones para login////////////////////////
 function mostrarAlerta(mensaje, tipo) {
     // Eliminar alertas previas
@@ -114,4 +115,44 @@ function validarFormulario() {
     //     // Si pasa todas las validaciones, puedes mostrar una alerta de éxito
     //     mostrarAlerta('¡Registro exitoso! Cuenta creada.', 'success');
     // }
+    
+    // const formulario = document.querySelector('#formularioCrear');
+
+    // /*Funcion para extraer todos los datos del formulario y convertirlos en formato JSON */
+    // const crearCuenta = (event) => {
+    //     event.preventDefault();
+    //     // Constructor que crea objeto tipo FormData
+    //     const datos = new FormData(event.target);
+    //     console.log(datos);
+    // } // crearCuenta
+
+// >>>>>>> Funciones para objetos <<<<<<
+const form = document.querySelector('#loginForm--crearCuenta');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevenir el envío del formulario por defecto
+
+  const jsonData = {};
+
+  for (const input of form.querySelectorAll('input')) {
+    // Comprobar si el input tiene un nombre:
+    if (input.name) {
+      // Obtener el valor del input:
+      const value = input.value;
+
+      // Agregar el valor al objeto JSON solo si no está vacío:
+      if (value) {
+        jsonData[input.name] = value;
+      }
+    }
+  }
+
+  // Agregar los valores de los checkboxes:
+  jsonData['noSoyRobot'] = form.querySelector('#noSoyRobot').checked;
+  jsonData['aceptTermYCond'] = form.querySelector('#aceptTermYCond').checked;
+
+  console.log(JSON.stringify(jsonData)); // Imprimir los datos en formato JSON
+
+  // Aquí puedes hacer lo que quieras con los datos en formato JSON, como enviarlos a un servidor
+});
 
