@@ -29,31 +29,31 @@
     <div class="mb-5 container-fluid">
         <div class="col container-form">
             <!--Formulario para INICIAR SESIÓN-->
-            <div class="formulario">
-                <div class="mb-3 text-center">
-                    <h1>Iniciar sesión</h1>
+    <div class="formulario">
+        <div class="mb-3 text-center">
+            <h1>Iniciar sesión</h1>
+        </div>
+        <form id="loginForm">
+            <div class="form container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                <div class="mb-3">
+                    <label for="emailInput">Email:</label>
+                    <input id="emailInput" class="form-login" type="email" placeholder="Escribe tu email" />
                 </div>
-                <form id="loginForm">
-                    <div class="form container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                        <div class="mb-3">
-                            <label for="emailInput">Email:</label>
-                            <input id="emailInput" class="form-login" type="email" placeholder="Escribe tu email" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="passwordInput">Contraseña:</label>
-                            <input id="passwordInput" class="form-login" type="password"
-                                placeholder="Escribe tu constraseña" />
-                        </div>
-                </form>
+                <div class="mb-3">
+                    <label for="passwordInput">Contraseña:</label>
+                    <input id="passwordInput" class="form-login" type="password" placeholder="Escribe tu contraseña" />
+                </div>
             </div>
-            <br>
-            <div class="text-center row">
-                <button type="button"
-                    class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 btn btn-main-text btn-lg mb-2"
-                    id="btn--solidbk">
-                    Iniciar sesión
-                </button>
-            </div>
+        </form>
+        <br>
+        <div class="text-center row">
+            <button type="button" class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 btn btn-main-text btn-lg mb-2" id="btn--solidbk" onclick="validarFormulario()">
+                Iniciar sesión
+            </button>
+        </div>
+            
+                <!-- Agregamos la sección para mostrar alertas de Bootstrap -->
+                <div id="alertContainer" class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 mt-2"></div>
 
             <!--Separador de botones-->
             <div class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 mb-2">
@@ -79,24 +79,30 @@
             <div class="mb-3 text-center">
                 <h1>Crear una cuenta</h1>
             </div>
-            <form id="loginForm">
+            <form id="loginForm--crearCuenta">
                 <div class="form container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4" />
                 <div class="mb-3">
-                    <label for="nameInput">Nombre:</label>
-                    <input id="nameInput" class="form-login" type="text" placeholder="Escribe tu nombre completo" />
+                    <label for="nameInput--crearCuenta">Nombre:</label>
+                    <input id="nameInput--crearCuenta" class="form-login" type="text" placeholder="Escribe tu nombre completo" />
                 </div>
                 <div class="mb-3">
-                    <label for="telInput">Teléfono:</label>
-                    <input id="lastnameInput" class="form-login" type="text" placeholder="Escribe tu número de teléfono" />
+                    <label for="phoneInput--crearCuenta">Teléfono:</label>
+                    <input id="phoneInput--crearCuenta" class="form-login" type="text" placeholder="Escribe tu número de teléfono" />
                 </div>
                 <div class="mb-3">
-                    <label for="emailInput">Email:</label>
-                    <input id="emailInput" class="form-login" type="email" placeholder="Escribe tu email" />
+                    <label for="emailInput--crearCuenta">Email:</label>
+                    <input id="emailInput--crearCuenta" class="form-login" type="email" placeholder="Escribe tu email" />
                 </div>
                 <div class="mb-3">
-                    <label for="passwordInput">Contraseña:</label>
-                    <input id="passwordInput" class="form-login" type="password" placeholder="Escribe tu constraseña" />
+                    <label for="passwordInput--crearCuenta">Contraseña:</label>
+                    <input id="passwordInput--crearCuenta" class="form-login" type="password" placeholder="Escribe tu constraseña" />
                 </div>
+
+                <div class="mb-3">
+                    <label for="passwordInput--crearCuenta">Confirma tu contraseña:</label>
+                    <input id="passwordRepeat--crearCuenta" class="form-login" type="password" placeholder="Repite tu nueva contraseña" />
+                </div>
+
                 <div class="mb-1">
                     <input type="checkbox" class="form-check-input" id="noSoyRobot" />
                     <label class="form-check-label container col-8 mb-2 align-self-center" for="noSoyRobot">No soy un
@@ -105,7 +111,7 @@
                 <div class="mb-1">
                     <input type="checkbox" class="form-check-input" id="aceptTermYCond" />
                     <label class="form-check-label container col-11 mb-3 align-self-center"
-                        for="aceptTermYCond">Aceptotérminos y condiciones</label>
+                        for="aceptTermYCond">Acepto términos y condiciones</label>
                 </div>
             </form>
         </div>
