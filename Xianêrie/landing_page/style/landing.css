@@ -147,6 +147,13 @@ button{
     position: relative;
 }
 
+.contenedorcarrusel--productos{ 
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;    
+}
+
 /*Titulo*/
 #contenedortitle--productos{
     width:100%;
