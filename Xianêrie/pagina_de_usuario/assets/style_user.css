@@ -1,6 +1,21 @@
-.bootstrap{
+/*!IMPORTE VARIABLES*/
+:root {
+  --soft-pink: #FAD9C9;
+  --dark-pink: #E8B893;
+  --salmon: #EBCE98;
+  --soft-green: #CACB9C;
+  --main-ocre: #C6A043;
+  --main-text: #2E2D28;
+  --main-beige: #FAF4E4;
+  --main-white: #FFFFFF;
+  --especial-font: 'Playfair Display', serif;
+  --montserrat-font: 'Montserrat', sans-serif;
+  --roboto-font: 'Roboto', sans-serif;
+}
 
-  
+
+
+.bootstrap{
   background-color: #F4F4E4;
   padding: 70px;
   margin: 30px;
@@ -128,8 +143,9 @@ input[type="file"] {
   }
 }
 
+/*!RETIRAR LOS BORDES*/
 .cafe{
-  background-color: #2E2D28 !important;
+  background-color: #2E2D28;
   color: white !important;
   border-radius: 10px;
   padding: 10px 20px;
@@ -137,14 +153,22 @@ input[type="file"] {
   bottom: 0;
   right: 0;
   margin: 10px;
+  border: none;
 }
 
 .cafe-1{
-  background-color: #2E2D28 !important;
+  background-color: #2E2D28;
   color: white !important;
   border-radius: 10px;
   padding: 10px 20px;
   bottom: 0;
   right: 0;
   margin: 10px;
+  border: none;
 }
+
+.cafe-1:hover , .cafe:hover{
+  background-color: var(--main-ocre);
+  transition: background-color 0.5s;
+  }
+  

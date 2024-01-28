@@ -14,7 +14,7 @@
     --main-white: #FFFFFF;
     --especial-font: 'Playfair Display', serif;
     --montserrat-font: 'Montserrat', sans-serif;
-    --roboto-font: 'Roboto', sans-serif;
+    --roboto-font: 'Roboto',sans-serif;
 }
 
 body{
@@ -28,14 +28,14 @@ body{
 
 /* Estilos para las imagenes */
 
-.border-salmon {
+/* .border-salmon {
   border-color: var(--salmon); /* Asegúrate de definir el color que prefieras */
-  border: 2px solid var(--salmon);
+  /* border: 2px solid var(--salmon);
   font-family: var(--montserrat-font);
-  }
+}*/
 
 #titulo, #subtitulo, #texto{
-    color: white;
+    color: var(--main-white);
 }
 
 #texto-container{
@@ -44,8 +44,9 @@ body{
 
 #ingredientes{
     text-align: start;
-    margin-left: 75px;
+    margin-left: 5%;
     font-weight: bold;
+    font-size: 30px;
 }
 
 #miSeparador{
@@ -96,11 +97,12 @@ body{
 
                                                         /* Estilos para las imagenes */
   .card-body {
-    color: black;
+    color: var(--main-text);
     }
     
     #titulo-2 {
     font-weight: bold;
+    font-size: 30px;
     }
     
 
@@ -134,9 +136,9 @@ body{
       }
 
     .btn-transparent-2 {
-      color: black;
+      color: (--main-text);
       background-color: transparent;
-      border: solid var(black) 1px;
+      border: solid var(--main-text) 1px;
       border-radius: 10px;
       cursor: pointer;
       font-family: var(--montserrat-font);
@@ -145,9 +147,10 @@ body{
 
     .btn-container-2 button:hover {
       border: none;
-    background-color:var(--main-ocre);
-    transition: background-color 0.5s;
-    font-weight: 500;
+      background-color:var(--salmon);
+      transition: background-color 0.5s;
+      font-weight: 500;
+      color: (--main-beige);
 
     }
 
@@ -161,7 +164,7 @@ body{
     border-radius: 10px;
     color: var(--main-text);
     background-color: var(--main-white);
-    border: solid var(black) 1px;
+    border: solid var(--main-text) 1px;
     cursor: pointer;
 
     }
@@ -191,6 +194,10 @@ body{
         .imagenes img {
             width: 100px;
             height: 100px;
+        }
+        
+        #ingredientes , #titulo-2{
+          font-size: 25px;
         }
     }
     

@@ -26,13 +26,24 @@
 }
 .form-container{
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.436); background-color: #ffffff;
-    
+    box-shadow: 0px 8px 10px rgba(151, 151, 151, 0.384);  /*!Cambie sh*/
+    background-color: #ffffff;
+    border: none;
 }
+
 .btn-guardar{
     background-color: var(--main-text);
     color: var(--main-white);
     border-radius: 10px;
     width: 100px;
     height: 40px;
+    padding:0px 20px; /*!Agregué padding*/
+    border: none; /*!Quite border*/
+}
+
+.btn-guardar:hover{ /*!Agregué hover al botópn*/
+    border: none;
+    background-color:var(--main-ocre);
+    transition: background-color 0.5s;
+    font-weight: 500;
 }
