@@ -21,7 +21,7 @@ body {
 
 h1 {
     font-family: var(--montserrat-font);
-    font-weight: bold;
+    font-weight: 600;
 }
 
 /* Botones de crear cuenta - iniciar sesión*/
@@ -79,11 +79,11 @@ h1 {
 }
 
 .form{
-    border: var(--main-text) solid;
-    border-radius: 3%;
-    border-width: 3px;
-    padding: 1em;
-    border-color: var(--soft-pink);
+    border-radius: 20px;
+    box-shadow: 0px 8px 10px rgba(151, 151, 151, 0.384);  /*!Cambie sh*/
+    background-color: var(--main-white);
+    border: none;
+    padding-top: 2%;
 }
 
 .form-login[type=file] {
@@ -98,9 +98,9 @@ h1 {
     color: var(--main-text);
     background-color: var(--main-white);
     /* border-color: #FAD9C9; */
-    border-color: var(--main-ocre);
+    border-color: var(--salmon);
     outline: 0;
-    box-shadow: 0 0 0 0.25rem var(--salmon);
+   /*  box-shadow: 0 0 0 0.25rem var(--salmon); */
 }
 
 #noSoyRobot {
@@ -115,31 +115,31 @@ h1 {
 
 #noSoyRobot:checked {
     background-color: var(--dark-pink);
-    color: #2E2D28;
-    box-shadow: 0 0 0 0.25rem var(--salmon);
+    /* color: #2E2D28;
+    box-shadow: 0 0 0 0.25rem var(--salmon);*/
 }
 
 #noSoyRobot:focus {
     /* border-color: #FAD9C9; */
     border-color: var(--salmon);
     outline: 0;
-    box-shadow: 0 0 0 0.25rem var(--salmon);
+   /* box-shadow: 0 0 0 0.25rem var(--salmon); */
 }
 
 #aceptTermYCond {
     cursor: pointer;
     background-color: var(--main-white);
     appearance: none;
-    border: 0.5px solid #CACB9C;
-    scrollbar-shadow-color: var(--main-text);
+    /*border: 0.5px solid #CACB9C; */
+    /* scrollbar-shadow-color: var(--main-text); */
     transition: background-color 0.3s ease-in-out;
 
 }
 
 #aceptTermYCond:checked {
     background-color: var(--dark-pink);
-    color: #2E2D28;
-    box-shadow: 0 0 0 0.25rem var(--salmon);
+    /* color: #2E2D28;*/
+    /* box-shadow: 0 0 0 0.25rem var(--salmon);*/
 }
 
 #aceptTermYCond:focus {
@@ -147,4 +147,11 @@ h1 {
     border-color: var(--salmon);
     outline: 0;
     box-shadow: 0 0 0 0.25rem var(--salmon);
+}
+
+@media screen and (max-width: 620px){
+    
+    .form{
+        padding-bottom: 2%;
+    }
 }

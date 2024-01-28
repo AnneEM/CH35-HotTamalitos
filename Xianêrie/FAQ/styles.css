@@ -16,15 +16,16 @@ main {
     h1, h2{
         font-family: var(--montserrat-font);
         color: var(--main-text);
-        font-size: 25px;
-        padding-top: 7px;
-        padding-bottom: 7px;
-        
+        font-size: 30px;
+        padding-top: 2%;
+        padding-bottom: 7px;        
+        font-weight: 600;
     }
     
     *{
         background-color: var(--main-white);
         font-family: var(--montserrat-font);
+        margin-left: 1%;
     }
     
     .faq-item {
@@ -44,20 +45,21 @@ main {
         margin-left: 24px;
         text-align: justify;
         font-size: 1rem;
+        font-family: (--roboto-font);
     }
     
     .titulo {
         cursor: pointer;
         font-weight: bold;
-        margin-left: 10px;
     }
+
     .termino {
         display: none;
         margin-right: 20px;
-        margin-left: 20px;
+        margin-left: 2%;
         text-align: justify;
         font-size: 1rem;
-    
+        font-family: (--roboto-font);
     }
     
     .terminos-list{
@@ -68,4 +70,12 @@ main {
         border: 1.5px solid var(--main-ocre); 
         margin: 20px 0;
     }
+
+        /*!REDUCIT LA LETRA*/
+@media screen and (max-width: 720px){
+    h1, h2 {
+        font-size: 25px;
+    }
+    }
+
 }
