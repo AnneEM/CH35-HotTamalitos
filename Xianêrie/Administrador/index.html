@@ -28,8 +28,8 @@
 
                     <!-- nombre del producto -->
                     <div class="mb-3">
-                        <label for="productoImput">Nombre del producto:</label>
-                        <input id="productoImput" class="form-control" type="text" placeholder="Ingresa el nombre del producto" />
+                        <label for="productoInput">Nombre del producto:</label>
+                        <input id="productoInput" class="form-control" type="text" placeholder="Ingresa el nombre del producto" />
                     </div>
 
                     <!-- imagen del producto -->
@@ -40,14 +40,14 @@
 
                     <!-- precio del producto -->
                     <div class="mb-3">
-                        <label for="precioImput">Precio del producto:</label>
-                        <input id="precioImput" class="form-control" type="text" placeholder="Ingrese el precio del producto"/>
+                        <label for="precioInput">Precio del producto:</label>
+                        <input id="precioInput" class="form-control" type="text" placeholder="Ingrese el precio del producto"/>
                     </div>
 
                     <!-- descripción del producto -->
                     <div class="mb-3">
-                        <label for="descripcionImput">Descripción del producto:</label>
-                        <input id="descripcionImput" class="form-control" type="text" placeholder="Agregue una descripción del producto"/>
+                        <label for="descripcionInput">Descripción del producto:</label>
+                        <input id="descripcionInput" class="form-control" type="text" placeholder="Agregue una descripción del producto"/>
                     </div>
 
                     <!-- Ingredientes del producto -->
@@ -58,13 +58,13 @@
 
                     <!-- cantitad del producto -->
                     <div class="mb-3">
-                        <label for="cantidadImput">Contenido del producto:</label>
-                        <input id="cantidadImput" class="form-control" type="text" placeholder="Agregue la cantidad que contiene el producto"/>
+                        <label for="cantidadInput">Contenido del producto:</label>
+                        <input id="cantidadInput" class="form-control" type="text" placeholder="Agregue la cantidad que contiene el producto"/>
                     </div>
 
                     <!-- Dirigido al tipo de piel -->
                     <div class="mb-3">
-                        <label for="cantidadImput">Tipo de piel:</label>
+                        <label for="cantidadInput">Tipo de piel:</label>
                         <select class="form-control" id="pielSelect" aria-label="Default select example">
                             <option selected >Elija un tipo de piel</option>
                             <option value="1">Todo tipo de piel</option>
@@ -100,6 +100,8 @@
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!--Ligado con js de navbar y footer para no tener que copiar el html cada que se hagan modificaciones-->
+    <script src="../Product_List/lista_productos.js"></script>
+    <script src="./app.js"></script>
     <script defer src="../navbar_footer.js"></script>
    
 </body>
