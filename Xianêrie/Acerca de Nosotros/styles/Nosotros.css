@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display&family=Roboto:wght@400;500;700&display=swap');
+
 :root {
     --soft-pink: #FAD9C9;
     --dark-pink: #E8B893;
@@ -9,57 +11,24 @@
     --main-white: #FFFFFF;
     --especial-font: 'Playfair Display', serif;
     --montserrat-font: 'Montserrat', sans-serif;
-    --roboto-font: 'Roboto', sans-serif;
+    --roboto-font: 'Roboto', sans-serif;
 }
 
-h1, h2{
+
+/**GENERALES*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+*{
     font-family: var(--montserrat-font);
-    color: var(--main-beige);
-}
-
-h1{
-    font-size: 80px;
-    font-weight:bolder;
-    display: flex;
-    text-align:start;
-}
-
-h2{
-    font-size: 50px;
-    font-weight:600;
-    padding-top: 350px;
-}
-
-.img_up{
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
-
-
-/* .img_down{
-    background-image:url(../src/assets/img_join_downpg.jpg);
-    background-repeat:no-repeat;
-    background-size: 100%;
-    padding: 50%;
-} */
-
-.btn_ingredientes{
-    height: 50px;
-    display:inline-block;
-    padding:0px 20px;
-    font-family: var(--montserrat-font);
-    font-size: 15px;
-    color: var(--main-white);
+    color: var(--main-text);
     background-color: transparent;
-    border: solid var(--main-white) 1px;
-    border-radius: 10px;
-    cursor: pointer;
-    position: relative;
-    top: 500px;
-
+    margin: 0;
 }
 
-.btn_vermas{
+button{
     height: 50px;
     display:inline-block;
     padding:0px 20px;
@@ -67,82 +36,313 @@ h2{
     font-size: 15px;
 }
 
-.btn_vermas{
+.btn--whiteline{
     color: var(--main-white);
     background-color: transparent;
     border: solid var(--main-white) 1px;
     border-radius: 10px;
     cursor: pointer;
-    
+    height: 50px;
 }
-button:hover{
+
+.btn--whiteline:hover{
     border: none;
     background-color: rgba(255,255,255,.2);
     transition: background-color 0.5s;
     font-weight: 500;
 }
 
-.col-5{
-    padding: 0px 0px 0px;
-    margin: 0px 0px 0px;
-}
-.col-7{
-    background-color: #C6A043;
-    padding: 0;
-    margin: 0;
-}
 
-.contenedor2{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.texto2{
+/**FRAME SUPERIOR, ROSTROS Y BOTONES*/
+/*col 1*/
+#frame--superior{
     background-color: var(--main-text);
-    color:var(--main-beige);
-    font-family: var(--roboto-font);
-    font-size: 20px;
-    text-align:justify;
-    padding: 100px;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    text-align: center;
-    justify-content: end;
-
 }
 
-.contendor_btn_vermas{
-    background-color: #2E2D28;
-    padding-top: 0px;
-    padding-bottom: 100px;
+#image--cabecera{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#nutre--text{
+    border: purple 2px;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.main--title { /*!ESTILOS DE EL MAIN TILE "NUTRE TU PIEL*/
+    font-family: var(--especial-font);
+    font-size: 80px;
+    position: relative;
+    color: var(--main-white);
+    
+}
+
+#xan--text{
+    margin-left: 5%;
+    margin-bottom: 3%;
+    color: var(--main-white);
+}
+
+/*Col 2*/
+#contenedor--col2{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50%;
+    margin-bottom: 5%;
+}
+
+#text--col2{
+    margin-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: var(--main-white);
+    font-family: var(--roboto-font);
+    font-size: 21px;
+}
+
+/**SECOND FRAME*/
+#secondframe {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--dark-pink);
+}
+
+#gralcont--framesec {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+/* COL1 */
+#framesec--col1 {
+    background-color: #e98e77;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+#text--framesec {
+    color: var(--main-white);
+    font-family: var(--roboto-font);
+    font-size: 21px;
+    text-align: center;
+    padding: 10%;
+}
+
+/* COL2 */
+#framesec--col2 {
+    position: relative; /* Añadido para posicionar el degradado sobre la imagen */
+    width: 40%;
+    flex: 1;
+}
+
+#contimg--framesec {
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+#img--framesec {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Degradado sobre la imagen */
+#framesec--col2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.09) 100%);
+    pointer-events: none; /* Para que el degradado no interfiera con eventos */
+}
+
+
+
+
+
+/**FRAME GOTERO Y TEXTURA*/
+/*Gral frame*/
+#frame--mid{
+    background-color: var(--main-beige);
+    height: 540px;
+}
+
+/*Textura dorada*/
+#contimg--texture{
+    height: 540px;
+    width: 49.2%;
+    position: absolute;
+}
+
+#img--texture{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+/*Textura serum*/
+#cont--serum{
+    display: flex;
+    height: 70%;
+    width: 55%;
+    position: relative;
+    padding-top: 12%;
+    margin-left: 40%;
+    align-items: center;
+    text-align: center;
     justify-content: center;
 }
 
-.texto3{
-    background-color: #FAF4E4;
-    font-family: var(--montserrat-font);
-    margin-bottom: 0px;
-    padding-bottom: 20px ;
-    padding-top: 15px;
-    font-size: 45px;
-    display: flex;
-    text-align: start;
+#img--serum{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
 
-.linksContainer{
-    background-color: #FAF4E4;   
-    padding-bottom: 100px;
+#contcaption--serum{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2%;
+}
+
+#textcaption--serum{
+    color: var(--main-white);
+    font-family: var(--montserrat-font);
+    font-weight: 900;
+    font-size: 30px;
+}
+
+
+/**FRAME "VER MAS"*/
+#frame--bottom{
+    background-color: var(--main-text);
+    height: 200px;
+    
+}
+
+#bottom--content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#bottom--text{
+    color: var(--main-white);
+    margin-top: 6%;
+    text-align: center;
+    font-family: var(--roboto-font);
+    font-size: 21px;
+}
+
+
+/**FINAL SECTION*/
+#final{
+    background-color: var(--main-beige);
+}
+#final--title{
+    padding-left: 5%;
+    padding-top: 2%;
+}
+
+#texto--final{
+    color: var(--main-text);
+    font-size: 30px;
+    font-weight: 600;
+    font-family: var(--montserrat-font);
+}
+
+.bullets--container{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    padding-bottom: 2%;
 }
 
 .links{
     display: flex;
-    justify-content: space-evenly;
-    
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+    padding-bottom: 2%;
 }
 
-#link{
-    color: #2E2D28;
-    text-decoration: none;
-    text-align: center;
+.text--links{
+    font-family: var(--roboto-font);
+    color: var(--main-text);
+}
+
+
+/**RESPONS 990PX PARA IMAGENES*/
+@media screen and (max-width: 990px){
+    /**FIRST SECTION ROSTROS Y BOTONES*/
+    #contenedor--col2{
+        margin-top: 5%;
+    }
+
+    #serum{
+        margin-top: 30%;
+    }
+    #supcir{
+        display: none;
+    }
+
+
+    /**MID FRAME, GOTERO Y TEXTURA*/
+    #cont--serum{
+        padding-top: 20%;
+    }
+    #bottom--text{
+        margin-left: 2%;
+        margin-right: 2%;
+     }
+}
+
+/**RESPONS 720 PARA MOBILE*/
+
+@media screen and (max-width: 720px){
+.btn--whiteline{
+    font-size: 17px;
+}
+
+.main--title{
+    font-size: 55px;
+}
+
+#text--col2{
+    font-size: 17px;
+}
+/**SECOND SECTION*/
+#text--framesec {
+font-size: 17px;
+}
+
+ /**MID FRAME, GOTERO Y TEXTURA*/
+ #bottom--text{
+    font-size: 17px;
+    margin-left: 5%;
+ }
+
+ /**FINAL SECTION*/
+ #texto--final{
+    font-size: 25px;
+ }
 }

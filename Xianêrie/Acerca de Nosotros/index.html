@@ -5,104 +5,190 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acerca de Nosotros</title>
-     <!--Css boostrap-->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/Nosotros.css">
+    <!--Css boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../Navbar/styles.css">
     <link rel="stylesheet" href="../Footer/style.css">
-    <!--fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat&family=Roboto:wght@300&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="./styles/Nosotros.css">
 </head>
 
 <body>
-    
-     <!-- Navbar -->
-     <div id="navBar1"></div>
 
-<!--Sección Acerca de nosotros-->
+    <!-- Navbar -->
+    <div id="navBar1"></div>
 
-    <div class="card text-bg-dark">
-        <img class="img-fluid" src="./src/assets/faces1.jpg" class="card-img" alt="...">
-        <div class="card-img-overlay">
-          <h1 class="col-3"> Nutre</h1>
-          <h1>tu piel</h1>
-          <!--<br><br><br><br><br><br>-->
-          <h2 class="card-text">Xanêrie </h2>
-          
+    <!--*FRAME SUPERIOR, ROSTROS Y BOTONES-->
+    <!--Contenido de la primer columna-->
+    <section id="frame--superior">
+        <div class="row">
+
+            <div id="framesup--col1" class="position-relative col-12 col-lg-6 ">
+                <img src="./src/assets/faces.jpg" id="image--cabecera">
+                <div class="position-absolute top-0 start-5" id="nutre--text">
+                    <h1 class="main--title"> Nutre <br> Tu piel </h1>
+                </div>
+
+                <div class="position-absolute bottom-0 start-5" id="xan--text">
+                    <h2 id="main--subtitle">Xanêrie </h2>
+                </div>
+
+            </div>
+
+            <!-- Contenido de la segunda columna aquí -->
+            <div id="framesup--col2" class="col-12 col-lg-6">
+                <div id="contenedor--col2">
+                    <svg id="supcir" width="180" height="180">
+                        <circle cx="90" cy="90" r="70" stroke="white" stroke-width="1.5" fill="transparent" />
+                        <!-- Línea vertical desde el centro hacia abajo -->
+                        <line x1="90" y1="90" x2="90" y2="-120" stroke="white" stroke-width="1.5" />
+                        <!--Circulo decorativo-->
+                        <circle cx="90" cy="90" r="3" fill="white" />
+                    </svg>
+
+                    <div id="btn--col2">
+                        <p id="text--col2">Una marca orgullosamente mexicana de alta cosmética. Diseñada por químicos
+                            farmaco-biólogos.
+                            Aplicamos la ciencia para cuidar tu piel y ofrecerte productos de alta calidad.
+
+                            Descubre la magia de nuestras lineas únicas y luce radiante.
+                        </p>
+
+                        <a href="/Xianêrie/Ingredientes/index.html"> <button class="btn--whiteline"> Nuestros
+                                ingredientes </button> </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </div>
-<!--imagen 2 con botón-->
-    
-        <img class= "col-12" src="./src/assets/img_join_up.jpg" alt="img_textura_y_serum">
-        <div class="contenedor_btn_ing">
-            <!-- <button class="btn_ingredientes">Nuestros ingredientes</button> -->
+
+    </section>
+
+
+    <!--*SECOND FRAME-->
+    <section id="secondframe">
+        <div id="gralcont--framesec">
+
+            <!-- Col1 -->
+            <div id="framesec--col1">
+                <div id="conttext--framesec">
+                    <p id="text--framesec">Belleza inteligente y segura. Sólo ingredientes que las investigaciones
+                        demuestran que son beneficiosos para la piel.</p>
+                </div>
+            </div>
+
+            <!-- Col2 -->
+            <div id="framesec--col2">
+                <div id="contimg--framesec">
+                    <img src="/Xianêrie/Acerca de Nosotros/src/assets/faces2.jpg" id="img--framesec">
+                </div>
+            </div>
+
         </div>
-        
-    <div class="img_up">
-        <img class= "col-12" src="./src/assets/img_join_downpg.jpg" alt="img_textura_y_serum">
-    </div>
+    </section>
 
-<!--Ver más-->
-<div class="col-12">
-    <pre class="texto2">
-        ¿Estás listo para descubrir los productos de xanêrie y darle 
-        a tu piel los cuidados que merece?
-    </pre>
-</div>
-<!--Botón ver más-->
-<div class="col-12">
-    <div class="contendor_btn_vermas">
-        <a href="/Xianêrie/Ingredientes/index.html"> <button class="btn_vermas">Ver más</button> </a>
-    </div>
-</div>
-
-<!--última fila Nos importa que sepas esto-->
-<div class="texto3">
-    <div class="col-12">
-        <pre>
-            Nos importa que sepas
-            esto...
-        </pre>
-    </div>
-</div>
-<div class="col-12">
-    <img class="col-12" src="./src/assets/imagen3.jpg" alt="img3">
-</div>
-
-<div class="linksContainer">
-    <div class="col-12">
-        <div class="links">
-            <a id="link" href="#">Eficacia probada</a>
-            <a id="link" href="#">pH balanceado</a>
-            <a id ="link" href="#">Para pieles mexicanas</a>
+    <!--*FRAME GOTERO Y TEXTURA-->
+    <section id="frame--mid">
+        <div id="cont--texture">
+            <div id="contimg--texture">
+                <img src="./src/assets/textura.jpg" alt="Imagen de Textura" id="img--texture">
+            </div>
         </div>
-    </div>
-</div>
 
-<!--
-    <div class="contenedor">
-        <img  class="col-12" src="./src/assets/faces1.jpg" alt="faces1">
-        <h1>Xanêrie</h1>
-    </div>
-    
-    <div class="row">
-        <img class="col-6" src="./src/assets/textura.jpg" alt="texture"> 
-        <img class="col-6" src="./src/assets/serum.jpg" alt="imagen serum">
-    </div>
--->
-    <!--footer-->
-    <div id="footer1"></div>
+        <div id="cont--serum">
+            <img src="./src/assets/serum.jpg" alt="Imagen de Serum" id="img--serum">
+            <div id="contcaption--serum">
+                <h1 id="textcaption--serum"> NUESTRO COMPROMISO ES CONTIGO. </h1>
+            </div>
+        </div>
+    </section>
 
 
+    <!--*FRAME "VER MÁS"-->
+    <section id="frame--bottom">
+        <div id="bottom--content">
+            <div>
+                <p id="bottom--text">
+                    ¿Estás listo para descubrir los productos de xanêrie y darle a tu piel los cuidados que merece?
+                </p>
+            </div>
+
+            <div id="bottom--btn">
+                <a href="/Xianêrie/Product_List/lista_productos.html"> <button class="btn--whiteline">Ver más</button>
+                </a>
+            </div>
+        </div>
+    </section>
 
 
 
+    <!--*FINAL SECTION-->
+    <section id="final">
+        <div id="final--title">
+            <p id="texto--final">
+                Nos importa que sepas <br>
+                esto...
+            </p>
+        </div>
 
+        <div id="final--bullets">
+            <div class="bullets--container">
+                <svg width="140" height="140">
+                    <circle cx="60" cy="60" r="50" stroke="black" stroke-width="1.5" fill="transparent" />
+                    <!-- Línea vertical desde el centro hacia abajo -->
+                    <line x1="60" y1="60" x2="60" y2="130" stroke="black" stroke-width="1.5" />
+                    <!--Circulo decorativo-->
+                    <circle cx="60" cy="60" r="3" fill="black" />
+                </svg>
+                <svg width="140" height="140">
+                    <circle cx="60" cy="60" r="50" stroke="black" stroke-width="1.5" fill="transparent" />
+                    <!-- Línea vertical desde el centro hacia abajo -->
+                    <line x1="60" y1="60" x2="60" y2="130" stroke="black" stroke-width="1.5" />
+                    <!--Circulo decorativo-->
+                    <circle cx="60" cy="60" r="3" fill="black" />
+                </svg>
+                <svg width="140" height="140">
+                    <circle cx="60" cy="60" r="50" stroke="black" stroke-width="1.5" fill="transparent" />
+                    <!-- Línea vertical desde el centro hacia abajo -->
+                    <line x1="60" y1="60" x2="60" y2="130" stroke="black" stroke-width="1.5" />
+                    <!--Circulo decorativo-->
+                    <circle cx="60" cy="60" r="3" fill="black" />
+                </svg>
+            </div>
+        </div>
+
+
+        <div class="linksContainer">
+            <div class="links">
+                <p class="text--links">Eficacia probada</p>
+                <p class="text--links">pH balanceado</p>
+                <p class="text--links">Para pieles mexicanas</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer>
+        <!--*FOOTER-->
+        <div id="footer1"></div>
+    </footer>
+    <!-- * Bootstrap script-->
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!--Ligado con js de navbar y footer para no tener que copiar el html cada que se hagan modificaciones-->
+    <!--Scripts java-->
     <script defer src="../navbar_footer.js"></script>
+
+
+    <!---Bootstap--> <!--!AGREGAR LOS SCRIPTS CORRESPONDIENTES DE BOOTSTRAP--->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
