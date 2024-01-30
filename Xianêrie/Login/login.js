@@ -182,12 +182,18 @@ function validarFormularioCrearCuenta() {
     var nombreValido = validarCampoNoVacio('nameInput--crearCuenta', 'Nombre');
     var telefonoValido = validarTelefono();
     var emailValido = validarCampoNoVacio('emailInput--crearCuenta', 'Email');
+    
+    // Validar que el campo de contraseña no esté vacío y la contraseña sea válida
     var contraseñaValida = validarCampoNoVacio('passwordInput--crearCuenta', 'Contraseña') && validarContraseñaCrearCuenta();
+    
+    // Validar que el campo de repetir contraseña no esté vacío
+    var repetirContraseñaValido = validarCampoNoVacio('passwordRepeat--crearCuenta', 'Repetir Contraseña');
+    
     var noSoyRobotValido = validarCampoNoVacio('noSoyRobot', 'Checkbox No Soy un Robot');
     var aceptoTerminosValido = validarCampoNoVacio('aceptTermYCond', 'Checkbox Acepto Términos y Condiciones');
 
-    // Verificar que todas las validaciones específicas sean exitosas
-    if (nombreValido && telefonoValido && emailValido && contraseñaValida && noSoyRobotValido && aceptoTerminosValido) {
+    // Verificar que todas las validaciones específicas sean exitosas, incluyendo la de repetir contraseña
+    if (nombreValido && telefonoValido && emailValido && contraseñaValida && repetirContraseñaValido && noSoyRobotValido && aceptoTerminosValido) {
         // Si todas las validaciones específicas son exitosas
         mostrarAlerta2('¡Formulario válido! Crear cuenta.', 'success');
         return true;
