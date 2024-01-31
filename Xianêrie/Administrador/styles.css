@@ -31,6 +31,21 @@
     border: none;
 }
 
+.form-control-no{
+    color: red;
+    max-width: 400px;
+    border-radius: 10px;
+    padding:10px 20px;
+    border: none; 
+    display: flex;
+    align-items: center;
+    font-size: small;
+}
+
+.hidden {
+    display: none;
+}
+
 .btn-guardar{
     background-color: var(--main-text);
     color: var(--main-white);

@@ -32,7 +32,7 @@ const listaProductos = [
       "nombre": "Sérum Revitaliza",
       "img": "./src/assets/pr4_serum_revitaliza.png",
       "precio":"$ 500.00",
-      "descripcion":"ormulado para pieles que han sufrido estragos por el tiempo. El sérum Revitaliza contiene ingredientes eficaces en la reparación intensa de la piel.",
+      "descripcion":"Formulado para pieles que han sufrido estragos por el tiempo. El sérum Revitaliza contiene ingredientes eficaces en la reparación intensa de la piel.",
       "ingredientes":"Agua destilada, acetil tetrapeptido 9 y 11, extracto de argan (Argania spinosa), dexpantenol (provitamina B5), polisorbato 20, glicerina, alginato, pentilenglicol, urea, serina, trehalosą, poliacrilato de glicerina, caprilil glicol, ácido hialurónico, fenoxietanol.",
       "contenido":"30 mL.",
       "tipoDePiel": "Piel seca"
@@ -88,7 +88,7 @@ const listaProductos = [
       "img": "./src/assets/pr10_serum_purifica_nocturno.png",
       "precio":"$ 450.00",
       "descripcion":"Repara tu piel intensamente durante la noche, contiene ingredientes naturales que ayudan a restaurar la piel mixta grasa.",
-      "ingredientes":"gua destilada, pantenol (provitamina 85), extracto de boldo (Peumus baldus), extracto de semilla de makti (Vigna acontifolia), glicerina, alginato, pentilenglicol, urea, serina, trehalosa, pollacrilato de glicerina, caprilil glicol, hialuronato de sodio, propilenglicol, PEG-4, agar, acetato de tocoferol, alginata, polisarbato 20, BHT, quitosano, ácido glicólica, etilhexilglicerina, fenoxietanol.",
+      "ingredientes":"Agua destilada, pantenol (provitamina 85), extracto de boldo (Peumus baldus), extracto de semilla de makti (Vigna acontifolia), glicerina, alginato, pentilenglicol, urea, serina, trehalosa, pollacrilato de glicerina, caprilil glicol, hialuronato de sodio, propilenglicol, PEG-4, agar, acetato de tocoferol, alginata, polisarbato 20, BHT, quitosano, ácido glicólica, etilhexilglicerina, fenoxietanol.",
       "contenido":"30 mL.",
       "tipoDePiel": "Piel Mixta / Grasa"
   },
