@@ -62,3 +62,7 @@
     transition: background-color 0.5s;
     font-weight: 500;
 }
+
+.alert {
+    margin: 10px 0px;
+}

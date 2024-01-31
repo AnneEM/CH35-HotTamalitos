@@ -19,7 +19,7 @@ formulario.addEventListener('submit', (e) => {
 // Agregar eventos de escucha a los campos de entrada para validar cuando se pierde el foco
 nombre.addEventListener('blur', () => validarCampo(nombre, /^[a-zA-ZÀ-ÿ\s]{1,40}$/, 'Ingresa un nombre válido'));
 img.addEventListener('blur', () => validarCampo(img, /^.*\.(jpg|jpeg|png|gif|bmp|svg|webp)$/, 'Formatos válidos: jpg, jpeg, png, gif, bmp, svg, webp'));
-precio.addEventListener('blur', () => validarCampo(precio, /^\d{1,7}$/, 'El precio solo contiene números'));
+precio.addEventListener('blur', () => validarCampo(precio, /^\d{1,7}$/, 'El precio solo debe contener números'));
 descripcion.addEventListener('blur', () => validarCampo(descripcion, /^.{1,250}$/, 'Ingresa un texto válido para la descripción'));
 ingredientes.addEventListener('blur', () => validarCampo(ingredientes, /^.{1,600}$/, 'Ingresa un texto válido para los ingredientes'));
 contenido.addEventListener('blur', () => validarCampo(contenido, /^[0-9gml\s\\.]{1,10}$/, 'Ingresa el contenido del producto y su unidad (g o ml)'));
@@ -112,11 +112,11 @@ const noValidado = (input, mensaje) => {
     const formControl = input.parentElement;
     
     // Verificar si ya hay un aviso
-    const aviso = formControl.querySelector("p.form-control-no");
+    const aviso = formControl.querySelector('p.alert', 'p.alert-danger');
     if (!aviso) {
         const nuevoAviso = document.createElement("p");
         nuevoAviso.innerText = mensaje;
-        nuevoAviso.className = 'form-control-no';
+        nuevoAviso.classList.add('alert', 'alert-danger');
         formControl.appendChild(nuevoAviso);
     }
 }
