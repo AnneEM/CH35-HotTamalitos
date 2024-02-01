@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display&family=Roboto:wght@400;500;700&display=swap');
 
-
-
-
 :root {
     --soft-pink: #FAD9C9;
     --dark-pink: #E8B893;
@@ -14,198 +11,215 @@
     --main-white: #FFFFFF;
     --especial-font: 'Playfair Display', serif;
     --montserrat-font: 'Montserrat', sans-serif;
-    --roboto-font: 'Roboto',sans-serif;
+    --roboto-font: 'Roboto', sans-serif;
 }
 
-body{
+body {
     background-color: var(--main-white);
     font-family: var(--montserrat-font);
 }
 
 .bg-main-text {
-  background-color: var(--main-text);
+    background-color: var(--main-text);
 }
 
-/* Estilos para las imagenes */
+/* Estilos para las imágenes */
 
-/* .border-salmon {
-  border-color: var(--salmon); /* Asegúrate de definir el color que prefieras */
-  /* border: 2px solid var(--salmon);
-  font-family: var(--montserrat-font);
-}*/
-
-#titulo, #subtitulo, #texto{
+#titulo, #subtitulo, #texto {
     color: var(--main-white);
 }
 
-#texto-container{
-    margin: 0 30px;
+#texto-container {
+  margin: 0 30px;
 }
 
-#ingredientes{
-    text-align: start;
-    margin-left: 5%;
-    font-weight: bold;
+#ingredientes {
+  text-align: start;
+  margin-left: 5%;
+  font-weight: bold;
     font-size: 30px;
-}
+  }
 
-#miSeparador{
+  #miSeparador {
     color: white;
-}
+  }
 
-.btn-container {
+  .btn-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 30px;
     margin-bottom: 30px;
-  }
-               
-  
-  .btn-container button {
+}
+
+.btn-container button {
     height: 50px;
-    display:inline-block;
-    padding:0px 20px;
+    display: inline-block;
+    padding: 0px 20px;
     font-family: var(--montserrat-font);
     font-size: 15px;
-
-     /* Agrega una transición suave para un efecto más elegante */
-  }
-  .btn-container button:last-child {
-    margin-right: 0; /* Anula el margen derecho para el último botón */
-  }
-  
-
-  .btn-transparent {
-    color: var(--main-white);
-    background-color: transparent;
+    cursor: pointer;
     border: solid var(--main-white) 1px;
     border-radius: 10px;
-    cursor: pointer;
-
-
+    color: var(--main-white);
+    background-color: transparent;
+    transition: background-color 0.5s;
     
   }
+  
+  .btn-container button:last-child {
+    margin-right: 0;
+  }
+  
   .btn-container button:hover {
     border: none;
-    background-color: rgba(255,255,255,.2);
+    background-color: rgba(255, 255, 255, 0.2);
     transition: background-color 0.5s;
     font-weight: 500;
+  }
 
+
+  @media screen and (max-width: 720px) {
+    .btn-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+  
+    .btn-container button {
+        width: 30%;
+        margin-bottom: 10px;
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+  
+  /* Estilos para las imágenes */
+  .card-body {
+    color: var(--main-text);
+  }
+  
+  #titulo-2 {
+    font-weight: bold;
+    font-size: 30px;
+}
+                                                      /* BOTONES 2 */
+
+.btn-container-2 {
+display: flex;
+justify-content: space-around;
+margin-top: 30px;
+margin-bottom: 10px;
+}
+
+.btn-container-2 button {
+height: 50px;
+display: inline-block;
+padding: 0px 20px;
+font-family: var(--montserrat-font);
+font-size: 15px;
+cursor: pointer;
+border: solid var(--main-text) 1px;
+border-radius: 10px;
+color: var(--main-text);
+background-color: transparent;
+transition: background-color 0.5s;
+width: 125px; /* Ajusta el ancho según tus preferencias */
+box-sizing: border-box; /* Asegura que el ancho incluya el relleno y el borde */
+}
+
+
+@media screen and (max-width: 720px) {
+  .btn-container-2 {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap; /* Evita que los botones se envuelvan en una nueva línea */
+  }
+
+  .btn-container-2 button {
+    flex: 1; /* Hace que los botones ocupen todo el espacio disponible */
+    max-width: 90px; /* Puedes ajustar este valor según sea necesario para limitar el ancho máximo de los botones */
+    margin-bottom: 10px;
+    margin-right: 7px; /* Puedes ajustar este valor según sea necesario para el margen entre botones */
+    font-size: clamp(12px, 3vw, 16px); /* Utiliza una función 'clamp' para ajustar el tamaño del texto automáticamente */
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 
 
-                                                        /* Estilos para las imagenes */
-  .card-body {
-    color: var(--main-text);
-    }
-    
-    #titulo-2 {
-    font-weight: bold;
-    font-size: 30px;
-    }
-    
 
-    .btn-container-2 {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    }
-
-        
-    .btn-group-2 {
-      text-align: center;
-      margin-bottom: 20px;
-      flex: 0 1 calc(30% - 10px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      }
+                                                      
 
 
-          
-    .btn-container-2 button {
-      height: 50px;
-    display:inline-block;
-    padding:0px 20px;
-    font-family: var(--montserrat-font);
-    font-size: 15px;
 
-      }
+.btn-container-2 button:hover {
+    border: none;
+    background-color: var(--salmon);
+    transition: background-color 0.5s;
+    font-weight: 500;
+    color: var(--main-beige);
+  }
 
-    .btn-transparent-2 {
-      color: (--main-text);
-      background-color: transparent;
-      border: solid var(--main-text) 1px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-family: var(--montserrat-font);
-      font-size: medium;
-    }
+  
+  
+#btn-1{
+  margin-left: px ;
+}
 
-    .btn-container-2 button:hover {
-      border: none;
-      background-color:var(--salmon);
-      transition: background-color 0.5s;
-      font-weight: 500;
-      color: (--main-beige);
+#btn-2{
+  margin-right: px;
+}
 
-    }
+#btn-3{
+  margin-left: 100x;
+}
+  
+
+ #no-sub {
+
+  font-family: var(--montserrat-font);
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
 
 
-    
-    .btn-container-2 button {
-    height: 50px;
-    width: 120px;
-    margin: 0 ;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    color: var(--main-text);
-    background-color: var(--main-white);
-    border: solid var(--main-text) 1px;
-    cursor: pointer;
+/* FIN DE BOTONES 2 */
+.imagenes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  margin-bottom: 15px;
+}
 
-    }
-    
-    .imagenes {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: nowrap; /* Ajustado para que no permita que los elementos se envuelvan */
-    overflow-x: auto;
-    margin-bottom: 30px;
-    }
-    
-    .imagen-1,
-    .imagen-2,
-    .imagen-3 {
-    text-align: center;
-    }
-    
-    .imagenes img {
+.imagenes img {
     width: 200px;
-    height: 200px; /* Asegura que la altura sea igual al ancho */
+    height: 200px;
     border-radius: 50%;
     margin-top: 10px;
-    }
-    @media screen and (max-width: 720px) {
-        .imagenes img {
-            width: 100px;
-            height: 100px;
-        }
+    
+}
+
+@media screen and (max-width: 720px) {
+    .imagenes img {
+        width: 78px;
+        height: 78px;
+        margin-right: 10px;
         
-        #ingredientes , #titulo-2{
-          font-size: 25px;
-        }
+        
     }
-    
-   
-    
-                                    
-    
-    
-                            /* Fin de los estilos para las imagenes */
 
+  
 
+    #ingredientes,
+    #titulo-2 {
+        font-size: 25px;
+    }
+}
