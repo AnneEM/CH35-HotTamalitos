@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display&family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display&family=Roboto:wght@400;500;700&&family=Pinyon+Script&display=swap');
 
 :root {
     --soft-pink: #FAD9C9;
@@ -44,4 +44,78 @@
     
 }
 
+#total{
+    font-weight: bold;
+}
 
+/* Estilos del producto en el carrito (falta ajustar detalles) */
+.item-producto {
+    border: solid var(--salmon) 1px;
+    margin: 3% 10% 3%;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    gap: 10px;
+    grid-template-columns:
+        auto;
+    grid-template-areas:
+    "img"
+    "texto"
+    "precio";
+    
+    
+
+    box-shadow: 2px 5px 8px rgba(151, 151, 151, 0.24);
+}
+.img{
+    grid-area: img;
+    margin: 0%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+.texto{
+    grid-area: texto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.precio{
+    grid-area: precio;
+    display: flex;
+    justify-content: center;
+    font-family: var(--montserrat-font);
+    font-weight: bold;
+}
+
+/* Estilos del boton eliminar */
+.bttn{
+    display: flex;
+    justify-content: center;
+}
+.button-eliminar{
+    height: 30px;
+    display:inline-block;
+    padding:0px 10px;
+    font-family: var(--montserrat-font);
+    font-size: 10px;
+}
+
+.btn--solidbk{
+    color: var(--main-white);
+    background-color: var(--main-text);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.btn--solidbk:hover{
+    background-color:rgb(236, 153, 153);
+    transition: background-color 0.5s;
+    font-weight: 500;
+}

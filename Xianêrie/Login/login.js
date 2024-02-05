@@ -12,17 +12,15 @@ $('.toggle').click(function(){
 
 
 ////////////////funciones para login////////////////////////
-function mostrarAlerta(mensaje, tipo) {
-    // Limpiar alertas previas
-    document.getElementById('alertContainer').innerHTML = '';
+function mostrarAlerta(containerId, mensaje, tipo) {
+    const alertContainer = document.querySelector(`#${containerId}`);
+    alertContainer.innerHTML = '';
 
-    // Crear nueva alerta
     const alerta = document.createElement('div');
     alerta.className = `alert alert-${tipo}`;
     alerta.textContent = mensaje;
 
-    // Agregar alerta al contenedor
-    document.getElementById('alertContainer').appendChild(alerta);
+    alertContainer.appendChild(alerta);
 }
 
 function validarFormatoEmail(email) {
@@ -30,54 +28,57 @@ function validarFormatoEmail(email) {
     return formatoEmail.test(email);
 }
 
-function validarLongitud(email, longitudMinima) {
-    return email.length >= longitudMinima;
-}
+function validarExistenciaEmail(email) {
+    // Verificar si el email existe en el localStorage
+    const users = JSON.parse(localStorage.getItem('users'));
 
-function validarExistenciaDominio(email) {
-    // Lógica para verificar la existencia del dominio en registros DNS (puedes agregarla si es necesario)
-    return true;
+    if (users && users.email === email) {
+        return true;
+    }
+
+    return false;
 }
 
 function validarComplejidadContraseña(password) {
     // Verificar complejidad con expresión regular
-    const complejidadContraseña = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/;
+    const complejidadContraseña = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
     return complejidadContraseña.test(password);
 }
 
+// **************** El formulario de iniciar sesion ya solo se puede validar con la informacion almacenada de email y contraseña dados al crear cuenta ****************
 function validarFormulario() {
     const email = document.getElementById('emailInput').value;
     const password = document.getElementById('passwordInput').value;
+    // Verificar si el usuario existe en la localStorage (key: users) y los datos son correctos
+    const listaUsuarios = JSON.parse(localStorage.getItem('users')) || [];
 
-    if (!validarFormatoEmail(email) || !validarLongitud(email, 10) || !validarExistenciaDominio(email)) {
-        mostrarAlerta('Formato de correo electrónico no válido.', 'danger');
-        return;
+    if (email === "" || password === "") {
+        mostrarAlerta('alertContainer', 'Campos vacíos.', 'danger');
+    } else {
+        // Iterar sobre el array listaUsuarios para encontrar al ususario solicitado. 
+        const usuario = listaUsuarios.find(user => user.email === email && user.password === password);
+
+        if (usuario) {
+            // Inicio de sesión exitoso
+            mostrarAlerta('alertContainer', '¡Inicio de sesión exitoso!', 'success');
+            // Redirigir a la página de destino
+            setTimeout(() => {
+                window.location.href = "/Xianêrie/landing_page/landing.html";
+            }, 1500);
+        } else {
+            mostrarAlerta('alertContainer', 'Email o contraseña incorrectos.', 'danger');
+        }
     }
-
-    if (!validarLongitud(password, 8) || !validarComplejidadContraseña(password)) {
-        mostrarAlerta('Contraseña no cumple con los requisitos mínimos de longitud o complejidad.', 'danger');
-        return;
-    }
-
-    // Si pasa todas las validaciones, muestra una alerta de éxito
-    mostrarAlerta('¡Formulario válido! Iniciar sesión.', 'success');
 }
+
 
 ////////////////funciones para crear cuenta////////////////////////
 
 function mostrarAlerta2(mensaje, tipo) {
-    // Eliminar alertas previas
-    document.getElementById('alertContainer2').innerHTML = '';
-
-    // Crear nueva alerta
-    var alerta = document.createElement('div');
-    alerta.className = 'alert alert-' + tipo;
-    alerta.innerHTML = mensaje;
-
-    // Agregar alerta al contenedor
-    document.getElementById('alertContainer2').appendChild(alerta);
+    mostrarAlerta('alertContainer2', mensaje, tipo);
 }
 
+///////// Validaciones de inputs
 function validarNombreUsuario() {
     var nombreUsuario = document.getElementById('nameInput--crearCuenta').value;
     return nombreUsuario.trim() !== '';
@@ -102,15 +103,10 @@ function validarTelefono() {
 
     return true;
 }
-
-
-
-
 function validarEmailCrearCuenta() {
     var email = document.getElementById('emailInput--crearCuenta').value;
-    return validarFormatoEmail(email) && validarLongitudEmail(email) && validarExistenciaDominio(email);
+    return validarFormatoEmail(email) && validarExistenciaDominio(email);
 }
-
 function validarContraseñaCrearCuenta() {
     var password = document.getElementById('passwordInput--crearCuenta').value;
     var passwordRepeat = document.getElementById('passwordRepeat--crearCuenta').value;
@@ -139,12 +135,9 @@ function validarContraseñaCrearCuenta() {
 
     return true;
 }
-
-
 function validarNoSoyRobot() {
     return document.getElementById('noSoyRobot').checked;
 }
-
 function validarCampoNoVacio(idCampo, nombreCampo) {
     var elementoCampo = document.getElementById(idCampo);
 
@@ -163,10 +156,8 @@ function validarCampoNoVacio(idCampo, nombreCampo) {
             return false;
         }
     }
-
     return true;
 }
-
 function todosLosCamposVacios() {
     // Verificar si todos los campos están vacíos
     var campos = document.querySelectorAll('.form-login');
@@ -194,8 +185,11 @@ function validarFormularioCrearCuenta() {
 
     // Verificar que todas las validaciones específicas sean exitosas, incluyendo la de repetir contraseña
     if (nombreValido && telefonoValido && emailValido && contraseñaValida && repetirContraseñaValido && noSoyRobotValido && aceptoTerminosValido) {
-        // Si todas las validaciones específicas son exitosas
+        // Si todas las validaciones específicas son exitosas redirige a la pagina_de_usuario
         mostrarAlerta2('¡Formulario válido! Crear cuenta.', 'success');
+        setTimeout(() => {
+            window.location.href = "/Xianêrie/pagina_de_usuario/index.html";
+        }, 1500);
         return true;
     }
 
@@ -205,34 +199,49 @@ function validarFormularioCrearCuenta() {
 
 
 
-
 // >>>>>>> Funciones para objetos <<<<<<
-const form = document.querySelector('#loginForm--crearCuenta');
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault(); // Prevenir el envío del formulario por defecto
+// Uso de jQuery para manejar el evento submit del formulario de crear cuenta y almacenar localmente la inforamcion (necesaria para iniciar sesion)
+$('#loginForm--crearCuenta').submit(function (event) {
+    event.preventDefault(); // Prevenir el envío del formulario por defecto
 
-  const jsonData = {};
+    const jsonData = {};
 
-  for (const input of form.querySelectorAll('input')) {
-    // Comprobar si el input tiene un nombre:
-    if (input.name) {
-      // Obtener el valor del input:
-      const value = input.value;
+    $(this).find('input').each(function () {
+        const value = $(this).val();
+        if (value) {
+            jsonData[$(this).attr('name')] = value;
+        }
+    });
 
-      // Agregar el valor al objeto JSON solo si no está vacío:
-      if (value) {
-        jsonData[input.name] = value;
-      }
+    jsonData['noSoyRobot'] = $('#noSoyRobot').prop('checked');
+    jsonData['aceptTermYCond'] = $('#aceptTermYCond').prop('checked');
+
+    console.log(JSON.stringify(jsonData)); // Imprimir los datos en formato JSON
+
+    // Aquí puedes hacer lo que quieras con los datos en formato JSON, como enviarlos a un servidor
+    if (validarFormularioCrearCuenta()) {
+        // Obtener la lista actual de usuarios del localStorage
+        const listaUsuarios = JSON.parse(localStorage.getItem('users')) || [];
+
+        // Crear un nuevo usuario a partir del id de los inputs ingresados 
+        const users = {
+            nombre: $('#nameInput--crearCuenta').val(),
+            
+            /* Quitar comentarios cuando agregen los id de apellidos */
+
+            //apellidoPaterno: $(#id del apellidoPaterno ).val()
+            //apellidoMaterno: $(#id del apellidoMaterno ).val()
+            telefono: $('#phoneInput--crearCuenta').val(),
+            email: $('#emailInput--crearCuenta').val(),
+            // Podemos cifrar localmente la contraseña con hash
+            password: $('#passwordRepeat--crearCuenta').val(),
+        };
+
+        // Se agrega el nuevo usuario a la lista existente
+        listaUsuarios.push(users);
+
+        // Almacenar la lista actualizada de usuarios en el localStorage
+        localStorage.setItem('users', JSON.stringify(listaUsuarios));
     }
-  }
-
-  // Agregar los valores de los checkboxes:
-  jsonData['noSoyRobot'] = form.querySelector('#noSoyRobot').checked;
-  jsonData['aceptTermYCond'] = form.querySelector('#aceptTermYCond').checked;
-
-  console.log(JSON.stringify(jsonData)); // Imprimir los datos en formato JSON
-
-  // Aquí puedes hacer lo que quieras con los datos en formato JSON, como enviarlos a un servidor
 });
-
