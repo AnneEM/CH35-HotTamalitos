@@ -195,20 +195,6 @@ body{
     justify-content: center;
 }
 
-.btn--whiteline{
-    color: var(--main-white);
-    background-color: transparent;
-    border: solid var(--main-white) 1px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-.btn--whiteline:hover{
-    border: none;
-    background-color: rgba(255,255,255,.2);
-    transition: background-color 0.5s;
-    font-weight: 500;
-}
-
 .btn--solidbk{
     color: var(--main-white);
     background-color: var(--main-text);
