@@ -29,133 +29,157 @@
     <div class="mb-5 container-fluid">
         <div class="col container-form">
             <!--Formulario para INICIAR SESIÓN-->
-    <div class="formulario">
-        <div class="mb-3 text-center">
-            <h1>Iniciar sesión</h1>
-        </div>
-        <form id="loginForm">
-            <div class="form container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                <div class="mb-3">
-                    <label for="emailInput">Email:</label>
-                    <input id="emailInput" class="form-login" type="email" placeholder="Escribe tu email" />
+            <div class="formulario">
+                <div class="mb-3 text-center">
+                    <h1>Iniciar sesión</h1>
                 </div>
-                <div class="mb-3">
-                    <label for="passwordInput">Contraseña:</label>
-                    <input id="passwordInput" class="form-login" type="password" placeholder="Escribe tu contraseña" />
-                </div>
-                <div class="text-center row">
-                    <button type="button" class="container col-11 btn btn-main-text btn-lg mt-2 mb-3" id="btn--solidbk" onclick="validarFormulario()">
-                        Iniciar sesión
-                    </button>
-                </div>
-            </div>
-        </form>
-            
+                <form id="loginForm">
+                    <div class="form container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                        <div class="mb-3">
+                            <label for="emailInput">Email:</label>
+                            <input id="emailInput" class="form-login" type="email" placeholder="Escribe tu email" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordInput">Contraseña:</label>
+                            <input id="passwordInput" class="form-login" type="password"
+                                placeholder="Escribe tu contraseña" />
+                        </div>
+                        <div class="text-center row">
+                            <button type="button" class="container col-11 btn btn-main-text btn-lg mt-2 mb-3"
+                                id="btn--solidbk" onclick="validarFormulario()">
+                                Iniciar sesión
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
                 <!-- Agregamos la sección para mostrar alertas de Bootstrap -->
                 <div id="alertContainer" class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 mt-2"></div>
 
-            <!--Separador de botones-->
-            <div class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 mb-2 mt-3">
-                <div class="row text-center align-self-center">
-                    <div class="col-5">
-                        <hr />
+                <!--Separador de botones-->
+                <div class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 mb-2 mt-3">
+                    <div class="row text-center align-self-center">
+                        <div class="col-5">
+                            <hr />
+                        </div>
+                        <div class="col-2">o</div>
+                        <div class="col-5">
+                            <hr class="" />
+                        </div>
                     </div>
-                    <div class="col-2">o</div>
-                    <div class="col-5">
-                        <hr class="" />
+                </div>
+                <!-- Botón para mostrar formulario de crear cuenta -->
+                <div class="text-center row">
+                    <span type="button"
+                        class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 btn btn-main-text btn-lg mb-2 toggle"
+                        id="btn--mostrarCrearCuenta">
+                        Crear cuenta
+                    </span>
+                </div>
+            </div>
+            <!--Formulario para crear-cuenta-->
+            <div class="formulario">
+                <div class="mb-3 text-center">
+                    <h1>Crear una cuenta</h1>
+                </div>
+                <form id="loginForm--crearCuenta" onsubmit="return validarFormularioCrearCuenta()">
+                    <div class="form container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                        <div class="mb-3">
+                            <label for="nameInput--crearCuenta">Nombre:</label>
+                            <input name="nombreUsuario" id="nameInput--crearCuenta" class="form-login" type="text"
+                                placeholder="Escribe tu nombre" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellidoPaternoInput--crearCuenta">Apellido paterno:</label>
+                            <input name="apellidoPaternoUsuario" id="apellidoPaternoInput--crearCuenta" class="form-login" type="text"
+                                placeholder="Escribe tu apellido paterno completo" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellidoMaternoInput--crearCuenta">Apellido materno:</label>
+                            <input name="apellidoMaternoUsuario" id="apellidoMaternoInput--crearCuenta" class="form-login" type="text"
+                                placeholder="Escribe tu apellido materno completo" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="phoneInput--crearCuenta">Teléfono:</label>
+                            <input name="telefono" id="phoneInput--crearCuenta" class="form-login" type="text"
+                                placeholder="Escribe tu número de teléfono" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailInput--crearCuenta">Email:</label>
+                            <input name="correo" id="emailInput--crearCuenta" class="form-login" type="email"
+                                placeholder="Escribe tu email" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordInput--crearCuenta">Contraseña:</label>
+                            <input name="codigoAcceso" id="passwordInput--crearCuenta" class="form-login"
+                                type="password" placeholder="Escribe tu contraseña" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordRepeat--crearCuenta">Confirma tu contraseña:</label>
+                            <input id="passwordRepeat--crearCuenta" class="form-login" type="password"
+                                placeholder="Repite tu nueva contraseña" />
+                        </div>
+                        <div class="mb-1">
+                            <input type="checkbox" class="form-check-input" id="noSoyRobot" />
+                            <label class="form-check-label container col-8 mb-2 align-self-center" for="noSoyRobot">No
+                                soy un robot</label>
+                        </div>
+                        <div class="mb-1">
+                            <input type="checkbox" class="form-check-input" id="aceptTermYCond" />
+                            <label class="form-check-label container col-11 mb-3 align-self-center"
+                                for="aceptTermYCond">Acepto términos y condiciones</label>
+                        </div>
+                        <div class="text-center row">
+                            <button type="submit" class="container col-11 btn btn-main-text btn-lg mt-2 mb-3 "
+                                id="btn--solidbk">
+                                Crear cuenta
+                            </button>
+                        </div>
+                    </div> <!--  el cierre de este div es el que generaba el problema-->
+                </form>
+
+                <div id="alertContainer2" class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 mt-2"></div>
+
+
+                <!--Separador de botones-->
+                <div class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 mb-2 mt-3">
+                    <div class="row text-center align-self-center">
+                        <div class="col-5">
+                            <hr />
+                        </div>
+                        <div class="col-2">o</div>
+                        <div class="col-5">
+                            <hr class="" />
+                        </div>
+                    </div>
+                </div>
+                <!-- Botón para mostrar formulario de iniciar sesión -->
+                <div class="text-center row">
+                    <span type="button"
+                        class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 btn btn-main-text btn-lg mb-2 toggle"
+                        id="btn--mostrarCrearCuenta">
+                        Iniciar sesión
+                    </span>
+                </div>
+            </div>
+        </div> <!--Moví esde cierre de div hasta antes del modal, envolviendo el Separador de botones de linea 134 y el otón para mostrar formulario de iniciar sesión de la linea 146-->
+        <!-- Modal -->
+        <div class="modal" tabindex="-1" id="miModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Mensaje de Validación</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="modalBody">
+                        <!-- Contenido del mensaje de validación -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
             </div>
-            <!-- Botón para mostrar formulario de crear cuenta -->
-            <div class="text-center row">
-                <span type="button" class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 btn btn-main-text btn-lg mb-2 toggle" id="btn--mostrarCrearCuenta">
-                    Crear cuenta
-                </span>
-            </div>
         </div>
-        <!--Formulario para crear-cuenta-->
-       <div class="formulario">
-    <div class="mb-3 text-center">
-        <h1>Crear una cuenta</h1>
-    </div>
-    <form id="loginForm--crearCuenta" onsubmit="return validarFormularioCrearCuenta()">
-        <div class="form container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-            <div class="mb-3">
-                <label for="nameInput--crearCuenta">Nombre:</label>
-                <input name="nombreUsuario" id="nameInput--crearCuenta" class="form-login" type="text" placeholder="Escribe tu nombre completo" />
-            </div>
-            <div class="mb-3">
-                <label for="phoneInput--crearCuenta">Teléfono:</label>
-                <input name="telefono" id="phoneInput--crearCuenta" class="form-login" type="text" placeholder="Escribe tu número de teléfono" />
-            </div>
-            <div class="mb-3">
-                <label for="emailInput--crearCuenta">Email:</label>
-                <input name="correo" id="emailInput--crearCuenta" class="form-login" type="email" placeholder="Escribe tu email" />
-            </div>
-            <div class="mb-3">
-                <label for="passwordInput--crearCuenta">Contraseña:</label>
-                <input name="codigoAcceso" id="passwordInput--crearCuenta" class="form-login" type="password" placeholder="Escribe tu contraseña" />
-            </div>
-            <div class="mb-3">
-                <label for="passwordRepeat--crearCuenta">Confirma tu contraseña:</label>
-                <input id="passwordRepeat--crearCuenta" class="form-login" type="password" placeholder="Repite tu nueva contraseña" />
-            </div>
-            <div class="mb-1">
-                <input type="checkbox" class="form-check-input" id="noSoyRobot" />
-                <label class="form-check-label container col-8 mb-2 align-self-center" for="noSoyRobot">No soy un robot</label>
-            </div>
-            <div class="mb-1">
-                <input type="checkbox" class="form-check-input" id="aceptTermYCond" />
-                <label class="form-check-label container col-11 mb-3 align-self-center" for="aceptTermYCond">Acepto términos y condiciones</label>
-            </div>
-            <div class="text-center row">
-                <button type="submit" class="container col-11 btn btn-main-text btn-lg mt-2 mb-3 " id="btn--solidbk">
-                    Crear cuenta
-                </button>
-            </div>
-        </div>
-    </form>
-
-    <div id="alertContainer2" class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 mt-2"></div>
-</div>
-
-
-        <!--Separador de botones-->
-        <div class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 mb-2 mt-3">
-            <div class="row text-center align-self-center">
-                <div class="col-5">
-                    <hr />
-                </div>
-                <div class="col-2">o</div>
-                <div class="col-5">
-                    <hr class="" />
-                </div>
-            </div>
-        </div>
-        <!-- Botón para mostrar formulario de iniciar sesión -->
-        <div class="text-center row">
-            <span type="button" class="container col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 btn btn-main-text btn-lg mb-2 toggle" id="btn--mostrarCrearCuenta">
-                Iniciar sesión
-            </span>
-        </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal" tabindex="-1" id="miModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Mensaje de Validación</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="modalBody">
-                    <!-- Contenido del mensaje de validación -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
     </div>
     <!--footer-->

@@ -83,6 +83,15 @@ function validarNombreUsuario() {
     var nombreUsuario = document.getElementById('nameInput--crearCuenta').value;
     return nombreUsuario.trim() !== '';
 }
+// Se agregan funcinoes para validar apellidos de línea 87 a 94
+function validarApellidoPaternoUsuario() {
+    var nombreUsuario = document.getElementById('apellidoPaternoInput--crearCuenta').value;
+    return nombreUsuario.trim() !== '';
+}
+function validarApellidoMaternoUsuario() {
+    var nombreUsuario = document.getElementById('apellidoMaternoInput--crearCuenta').value;
+    return nombreUsuario.trim() !== '';
+}
 function validarTelefono() {
     var telefono = document.getElementById('phoneInput--crearCuenta').value.trim();
 
@@ -228,10 +237,10 @@ $('#loginForm--crearCuenta').submit(function (event) {
         const users = {
             nombre: $('#nameInput--crearCuenta').val(),
             
-            /* Quitar comentarios cuando agregen los id de apellidos */
+            /* Sea agregan los id de apellidos en líneas 233 y 234 */
 
-            //apellidoPaterno: $(#id del apellidoPaterno ).val()
-            //apellidoMaterno: $(#id del apellidoMaterno ).val()
+            apellidoPaterno: $('#apellidoPaternoInput--crearCuenta').val(),
+            apellidoMaterno: $('#apellidoMaternoInput--crearCuenta').val(),
             telefono: $('#phoneInput--crearCuenta').val(),
             email: $('#emailInput--crearCuenta').val(),
             // Podemos cifrar localmente la contraseña con hash
