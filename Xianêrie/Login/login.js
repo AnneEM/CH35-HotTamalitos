@@ -1,7 +1,7 @@
 // Lógica de validación del formulario
 // Por ejemplo, verificar que los campos no estén vacíos
 
-$('.toggle').click(function(){
+$('.toggle').click(function () {
     $('.formulario').animate({
         height: "toggle",
         'padding-top': 'toggle',
@@ -78,43 +78,73 @@ function mostrarAlerta2(mensaje, tipo) {
     mostrarAlerta('alertContainer2', mensaje, tipo);
 }
 
-///////// Validaciones de inputs
+// Funciones de validación actualizadas con eventos keyup
+document.getElementById('nameInput--crearCuenta').addEventListener('keyup', validarNombreUsuario);
+document.getElementById('apellidoPaternoInput--crearCuenta').addEventListener('keyup', validarApellidoPaternoUsuario);
+document.getElementById('apellidoMaternoInput--crearCuenta').addEventListener('keyup', validarApellidoMaternoUsuario);
+document.getElementById('phoneInput--crearCuenta').addEventListener('keyup', validarTelefono);
+document.getElementById('emailInput--crearCuenta').addEventListener('keyup', validarEmailCrearCuenta);
+document.getElementById('passwordInput--crearCuenta').addEventListener('keyup', validarContraseñaCrearCuenta);
+document.getElementById('passwordRepeat--crearCuenta').addEventListener('keyup', validarContraseñaCrearCuenta);
+
+// Funciones de validación actualizadas con eventos keyup
 function validarNombreUsuario() {
     var nombreUsuario = document.getElementById('nameInput--crearCuenta').value;
-    return nombreUsuario.trim() !== '';
-}
-// Se agregan funcinoes para validar apellidos de línea 87 a 94
-function validarApellidoPaternoUsuario() {
-    var nombreUsuario = document.getElementById('apellidoPaternoInput--crearCuenta').value;
-    return nombreUsuario.trim() !== '';
-}
-function validarApellidoMaternoUsuario() {
-    var nombreUsuario = document.getElementById('apellidoMaternoInput--crearCuenta').value;
-    return nombreUsuario.trim() !== '';
-}
-function validarTelefono() {
-    var telefono = document.getElementById('phoneInput--crearCuenta').value.trim();
+    var regexNombre = /^[a-zA-Z\s]+$/;
 
-    // Verificar si el teléfono está vacío
-    if (telefono === '') {
-        mostrarAlerta2('El campo Teléfono no puede estar vacío.', 'danger');
+    if (!regexNombre.test(nombreUsuario.trim())) {
+        mostrarAlerta2('El nombre de usuario no cumple con el formato requerido.', 'danger');
         return false;
     }
+    return true;
+}
 
-    // Mejorar la expresión regular para permitir solo números y opcionalmente un símbolo "+" al principio
-    var formatoCorrecto = /^(?:\+\d+)?\d*$/;
+function validarApellidoPaternoUsuario() {
+    var apellidoPaterno = document.getElementById('apellidoPaternoInput--crearCuenta').value;
+    var regexApellido = /^[a-zA-Z\s]+$/;
 
-    // Validar que el teléfono contenga solo números y opcionalmente un símbolo "+" al principio
-    if (!formatoCorrecto.test(telefono)) {
-        mostrarAlerta2('El teléfono debe contener solo números y opcionalmente un símbolo "+" al principio.', 'danger');
+    if (!regexApellido.test(apellidoPaterno.trim())) {
+        mostrarAlerta2('El apellido paterno no cumple con el formato requerido.', 'danger');
         return false;
     }
 
     return true;
 }
+
+function validarApellidoMaternoUsuario() {
+    var apellidoMaterno = document.getElementById('apellidoMaternoInput--crearCuenta').value;
+    var regexApellido = /^[a-zA-Z\s]+$/;
+
+    if (!regexApellido.test(apellidoMaterno.trim())) {
+        mostrarAlerta2('El apellido materno no cumple con el formato requerido.', 'danger');
+        return false;
+    }
+
+    return true;
+}
+
+function validarTelefono() {
+    var telefono = document.getElementById('phoneInput--crearCuenta').value.trim();
+    var formatoCorrecto = /^(?:\+\d{1,3})?\d{8,}$/; // Permitir código de país opcional
+
+    if (!formatoCorrecto.test(telefono)) {
+        mostrarAlerta2('El teléfono no cumple con el formato requerido.', 'danger');
+        return false;
+    }
+
+    return true;
+}
+
 function validarEmailCrearCuenta() {
     var email = document.getElementById('emailInput--crearCuenta').value;
-    return validarFormatoEmail(email) && validarExistenciaDominio(email);
+    var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regexEmail.test(email)) {
+        mostrarAlerta2('El teléfono no cumple con el formato requerido.', 'danger');
+        return false;
+    }
+
+    return true;
+
 }
 function validarContraseñaCrearCuenta() {
     var password = document.getElementById('passwordInput--crearCuenta').value;
@@ -180,20 +210,22 @@ function todosLosCamposVacios() {
 
 function validarFormularioCrearCuenta() {
     var nombreValido = validarCampoNoVacio('nameInput--crearCuenta', 'Nombre');
+    var apellidoPaternoValido = validarCampoNoVacio('apellidoPaternoInput--crearCuenta', 'Apellido Paterno');
+    var apellidoMaternoValido = validarCampoNoVacio('apellidoMaternoInput--crearCuenta', 'Apellido Materno');
     var telefonoValido = validarTelefono();
     var emailValido = validarCampoNoVacio('emailInput--crearCuenta', 'Email');
-    
+
     // Validar que el campo de contraseña no esté vacío y la contraseña sea válida
     var contraseñaValida = validarCampoNoVacio('passwordInput--crearCuenta', 'Contraseña') && validarContraseñaCrearCuenta();
-    
+
     // Validar que el campo de repetir contraseña no esté vacío
     var repetirContraseñaValido = validarCampoNoVacio('passwordRepeat--crearCuenta', 'Repetir Contraseña');
-    
+
     var noSoyRobotValido = validarCampoNoVacio('noSoyRobot', 'Checkbox No Soy un Robot');
     var aceptoTerminosValido = validarCampoNoVacio('aceptTermYCond', 'Checkbox Acepto Términos y Condiciones');
 
     // Verificar que todas las validaciones específicas sean exitosas, incluyendo la de repetir contraseña
-    if (nombreValido && telefonoValido && emailValido && contraseñaValida && repetirContraseñaValido && noSoyRobotValido && aceptoTerminosValido) {
+    if (nombreValido && apellidoPaternoValido && apellidoMaternoValido && telefonoValido && emailValido && contraseñaValida && repetirContraseñaValido && noSoyRobotValido && aceptoTerminosValido) {
         // Si todas las validaciones específicas son exitosas redirige a la pagina_de_usuario
         mostrarAlerta2('¡Formulario válido! Crear cuenta.', 'success');
         setTimeout(() => {
@@ -205,6 +237,7 @@ function validarFormularioCrearCuenta() {
     // Si alguna validación específica falla, ya se habrá mostrado la alerta correspondiente
     return false;
 }
+
 
 
 
@@ -236,7 +269,7 @@ $('#loginForm--crearCuenta').submit(function (event) {
         // Crear un nuevo usuario a partir del id de los inputs ingresados 
         const users = {
             nombre: $('#nameInput--crearCuenta').val(),
-            
+
             /* Sea agregan los id de apellidos en líneas 233 y 234 */
 
             apellidoPaterno: $('#apellidoPaternoInput--crearCuenta').val(),
