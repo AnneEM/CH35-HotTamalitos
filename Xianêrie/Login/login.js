@@ -116,13 +116,13 @@ document.getElementById('nameInput--crearCuenta').addEventListener('keyup', func
     validarInput('nameInput--crearCuenta', /^[a-zA-Z\s]+$/, 'El nombre no cumple con el formato requerido.');
 });
 
-document.getElementById('apellidoPaternoInput--crearCuenta').addEventListener('keyup', function () {
-    validarInput('apellidoPaternoInput--crearCuenta', /^[a-zA-Z\s]+$/, 'El apellido paterno no cumple con el formato requerido.');
+document.getElementById('apellidoInput--crearCuenta').addEventListener('keyup', function () {
+    validarInput('apellidoInput--crearCuenta', /^[a-zA-Z\s]+$/, 'El apellido paterno no cumple con el formato requerido.');
 });
 
-document.getElementById('apellidoMaternoInput--crearCuenta').addEventListener('keyup', function () {
-    validarInput('apellidoMaternoInput--crearCuenta', /^[a-zA-Z\s]+$/, 'El apellido materno no cumple con el formato requerido.');
-});
+// document.getElementById('apellidoMaternoInput--crearCuenta').addEventListener('keyup', function () {
+//     validarInput('apellidoMaternoInput--crearCuenta', /^[a-zA-Z\s]+$/, 'El apellido materno no cumple con el formato requerido.');
+// });
 
 document.getElementById('phoneInput--crearCuenta').addEventListener('keyup', function () {
     validarInput('phoneInput--crearCuenta', /^(?:\+\d{1,3})?\d{8,}$/, 'El teléfono no cumple con el formato requerido.');
