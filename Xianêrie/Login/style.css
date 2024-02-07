@@ -24,8 +24,8 @@ h1 {
     font-weight: 600;
 }
 
-/* Botones de crear cuenta - iniciar sesión*/
-#btn--solidbk, #btn--mostrarCrearCuenta {
+/* Botones de Iniciar sesión / Crear cuenta*/
+#btn--solidbk--iniciarSesion, #btn--solidbk--crearCuenta, #btn--mostrarCrearCuenta { /*Agregué diferentes IDs a los botones para eliminar la advertencia de id repetidos*/
     color: var(--main-white);
     background-color: var(--main-text);
     border: none;
@@ -33,7 +33,7 @@ h1 {
     cursor: pointer;
 }
 
-#btn--solidbk:hover, #btn--mostrarCrearCuenta:hover {
+#btn--solidbk--iniciarSesion:hover, #btn--solidbk--crearCuenta:hover, #btn--mostrarCrearCuenta:hover {
     border: none;
     background-color: var(--main-ocre);
     transition: background-color 0.5s;
