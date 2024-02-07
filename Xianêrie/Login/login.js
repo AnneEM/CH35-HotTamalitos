@@ -1,7 +1,7 @@
 // Lógica de validación del formulario
 // Por ejemplo, verificar que los campos no estén vacíos
 
-$('.toggle').click(function(){
+$('.toggle').click(function () {
     $('.formulario').animate({
         height: "toggle",
         'padding-top': 'toggle',
@@ -74,79 +74,81 @@ function validarFormulario() {
 
 ////////////////funciones para crear cuenta////////////////////////
 
+// Función para mostrar la alerta
 function mostrarAlerta2(mensaje, tipo) {
     mostrarAlerta('alertContainer2', mensaje, tipo);
 }
 
-///////// Validaciones de inputs
-function validarNombreUsuario() {
-    var nombreUsuario = document.getElementById('nameInput--crearCuenta').value;
-    return nombreUsuario.trim() !== '';
-}
-// Se agregan funcinoes para validar apellidos de línea 87 a 94
-function validarApellidoPaternoUsuario() {
-    var nombreUsuario = document.getElementById('apellidoPaternoInput--crearCuenta').value;
-    return nombreUsuario.trim() !== '';
-}
-function validarApellidoMaternoUsuario() {
-    var nombreUsuario = document.getElementById('apellidoMaternoInput--crearCuenta').value;
-    return nombreUsuario.trim() !== '';
-}
-function validarTelefono() {
-    var telefono = document.getElementById('phoneInput--crearCuenta').value.trim();
+// Función de validación general
+function validarInput(inputId, regex, mensajeError) {
+    var inputValue = document.getElementById(inputId).value.trim();
 
-    // Verificar si el teléfono está vacío
-    if (telefono === '') {
-        mostrarAlerta2('El campo Teléfono no puede estar vacío.', 'danger');
+    if (!regex.test(inputValue)) {
+        mostrarAlerta2(mensajeError, 'danger');
         return false;
     }
 
-    // Mejorar la expresión regular para permitir solo números y opcionalmente un símbolo "+" al principio
-    var formatoCorrecto = /^(?:\+\d+)?\d*$/;
-
-    // Validar que el teléfono contenga solo números y opcionalmente un símbolo "+" al principio
-    if (!formatoCorrecto.test(telefono)) {
-        mostrarAlerta2('El teléfono debe contener solo números y opcionalmente un símbolo "+" al principio.', 'danger');
-        return false;
-    }
-
+    mostrarAlerta2('El input cumple con el formato.', 'success');
     return true;
 }
-function validarEmailCrearCuenta() {
-    var email = document.getElementById('emailInput--crearCuenta').value;
-    return validarFormatoEmail(email) && validarExistenciaDominio(email);
-}
-function validarContraseñaCrearCuenta() {
+
+// Función para validar que las contraseñas coincidan
+function validarContraseñaRepetida() {
     var password = document.getElementById('passwordInput--crearCuenta').value;
     var passwordRepeat = document.getElementById('passwordRepeat--crearCuenta').value;
 
-    // Verificar que las contraseñas coincidan solo si ambos campos no están vacíos
-    if (password !== '' && passwordRepeat !== '') {
-        // Verificar longitud mínima de la contraseña
-        if (password.length < 8) {
-            mostrarAlerta2('La contraseña debe tener al menos 8 caracteres.', 'danger');
-            return false;
-        }
-
-        // Verificar complejidad de la contraseña
-        var complejidadContraseña = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/;
-        if (!complejidadContraseña.test(password)) {
-            mostrarAlerta2('La contraseña debe contener al menos una mayúscula, una minúscula, un número y un caracter especial.', 'danger');
-            return false;
-        }
-
-        // Verificar que las contraseñas coincidan
-        if (password !== passwordRepeat) {
-            mostrarAlerta2('Las contraseñas no coinciden. Por favor, verifica.', 'danger');
-            return false;
-        }
+    // Verificar complejidad de la contraseña (requiere al menos una mayúscula, una minúscula, un número y un caracter especial)
+    var complejidadContraseña = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/;
+    if (!complejidadContraseña.test(password) && password.length < 8) {
+        mostrarAlerta2('La contraseña debe tener 8 caracteres y contener al menos una mayúscula, una minúscula, un número y un caracter especial.', 'danger');
+        return false;
     }
-
+    if (password !== passwordRepeat) {
+        mostrarAlerta2('Las contraseñas no coinciden. Por favor, verifica.', 'danger');
+        return false;
+    }
+    mostrarAlerta2('Contrseña válida.', 'success');
     return true;
 }
-function validarNoSoyRobot() {
-    return document.getElementById('noSoyRobot').checked;
-}
+
+// Eventos keyup para los diferentes campos
+document.getElementById('nameInput--crearCuenta').addEventListener('keyup', function () {
+    validarInput('nameInput--crearCuenta', /^[a-zA-Z\s]+$/, 'El nombre no cumple con el formato requerido.');
+});
+
+document.getElementById('apellidoPaternoInput--crearCuenta').addEventListener('keyup', function () {
+    validarInput('apellidoPaternoInput--crearCuenta', /^[a-zA-Z\s]+$/, 'El apellido paterno no cumple con el formato requerido.');
+});
+
+document.getElementById('apellidoMaternoInput--crearCuenta').addEventListener('keyup', function () {
+    validarInput('apellidoMaternoInput--crearCuenta', /^[a-zA-Z\s]+$/, 'El apellido materno no cumple con el formato requerido.');
+});
+
+document.getElementById('phoneInput--crearCuenta').addEventListener('keyup', function () {
+    validarInput('phoneInput--crearCuenta', /^(?:\+\d{1,3})?\d{8,}$/, 'El teléfono no cumple con el formato requerido.');
+});
+
+document.getElementById('emailInput--crearCuenta').addEventListener('keyup', function () {
+    validarInput('emailInput--crearCuenta', /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'El email no cumple con el formato requerido.');
+});
+
+document.getElementById('passwordInput--crearCuenta').addEventListener('keyup', function () {
+    validarInput('passwordInput--crearCuenta', /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/, 'La contraseña no cumple con el formato requerido.');
+    validarContraseñaRepetida();
+});
+
+document.getElementById('passwordRepeat--crearCuenta').addEventListener('keyup', function () {
+    validarContraseñaRepetida();
+});
+
+document.getElementById('noSoyRobot').addEventListener('change', function () {
+    validarCampoNoVacio('noSoyRobot', 'Checkbox No Soy un Robot');
+});
+
+document.getElementById('aceptTermYCond').addEventListener('change', function () {
+    validarCampoNoVacio('aceptTermYCond', 'Checkbox Acepto Términos y Condiciones');
+});
+
 function validarCampoNoVacio(idCampo, nombreCampo) {
     var elementoCampo = document.getElementById(idCampo);
 
@@ -167,6 +169,7 @@ function validarCampoNoVacio(idCampo, nombreCampo) {
     }
     return true;
 }
+
 function todosLosCamposVacios() {
     // Verificar si todos los campos están vacíos
     var campos = document.querySelectorAll('.form-login');
@@ -180,20 +183,22 @@ function todosLosCamposVacios() {
 
 function validarFormularioCrearCuenta() {
     var nombreValido = validarCampoNoVacio('nameInput--crearCuenta', 'Nombre');
+    var apellidoPaternoValido = validarCampoNoVacio('apellidoPaternoInput--crearCuenta', 'Apellido Paterno');
+    var apellidoMaternoValido = validarCampoNoVacio('apellidoMaternoInput--crearCuenta', 'Apellido Materno');
     var telefonoValido = validarTelefono();
     var emailValido = validarCampoNoVacio('emailInput--crearCuenta', 'Email');
-    
+
     // Validar que el campo de contraseña no esté vacío y la contraseña sea válida
-    var contraseñaValida = validarCampoNoVacio('passwordInput--crearCuenta', 'Contraseña') && validarContraseñaCrearCuenta();
-    
+    var contraseñaValida = validarCampoNoVacio('passwordInput--crearCuenta', 'Contraseña') && validarContraseñaRepetida();
+
     // Validar que el campo de repetir contraseña no esté vacío
     var repetirContraseñaValido = validarCampoNoVacio('passwordRepeat--crearCuenta', 'Repetir Contraseña');
-    
+
     var noSoyRobotValido = validarCampoNoVacio('noSoyRobot', 'Checkbox No Soy un Robot');
     var aceptoTerminosValido = validarCampoNoVacio('aceptTermYCond', 'Checkbox Acepto Términos y Condiciones');
 
     // Verificar que todas las validaciones específicas sean exitosas, incluyendo la de repetir contraseña
-    if (nombreValido && telefonoValido && emailValido && contraseñaValida && repetirContraseñaValido && noSoyRobotValido && aceptoTerminosValido) {
+    if (nombreValido && apellidoPaternoValido && apellidoMaternoValido && telefonoValido && emailValido && contraseñaValida && repetirContraseñaValido && noSoyRobotValido && aceptoTerminosValido) {
         // Si todas las validaciones específicas son exitosas redirige a la pagina_de_usuario
         mostrarAlerta2('¡Formulario válido! Crear cuenta.', 'success');
         setTimeout(() => {
@@ -205,6 +210,7 @@ function validarFormularioCrearCuenta() {
     // Si alguna validación específica falla, ya se habrá mostrado la alerta correspondiente
     return false;
 }
+
 
 
 
@@ -236,7 +242,7 @@ $('#loginForm--crearCuenta').submit(function (event) {
         // Crear un nuevo usuario a partir del id de los inputs ingresados 
         const users = {
             nombre: $('#nameInput--crearCuenta').val(),
-            
+
             /* Sea agregan los id de apellidos en líneas 233 y 234 */
 
             apellidoPaterno: $('#apellidoPaternoInput--crearCuenta').val(),
