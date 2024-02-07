@@ -74,109 +74,81 @@ function validarFormulario() {
 
 ////////////////funciones para crear cuenta////////////////////////
 
+// Función para mostrar la alerta
 function mostrarAlerta2(mensaje, tipo) {
     mostrarAlerta('alertContainer2', mensaje, tipo);
 }
 
-// Funciones de validación actualizadas con eventos keyup
-document.getElementById('nameInput--crearCuenta').addEventListener('keyup', validarNombreUsuario);
-document.getElementById('apellidoPaternoInput--crearCuenta').addEventListener('keyup', validarApellidoPaternoUsuario);
-document.getElementById('apellidoMaternoInput--crearCuenta').addEventListener('keyup', validarApellidoMaternoUsuario);
-document.getElementById('phoneInput--crearCuenta').addEventListener('keyup', validarTelefono);
-document.getElementById('emailInput--crearCuenta').addEventListener('keyup', validarEmailCrearCuenta);
-document.getElementById('passwordInput--crearCuenta').addEventListener('keyup', validarContraseñaCrearCuenta);
-document.getElementById('passwordRepeat--crearCuenta').addEventListener('keyup', validarContraseñaCrearCuenta);
+// Función de validación general
+function validarInput(inputId, regex, mensajeError) {
+    var inputValue = document.getElementById(inputId).value.trim();
 
-// Funciones de validación actualizadas con eventos keyup
-function validarNombreUsuario() {
-    var nombreUsuario = document.getElementById('nameInput--crearCuenta').value;
-    var regexNombre = /^[a-zA-Z\s]+$/;
-
-    if (!regexNombre.test(nombreUsuario.trim())) {
-        mostrarAlerta2('El nombre de usuario no cumple con el formato requerido.', 'danger');
-        return false;
-    }
-    return true;
-}
-
-function validarApellidoPaternoUsuario() {
-    var apellidoPaterno = document.getElementById('apellidoPaternoInput--crearCuenta').value;
-    var regexApellido = /^[a-zA-Z\s]+$/;
-
-    if (!regexApellido.test(apellidoPaterno.trim())) {
-        mostrarAlerta2('El apellido paterno no cumple con el formato requerido.', 'danger');
+    if (!regex.test(inputValue)) {
+        mostrarAlerta2(mensajeError, 'danger');
         return false;
     }
 
+    mostrarAlerta2('El input cumple con el formato.', 'success');
     return true;
 }
 
-function validarApellidoMaternoUsuario() {
-    var apellidoMaterno = document.getElementById('apellidoMaternoInput--crearCuenta').value;
-    var regexApellido = /^[a-zA-Z\s]+$/;
-
-    if (!regexApellido.test(apellidoMaterno.trim())) {
-        mostrarAlerta2('El apellido materno no cumple con el formato requerido.', 'danger');
-        return false;
-    }
-
-    return true;
-}
-
-function validarTelefono() {
-    var telefono = document.getElementById('phoneInput--crearCuenta').value.trim();
-    var formatoCorrecto = /^(?:\+\d{1,3})?\d{8,}$/; // Permitir código de país opcional
-
-    if (!formatoCorrecto.test(telefono)) {
-        mostrarAlerta2('El teléfono no cumple con el formato requerido.', 'danger');
-        return false;
-    }
-
-    return true;
-}
-
-function validarEmailCrearCuenta() {
-    var email = document.getElementById('emailInput--crearCuenta').value;
-    var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!regexEmail.test(email)) {
-        mostrarAlerta2('El teléfono no cumple con el formato requerido.', 'danger');
-        return false;
-    }
-
-    return true;
-
-}
-function validarContraseñaCrearCuenta() {
+// Función para validar que las contraseñas coincidan
+function validarContraseñaRepetida() {
     var password = document.getElementById('passwordInput--crearCuenta').value;
     var passwordRepeat = document.getElementById('passwordRepeat--crearCuenta').value;
 
-    // Verificar que las contraseñas coincidan solo si ambos campos no están vacíos
-    if (password !== '' && passwordRepeat !== '') {
-        // Verificar longitud mínima de la contraseña
-        if (password.length < 8) {
-            mostrarAlerta2('La contraseña debe tener al menos 8 caracteres.', 'danger');
-            return false;
-        }
-
-        // Verificar complejidad de la contraseña
-        var complejidadContraseña = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/;
-        if (!complejidadContraseña.test(password)) {
-            mostrarAlerta2('La contraseña debe contener al menos una mayúscula, una minúscula, un número y un caracter especial.', 'danger');
-            return false;
-        }
-
-        // Verificar que las contraseñas coincidan
-        if (password !== passwordRepeat) {
-            mostrarAlerta2('Las contraseñas no coinciden. Por favor, verifica.', 'danger');
-            return false;
-        }
+    // Verificar complejidad de la contraseña (requiere al menos una mayúscula, una minúscula, un número y un caracter especial)
+    var complejidadContraseña = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/;
+    if (!complejidadContraseña.test(password) && password.length < 8) {
+        mostrarAlerta2('La contraseña debe tener 8 caracteres y contener al menos una mayúscula, una minúscula, un número y un caracter especial.', 'danger');
+        return false;
     }
-
+    if (password !== passwordRepeat) {
+        mostrarAlerta2('Las contraseñas no coinciden. Por favor, verifica.', 'danger');
+        return false;
+    }
+    mostrarAlerta2('Contrseña válida.', 'success');
     return true;
 }
-function validarNoSoyRobot() {
-    return document.getElementById('noSoyRobot').checked;
-}
+
+// Eventos keyup para los diferentes campos
+document.getElementById('nameInput--crearCuenta').addEventListener('keyup', function () {
+    validarInput('nameInput--crearCuenta', /^[a-zA-Z\s]+$/, 'El nombre no cumple con el formato requerido.');
+});
+
+document.getElementById('apellidoPaternoInput--crearCuenta').addEventListener('keyup', function () {
+    validarInput('apellidoPaternoInput--crearCuenta', /^[a-zA-Z\s]+$/, 'El apellido paterno no cumple con el formato requerido.');
+});
+
+document.getElementById('apellidoMaternoInput--crearCuenta').addEventListener('keyup', function () {
+    validarInput('apellidoMaternoInput--crearCuenta', /^[a-zA-Z\s]+$/, 'El apellido materno no cumple con el formato requerido.');
+});
+
+document.getElementById('phoneInput--crearCuenta').addEventListener('keyup', function () {
+    validarInput('phoneInput--crearCuenta', /^(?:\+\d{1,3})?\d{8,}$/, 'El teléfono no cumple con el formato requerido.');
+});
+
+document.getElementById('emailInput--crearCuenta').addEventListener('keyup', function () {
+    validarInput('emailInput--crearCuenta', /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'El email no cumple con el formato requerido.');
+});
+
+document.getElementById('passwordInput--crearCuenta').addEventListener('keyup', function () {
+    validarInput('passwordInput--crearCuenta', /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/, 'La contraseña no cumple con el formato requerido.');
+    validarContraseñaRepetida();
+});
+
+document.getElementById('passwordRepeat--crearCuenta').addEventListener('keyup', function () {
+    validarContraseñaRepetida();
+});
+
+document.getElementById('noSoyRobot').addEventListener('change', function () {
+    validarCampoNoVacio('noSoyRobot', 'Checkbox No Soy un Robot');
+});
+
+document.getElementById('aceptTermYCond').addEventListener('change', function () {
+    validarCampoNoVacio('aceptTermYCond', 'Checkbox Acepto Términos y Condiciones');
+});
+
 function validarCampoNoVacio(idCampo, nombreCampo) {
     var elementoCampo = document.getElementById(idCampo);
 
@@ -197,6 +169,7 @@ function validarCampoNoVacio(idCampo, nombreCampo) {
     }
     return true;
 }
+
 function todosLosCamposVacios() {
     // Verificar si todos los campos están vacíos
     var campos = document.querySelectorAll('.form-login');
@@ -216,7 +189,7 @@ function validarFormularioCrearCuenta() {
     var emailValido = validarCampoNoVacio('emailInput--crearCuenta', 'Email');
 
     // Validar que el campo de contraseña no esté vacío y la contraseña sea válida
-    var contraseñaValida = validarCampoNoVacio('passwordInput--crearCuenta', 'Contraseña') && validarContraseñaCrearCuenta();
+    var contraseñaValida = validarCampoNoVacio('passwordInput--crearCuenta', 'Contraseña') && validarContraseñaRepetida();
 
     // Validar que el campo de repetir contraseña no esté vacío
     var repetirContraseñaValido = validarCampoNoVacio('passwordRepeat--crearCuenta', 'Repetir Contraseña');
