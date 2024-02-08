@@ -117,7 +117,7 @@ document.getElementById('nameInput--crearCuenta').addEventListener('keyup', func
 });
 
 document.getElementById('apellidoInput--crearCuenta').addEventListener('keyup', function () {
-    validarInput('apellidoInput--crearCuenta', /^[a-zA-Z\s]+$/, 'El apellido paterno no cumple con el formato requerido.');
+    validarInput('apellidoInput--crearCuenta', /^[a-zA-Z\s]+$/, 'El apellido no cumple con el formato requerido.');
 });
 
 // document.getElementById('apellidoMaternoInput--crearCuenta').addEventListener('keyup', function () {
@@ -183,9 +183,8 @@ function todosLosCamposVacios() {
 
 function validarFormularioCrearCuenta() {
     var nombreValido = validarCampoNoVacio('nameInput--crearCuenta', 'Nombre');
-    var apellidoPaternoValido = validarCampoNoVacio('apellidoPaternoInput--crearCuenta', 'Apellido Paterno');
-    var apellidoMaternoValido = validarCampoNoVacio('apellidoMaternoInput--crearCuenta', 'Apellido Materno');
-    // var telefonoValido = validarTelefono();
+    var apellidoValido = validarCampoNoVacio('apellidoInput--crearCuenta', 'Apellido');
+    var telefonoValido = validarCampoNoVacio('#phoneInput--crearCuenta', 'Telefono');
     var emailValido = validarCampoNoVacio('emailInput--crearCuenta', 'Email');
 
     // Validar que el campo de contraseña no esté vacío y la contraseña sea válida
@@ -198,7 +197,7 @@ function validarFormularioCrearCuenta() {
     var aceptoTerminosValido = validarCampoNoVacio('aceptTermYCond', 'Checkbox Acepto Términos y Condiciones');
 
     // Verificar que todas las validaciones específicas sean exitosas, incluyendo la de repetir contraseña
-    if (nombreValido && apellidoPaternoValido && apellidoMaternoValido && emailValido && contraseñaValida && repetirContraseñaValido && noSoyRobotValido && aceptoTerminosValido) {
+    if (nombreValido && apellidoValido && telefonoValido && emailValido && contraseñaValida && repetirContraseñaValido && noSoyRobotValido && aceptoTerminosValido) {
         // Si todas las validaciones específicas son exitosas redirige a la pagina_de_usuario
         mostrarAlerta2('¡Formulario válido! Crear cuenta.', 'success');
         setTimeout(() => {
@@ -242,17 +241,12 @@ $('#loginForm--crearCuenta').submit(function (event) {
         // Crear un nuevo usuario a partir del id de los inputs ingresados 
         const users = {
             nombre: $('#nameInput--crearCuenta').val(),
-
-            /* Sea agregan los id de apellidos en líneas 233 y 234 */
-
-            apellidoPaterno: $('#apellidoPaternoInput--crearCuenta').val(),
-            apellidoMaterno: $('#apellidoMaternoInput--crearCuenta').val(),
+            apellido: $('#apellidoInput--crearCuenta').val(),
             telefono: $('#phoneInput--crearCuenta').val(),
             email: $('#emailInput--crearCuenta').val(),
             // Podemos cifrar localmente la contraseña con hash
             password: $('#passwordRepeat--crearCuenta').val(),
         };
-
         // Se agrega el nuevo usuario a la lista existente
         listaUsuarios.push(users);
 
