@@ -93,8 +93,8 @@ input[type="file"] {
     grid-template-areas: 
     "caja1 caja2 caja2 "
     "caja1 caja2 caja2"
-    "caja3 caja4 caja4"
-    "caja3 caja4 caja4";
+    "caja3 caja2 caja2"
+    "caja3 caja2 caja2";
     padding: 20px;
     grid-gap: 40px;
 }
@@ -139,7 +139,7 @@ input[type="file"] {
       "caja1"
       "caja2"
       "caja3"
-      "caja4";
+      "";
   }
 }
 
