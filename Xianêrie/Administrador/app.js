@@ -6,6 +6,7 @@ const descripcion = document.getElementById("descripcionInput");
 const ingredientes = document.getElementById("ingredientesInput");
 const contenido = document.getElementById("cantidadInput");
 const tipoDePiel = document.getElementById("pielSelect");
+const stock = document.getElementById("stockInput");
 
 // Array con los regex y mensaje de error para cada input
 const campos = [
@@ -15,7 +16,8 @@ const campos = [
     { input: descripcion, regex: /^.{1,250}$/, mensaje: 'Ingresa un texto válido para la descripción' },
     { input: ingredientes, regex: /^.{1,600}$/, mensaje: 'Ingresa un texto válido para los ingredientes' },
     { input: contenido, regex: /^(\d+\s*(g|ml)(\s*\.)?)$/i, mensaje: 'Ingresa el contenido del producto y su unidad (g o ml)' },
-    { input: tipoDePiel, validarTipoPiel: true }
+    { input: tipoDePiel, validarTipoPiel: true, mensaje: 'Por favor, elija un tipo de piel'},
+    { input: stock, regex: /^\d{1,7}$/, mensaje: 'El stock solo debe contener números' }
 ];
 
 // Agregando el evento submit a nuestro form 
@@ -29,10 +31,12 @@ formulario.addEventListener('submit', (e) => {
 
 // Agregar eventos de escucha a los campos de entrada para validar cuando se pierde el foco (evento blur) de cada input
 campos.forEach(campo => {
-    campo.input.addEventListener('blur', () => validarCampo(campo));
+    if(campo.input !== tipoDePiel)
+        campo.input.addEventListener('blur', () => validarCampo(campo));
 });
 
 const validarCampo = ({ input, regex, mensaje }) => {
+    
     const valor = input.value.trim();
 
     if (!regex.test(valor)) {
@@ -50,7 +54,7 @@ const validarFormulario = () => {
     for (const campo of campos) {
         if (campo.validarTipoPiel) {
             if (campo.input.value.trim() === "Elija un tipo de piel") {
-                noValidado(campo.input, 'Por favor, elija un tipo de piel');
+                noValidado(campo.input, campo.mensaje);
                 valido = false;
             } else {
                 siValidado(campo.input);
@@ -107,6 +111,7 @@ const imprimirJSON = () => {
     const ingredientesValor = ingredientes.value.trim();
     const contenidoValor = contenido.value.trim();
     const tipoDePielValor = tipoDePiel.value.trim();
+    const stockValor = stock.value.trim();
     
         const nuevoProducto = {
             // Falta como agregar el atributo id_producto al nuevo objeto
@@ -117,6 +122,7 @@ const imprimirJSON = () => {
             "ingredientes": ingredientesValor,
             "contenido": contenidoValor,
             "tipoDePiel": tipoDePielValor,
+            "stock" : stockValor
         };
     
         //para mostar el nuevo producto creado en la consola 

@@ -1,103 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de compras</title>
-     <!--Css boostrap-->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../Carrito/style.css">
-     
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de compras</title>
+  <!--Css boostrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="../Carrito/style.css">
+
 </head>
+
 <body>
-   <!-- Navbar -->
-   <div id="navBar1"></div>
+  <!-- Navbar -->
+  <div id="navBar1"></div>
   <!-- Contenido de la página del carrito -->
-    <div class="container-fluid p-5 ">
-        <div class="row d-flex justify-content-around">
-          <!-- Primera columna -->
-          <div class="form-container col-12  col-md-8 col-xl-8 p-4">
-            <h4>Datos de envío</h4>
-                <form class="row g-3">
-                  <div class=" col-6 ">
-                    <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
-                  </div>
-                  <div class=" col-6 col-md-6 col-xl-6">
-                    <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
-                  </div>
-                  <div class=" col-7 col-md-4 col-xl-4">
-                      <input type="text" class="form-control" id="inputEstado" placeholder="Estado">
-                    </div> 
-                    <div class=" col-5 col-md-4 col-xl-4">
-                      <input type="text" class="form-control" id="inputCiudad" placeholder="Ciudad">
-                    </div>
-                    <div class=" col-4 col-md-4 col-xl-4">
-                      <input type="text" class="form-control" id="inputCodigoPostal" placeholder="C.P">
-                    </div>
-                    <div class=" col-8 col-md-3 col-xl-3">
-                      <input type="text" class="form-control" id="inputColonia" placeholder="Colonia">
-                    </div>
-                    <div class=" col-8 col-md-6 col-xl-6">
-                      <input type="text" class="form-control" id="inputCalleNumero" placeholder="Calle y número">
-                    </div>
-                    <div class=" col-4 col-md-3 col-xl-3">
-                      <input type="text" class="form-control" id="inputNumInterior" placeholder="N° interior">
-                    </div>
-                    
-                    <div class="mt-4">
-                      <h4>Métodos de Pago</h4>
-                      <div class="d-flex justify-content-end align-items-center">
+  <div class="container-fluid p-5 ">
+    <div class="row d-flex justify-content-around">
+      <!-- Primera columna -->
+      <div class="form-container col-12  col-md-8 col-xl-8 p-4">
+        <!-- Precio total del carrito -->
+        <div id="total" class="d-flex justify-content-end"></div>
+        <hr>
+        <h4>Métodos de Pago</h4>
 
-                        <img src="../assets/visa.png" alt="Visa" class="icon-visa">
-                        <img src="../assets/mastercard.png" alt="MasterCard" class="icon-master">
-                      </div>
-                    </div>
 
-                    <div class=" col-12 ">
-                      <input type="text" class="form-control" id="inputNombre" placeholder="Nombre completo del titular de la cuenta">
-                    </div>
-                    <div class=" col-12 col-md-6 col-xl-6">
-                      <input type="text" class="form-control" id="numeroTarjeta" placeholder="Número de tarjeta">
-                    </div>
-                    <div class=" col-6 col-md-3 col-xl-3">
-                      <input type="text" class="form-control" id="fechaVencimiento" placeholder="MM/AA">
-                    </div>
-                    <div class=" col-6 col-md-3 col-xl-3">
-                      <input type="text" class="form-control" id="ccv" placeholder="CCV">
-                    </div>
-                  <div class="col-12 d-grid d-md-flex justify-content-md-end">
-                    <button type="submit" class="btn btn-main-text">Guardar</button>
-                  </div>
-                </form>
+        <form id="formulario" class="row g-3">
+
+          <select name="metodo" class="form-control form-control-sm" id="metodoSelect">
+            <option value="default" selected>Selecciona un método de pago</option>
+            <option value="efectivo">Efectivo</option>
+            <option value="transferencia">Transferencia bancaria</option>
+          </select>
+
+          <div id="efectivo"> <h6>Podrás pagar en efectivo al momento de recibir tus productos. <br><br>¡Da click en "Guardar" para registrar tu pedido y apartar tu carrito!</h6>
+            <div class="col-12 d-grid d-md-flex justify-content-end">
+              <button id="btnEfectivo" type="submit" class="btn-guardar btn--solidbk">Guardar</button>
+            </div>
+            <div id="pedidoEfectivo"></div>
           </div>
 
-          <!-- Columna dos -->
-          <div class="carrito-container col-12 col-md-3 col-xl-3">
-            <h4>Carrito</h4>
-            <div class="productos-carrito">
-              <div id="productosCarrito"></div>
+          <div id="transferencia">
+            <p class="form-row">
+            <h6>Transferencia SPEI®</h6>
+            Podrás realizar tu pago en la siguiente cuenta:
+            <div class="form-control d-flex justify-content-end">
+              <img src="./src/Citi.png" alt="Visa" class="icon-citi">
             </div>
-            <hr>
-            <p>Subtotal</p>
-            <p>Envío</p>
-            <hr>
-            <div id="total"></div>
-            <div class="col-12 d-grid d-md-flex justify-content-md-end">
-              <button type="submit" class="btn btn-main-text">Comprar</button>
+
+            <ul class="form-control form-control-sm">
+              <li>Beneficiario: XAN200916</li>
+              <li>Cuenta: 0021 1501 6003 2694 11</li>
+              <li>Banco destino: Citibanamex</li>
+              <span></span>
+              <br>
+              <li>
+                <label>Compártenos el comprobante de tu transferencia:</label>
+                <input name="imagen" id="imagenInput" class="form-control form-control-sm" type="file" />
+              </li>
+            </ul>
+            </p>
+            <div class="col-12 d-grid d-md-flex justify-content-end">
+              <button id="btnTransferencia" type="submit" class="btn-guardar btn--solidbk">Guardar</button>
             </div>
+            <div id="formularioEnviado"></div>
           </div>
+        </form>
       </div>
+
+      <!-- Columna dos -->
+      <div class="carrito-container col-12 col-md-3 col-xl-3">
+        <h4><img src="./src/carrito.webp" height="20px" alt=""> Carrito</h4>
+        <hr>
+        <div class="productos-carrito">
+          <div id="productosCarrito"></div>
+        </div>
+
+
+      </div>
+    </div>
   </div>
 
-  
-  
+
+
 
   <!--footer-->
   <div id="footer1"></div>
-  
+
   <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <!--Ligado con js de navbar y footer para no tener que copiar el html cada que se hagan modificaciones-->
   <script defer src="../navbar_footer.js"></script>
   <script src="../Carrito/carrito.js"></script>
 </body>
+
 </html>

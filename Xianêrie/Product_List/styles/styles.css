@@ -16,6 +16,7 @@
 
 #marca{
     font-family: 'Pinyon Script';
+    font-size: xx-large;
 }
 
 *::before, *::after{
@@ -124,13 +125,29 @@ body{
     display: grid;
     grid-template-columns:auto auto;
     grid-template-rows: auto auto;
+    grid-template-areas:
+    "img texto"
+    "precio bttn";
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    gap: 10px;
+}
+.item-producto-2{
+    margin: 3% 10% 3%;
+    display: grid;
+    grid-template-columns:auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "texto img"
+    "bttn precio";
     align-items: center;
     justify-content: space-evenly;
     padding: 20px;
     gap: 10px;
 }
 
-.item-producto:hover{
+.item-producto:hover, .item-producto-2:hover{
     /* border: solid var(--salmon) 1px; */
     box-shadow: 
     /* Sombra derecha */ 20px 20px 60px 0px rgba(139, 139, 139, 0.15),
@@ -143,7 +160,7 @@ body{
         max-height: 600px;
         max-width: 90%;
         }
-    .item-producto {
+    .item-producto, .item-producto-2 {
         grid-template-columns: auto;
         grid-template-areas:
         "img"
@@ -152,21 +169,14 @@ body{
         "bttn";
         margin: 3% 3%;
     }
-    .img{
-        grid-area: img;
-    }
-    .texto{
-        grid-area: texto;
-    }
-    .precio{
-        grid-area: precio;
-    }
-    .bttn{
-        grid-area:bttn;
-    }
+    
 }
 
+.texto{
+    grid-area: texto;
+}
 .img{
+    grid-area: img;
     margin: 0%;
     height: 300px;
     display: flex;
@@ -176,6 +186,7 @@ body{
 }
 
 .precio{
+    grid-area: precio;
     display: flex;
     justify-content: center;
     font-family: var(--montserrat-font);
@@ -191,6 +202,7 @@ body{
 }
 
 .bttn{
+    
     display: flex;
     justify-content: center;
 }
