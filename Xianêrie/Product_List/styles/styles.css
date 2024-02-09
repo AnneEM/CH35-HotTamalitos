@@ -34,16 +34,16 @@ body{
 }
 
 .container-img{
+    width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
-    max-height: 610px;
-    max-width: 100%;
 }
 
-.w-100{
+/*.w-100{
     max-height: 600px;
     max-width: 80%;
-    }
+    }*/
 
 .grid-tipo-piel{
     display: grid;
