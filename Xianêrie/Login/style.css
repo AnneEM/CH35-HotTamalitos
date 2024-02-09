@@ -19,6 +19,20 @@ body {
     background-color: var(--main-white);
 }
 
+#title--form{
+    color: var(--main-text);
+    font-family: var(--montserrat-font);
+    font-weight: 600;
+    font-size: 32px;
+}
+
+#title2s--form{
+    color: var(--main-text);
+    font-family: var(--montserrat-font);
+    font-weight: 600;
+    font-size: 32px;
+}
+
 h1 {
     font-family: var(--montserrat-font);
     font-weight: 600;
