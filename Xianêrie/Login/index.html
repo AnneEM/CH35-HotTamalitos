@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
@@ -10,7 +10,7 @@
     <!-- <link rel="stylesheet" href="../style.css" /> -->
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="../Navbar/styles.css" />
-
+    <script defer src="./datosApagina.js"></script>
     <title>Login</title>
 </head>
 
@@ -46,9 +46,10 @@
                         </div>
                         <div class="text-center row">
                             <button type="button" class="container col-11 btn btn-main-text btn-lg mt-2 mb-3"
-                                id="btn--solidbk" onclick="validarFormulario()">
+                                id="btn--solidbk--iniciarSesion" onclick="validarFormulario()">
                                 Iniciar sesión
                             </button>
+                            <a href="../pagina_de_usuario/pagina_usuario.html">link directo</a>
                         </div>
                     </div>
                 </form>
@@ -90,15 +91,15 @@
                                 placeholder="Escribe tu nombre" />
                         </div>
                         <div class="mb-3">
-                            <label for="apellidoPaternoInput--crearCuenta">Apellido paterno:</label>
-                            <input name="apellidoPaternoUsuario" id="apellidoPaternoInput--crearCuenta" class="form-login" type="text"
-                                placeholder="Escribe tu apellido paterno" />
+                            <label for="apellidoInput--crearCuenta">Apellido:</label>
+                            <input name="apellidoPaternoUsuario" id="apellidoInput--crearCuenta" class="form-login" type="text"
+                                placeholder="Escribe tu apellido" />
                         </div>
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <label for="apellidoMaternoInput--crearCuenta">Apellido materno:</label>
                             <input name="apellidoMaternoUsuario" id="apellidoMaternoInput--crearCuenta" class="form-login" type="text"
                                 placeholder="Escribe tu apellido materno" />
-                        </div>
+                        </div> -->
                         <div class="mb-3">
                             <label for="phoneInput--crearCuenta">Teléfono:</label>
                             <input name="telefono" id="phoneInput--crearCuenta" class="form-login" type="text"
@@ -127,11 +128,11 @@
                         <div class="mb-1">
                             <input type="checkbox" class="form-check-input" id="aceptTermYCond" />
                             <label class="form-check-label container col-11 mb-3 align-self-center"
-                                for="aceptTermYCond">Acepto términos y condiciones</label>
+                                for="aceptTermYCond"><a href="../FAQ/index.html" id="linkFAQ">Acepto términos y condiciones</a></label>
                         </div>
                         <div class="text-center row">
                             <button type="submit" class="container col-11 btn btn-main-text btn-lg mt-2 mb-3 "
-                                id="btn--solidbk">
+                                id="btn--solidbk--crearCuenta">
                                 Crear cuenta
                             </button>
                         </div>

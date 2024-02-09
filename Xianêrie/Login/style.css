@@ -24,8 +24,8 @@ h1 {
     font-weight: 600;
 }
 
-/* Botones de crear cuenta - iniciar sesión*/
-#btn--solidbk, #btn--mostrarCrearCuenta {
+/* Botones de Iniciar sesión / Crear cuenta*/
+#btn--solidbk--iniciarSesion, #btn--solidbk--crearCuenta, #btn--mostrarCrearCuenta { /*Agregué diferentes IDs a los botones para eliminar la advertencia de id repetidos*/
     color: var(--main-white);
     background-color: var(--main-text);
     border: none;
@@ -33,13 +33,24 @@ h1 {
     cursor: pointer;
 }
 
-#btn--solidbk:hover, #btn--mostrarCrearCuenta:hover {
+#btn--solidbk--iniciarSesion:hover, #btn--solidbk--crearCuenta:hover, #btn--mostrarCrearCuenta:hover {
     border: none;
     background-color: var(--main-ocre);
     transition: background-color 0.5s;
     font-weight: 500;
 }
+/*Estilo de un link*/
+#linkFAQ {
+    color: var(--main-text);
+    text-decoration: none;
+    font-weight: bold;
+}
 
+#linkFAQ:hover {
+    color: var(--main-ocre);
+    text-decoration: none;
+    font-weight: bold;
+}
 
 
 /* Estilos de bootstrap para formulario */
@@ -80,9 +91,8 @@ h1 {
 
 .form{
     border-radius: 20px;
-    box-shadow: 0px 8px 10px rgba(151, 151, 151, 0.384);  /*!Cambie sh*/
+    box-shadow: 5px 7px 18px 1.5px rgba(192, 192, 192, 0.384);  /*!Cambie sh*/
     background-color: var(--main-white);
-    border: none;
     padding-top: 2%;
 }
 

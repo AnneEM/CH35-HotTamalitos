@@ -38,8 +38,7 @@
 
 .form-container {
     border-radius: 20px;
-    box-shadow: 2px 5px 8px rgba(151, 151, 151, 0.24);
-    /*!Cambie sh*/
+    box-shadow: 5px 7px 18px 3.5px rgba(192, 192, 192, 0.384);  /*!Cambie sh*/
     background-color: #ffffff;
     margin-bottom: 10%;
 }
@@ -71,7 +70,9 @@ li {
 
 /* Estilos del producto en el carrito (falta ajustar detalles) */
 .item-producto {
-    border: solid var(--salmon) 1px;
+    box-shadow: 5px 7px 18px 3.5px rgba(192, 192, 192, 0.384);  /*!Cambie sh*/
+    border-radius: 20px;
+    border:rgba(192, 192, 192, 0.384) 1px;
     margin: 3% 10% 3%;
     display: grid;
     grid-template-rows: auto auto;
@@ -132,7 +133,7 @@ li {
 
 .button-eliminar {
     grid-area: bttn;
-    height: 40px;
+    height: 30px;
     display: inline-block;
     padding: 0px 20px;;
     font-family: var(--montserrat-font);
@@ -153,11 +154,12 @@ li {
     background-color: var(--main-text);
     border: none;
     border-radius: 10px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 .btn--solidbk:hover{
-    background-color:var(--main-ocre);
+    background-color:var(--dark-pink);
     transition: background-color 0.5s;
     font-weight: 500;
 }
