@@ -182,7 +182,6 @@ box-sizing: border-box; /* Asegura que el ancho incluya el relleno y el borde */
 
 .btn-container button {
   height: 50px;
-  width: 150px; /* Establece un ancho fijo para los botones */
   display: inline-block;
   padding: 0px 20px;
   font-family: var(--montserrat-font);
@@ -193,6 +192,8 @@ box-sizing: border-box; /* Asegura que el ancho incluya el relleno y el borde */
   color: var(--main-white);
   background-color: transparent;
   transition: background-color 0.5s;
+  width: 125px; /* Ajusta el ancho según tus preferencias */
+  box-sizing: border-box; /* Asegura que el ancho incluya el relleno y el borde */
   
 }
 @media screen and (max-width: 720px) {

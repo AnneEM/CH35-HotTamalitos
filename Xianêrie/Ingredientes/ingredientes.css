@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --soft-pink: #FAD9C9;
+    --dark-pink: #E8B893;
+    --salmon: #EBCE98;
+    --soft-green: #CACB9C;
+    --main-ocre: #C6A043;
+    --main-text: #2E2D28;
+    --main-beige: #FAF4E4;
+    --main-white: #FFFFFF;
+    --especial-font: 'Playfair Display', serif;
+    --montserrat-font: 'Montserrat', sans-serif;
+    --roboto-font: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: var(--main-white);
+    font-family: var(--montserrat-font);
+}
+
+
+#titulo, #subtitulo, #texto{
+    color: white;
+}
+
+#texto-container{
+    margin: 0 30px;
+}
+
+#ingredientes{
+    text-align: start;
+    margin-left: 75px;
+    font-weight: bold;
+}
+
+#miSeparador{
+    color: white;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+               
+  
+  .btn-container button {
+    flex: 0 1 200px; /* Esto permite que los botones ocupen el espacio disponible */
+    height: 35px;
+    margin-right: 15px; /* Añade un espacio entre los botones */
+    margin-left: -10px;
+    border-radius: 20px;
+    display: block;
+     /* Agrega una transición suave para un efecto más elegante */
+  }
+  .btn-container button:last-child {
+    margin-right: 0; /* Anula el margen derecho para el último botón */
+  }
+  
+
+  .btn-transparent {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: white;
+    font-size: medium;
+
+    
+  }
+  .btn-container button:hover {
+    background-color: transparent;
+    color: var(--salmon);
+    border: 2px solid white; /* Añade un borde blanco en el hover */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Agrega una sombra al hover */
+    transform: scale(1.1); /* Escala el botón al 110% en el hover */
+    transition: all 0.3s ease;
+}
+
+
+
+                                                        /* Estilos para las imagenes */
+  .card-body {
+    color: black;
+    }
+    
+    #titulo-2 {
+    font-weight: bold;
+    }
+    
+
+    .btn-container-2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    }
+
+        
+    .btn-group-2 {
+      text-align: center;
+      margin-bottom: 20px;
+      flex: 0 1 calc(30% - 10px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
+
+
+          
+    .btn-container-2 button {
+      height: 55px;
+      width: 110px;
+      margin: 0 5px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      }
+
+    .btn-transparent-2 {
+      color: black;
+      background-color: transparent;
+      border: solid var(black) 1px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: var(--montserrat-font);
+      font-size: medium;
+    }
+
+    .btn-container-2 button:hover {
+      background-color: transparent;
+      color: black;
+      border: 2px solid black; /* Añade un borde blanco en el hover */
+      box-shadow: 0 0 10px black; /* Agrega una sombra al hover */
+      transform: scale(1.1); /* Escala el botón al 110% en el hover */
+    }
+
+
+    
+    .btn-container-2 button {
+    height: 50px;
+    width: 120px;
+    margin: 0 ;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    }
+    
+    .imagenes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap; /* Ajustado para que no permita que los elementos se envuelvan */
+    overflow-x: auto;
+    margin-bottom: 30px;
+    }
+    
+    .imagen-1,
+    .imagen-2,
+    .imagen-3 {
+    text-align: center;
+    }
+    
+    .imagenes img {
+    width: 200px;
+    height: 200px; /* Asegura que la altura sea igual al ancho */
+    border-radius: 50%;
+    margin-top: 10px;
+    }
+    @media screen and (max-width: 720px) {
+        .imagenes img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    
+   
+    
+                                    
+    
+    
+                            /* Fin de los estilos para las imagenes */
+
+
