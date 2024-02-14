@@ -49,30 +49,34 @@ function validarComplejidadContraseña(password) {
 function validarFormulario() {
     const email = document.getElementById('emailInput').value;
     const password = document.getElementById('passwordInput').value;
-    // Verificar si el usuario existe en la localStorage (key: users) y los datos son correctos
-    const listaUsuarios = JSON.parse(localStorage.getItem('users')) || [];
+    const url = `http://localhost:8080/admin/users/byEmail?email=${email}`;
 
     if (email === "" || password === "") {
         mostrarAlerta('alertContainer', 'Campos vacíos.', 'danger');
     } else {
-        // Iterar sobre el array listaUsuarios para encontrar al ususario solicitado. 
-        const usuario = listaUsuarios.find(user => user.email === email && user.password === password);
-
-        if (usuario) {
-            // Inicio de sesión exitoso
-            mostrarAlerta('alertContainer', '¡Inicio de sesión exitoso!', 'success');
-            // Redirigir a la página de destino
-            setTimeout(() => {
-                window.location.href = "/Xianêrie/landing_page/landing.html";
-            }, 1500);
-        } else {
-            mostrarAlerta('alertContainer', 'Email o contraseña incorrectos.', 'danger');
-        }
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (password !== data.password) {
+                    mostrarAlerta('alertContainer', 'Contraseña incorrecta.', 'danger');
+                } else {
+                    sessionStorage.setItem('usuario', JSON.stringify(data));
+                    mostrarAlerta('alertContainer', `¡Bienvenido, ${data.nombre}!`, 'success');
+                    // Redirigir a la página de usuario
+                    setTimeout(() => {
+                        window.location.href = "/Xianêrie/landing_page/landing.html";
+                    }, 1800);
+                }
+            })
+            .catch(error => {
+                mostrarAlerta('alertContainer', 'Email no encontrado.', 'danger');
+                console.log(error)
+            })
     }
 }
 
 
-                                    ////////////////funciones para crear cuenta////////////////////////
+////////////////funciones para crear cuenta////////////////////////
 
 // Función para mostrar la alerta
 function mostrarAlerta2(mensaje, tipo) {
@@ -199,7 +203,7 @@ function validarFormularioCrearCuenta() {
     // Verificar que todas las validaciones específicas sean exitosas, incluyendo la de repetir contraseña
     if (nombreValido && apellidoValido && emailValido && contraseñaValida && repetirContraseñaValido && noSoyRobotValido && aceptoTerminosValido) {
         // Si todas las validaciones específicas son exitosas redirige a la pagina_de_usuario
-        mostrarAlerta2('¡Formulario válido! Crear cuenta.', 'success');
+        mostrarAlerta2('Registro exitoso. ¡Bienvenido a Xanêrie! ', 'success');
         setTimeout(() => {
             window.location.href = "/Xianêrie/pagina_de_usuario/pagina_usuario.html";
         }, 1500);
@@ -235,11 +239,9 @@ $('#loginForm--crearCuenta').submit(function (event) {
 
     // almacenamos la información localmente y creamos un objeto JSON 
     if (validarFormularioCrearCuenta()) {
-        // Obtener la lista actual de usuarios del localStorage
-        const listaUsuarios = JSON.parse(localStorage.getItem('users')) || [];
 
         // Crear un nuevo usuario a partir del id de los inputs ingresados 
-        const users = {
+        const user = {
             nombre: $('#nameInput--crearCuenta').val(),
             apellido: $('#apellidoInput--crearCuenta').val(),
             telefono: $('#phoneInput--crearCuenta').val(),
@@ -247,10 +249,25 @@ $('#loginForm--crearCuenta').submit(function (event) {
             // Podemos cifrar localmente la contraseña con hash
             password: $('#passwordRepeat--crearCuenta').val(),
         };
-        // Se agrega el nuevo usuario a la lista existente
-        listaUsuarios.push(users);
 
-        // Almacenar la lista actualizada de usuarios en el localStorage
-        localStorage.setItem('users', JSON.stringify(listaUsuarios));
+        const url = `http://localhost:8080/admin/users`
+
+        const crearUsuario = async () => {
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                });
+                const data = await response.json();
+                console.log(data);
+            } catch (error) {
+                console.log('Error al crear usuario:', error);
+            }
+        };
+
+        crearUsuario()
     }
 });

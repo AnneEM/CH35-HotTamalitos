@@ -180,7 +180,7 @@ listaProductos.forEach(producto => {
   }
 });
 
-// Funcion para agregar al Carrito mediante localStorage
+// Funcion para agregar al Carrito mediante sessionStorage
 const botonesCarrito = document.querySelectorAll('.button-carrito');
 botonesCarrito.forEach(boton => {
   boton.addEventListener('click', () => {
@@ -194,8 +194,8 @@ function agregarAlCarrito(idProducto) {
   const producto = listaProductos.find(producto => producto.id_producto === idProducto);
 
   if (producto) {
-    // Recupera el carrito actual desde localStorage o crea uno nuevo
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    // Recupera el carrito actual desde sessionStorage o crea uno nuevo
+    const carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
 
     // Verificar si el producto ya está en el carrito
     const productoEnCarrito = carrito.find(producto => producto.id_producto === idProducto);
@@ -207,7 +207,7 @@ function agregarAlCarrito(idProducto) {
       // ...producto : crea una copia del objeto producto y agrega la propiedad cantidad = 1 
       carrito.push({ ...producto, cantidad: 1 });
     }
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+    sessionStorage.setItem('carrito', JSON.stringify(carrito));
     alert('Producto agregado al carrito');
   }
 }

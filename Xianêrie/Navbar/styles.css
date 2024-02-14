@@ -101,7 +101,7 @@ ul .drop-list:hover .dropdown-content {
     display: none;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 785px) {
     .abrir-menu, 
     .cerrar-menu{
         display: block;
