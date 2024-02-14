@@ -205,7 +205,7 @@ function validarFormularioCrearCuenta() {
         // Si todas las validaciones específicas son exitosas redirige a la pagina_de_usuario
         mostrarAlerta2('Registro exitoso. ¡Bienvenido a Xanêrie! ', 'success');
         setTimeout(() => {
-            window.location.href = "/Xianêrie/pagina_de_usuario/pagina_usuario.html";
+            window.location.href = "/Xianêrie/Login/index.html";
         }, 1500);
         return true;
     }
