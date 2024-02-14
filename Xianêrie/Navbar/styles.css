@@ -64,8 +64,7 @@ header {
 #cerrarSesionBtn {
     background: none;
     border: none;
-    padding: 0;
-    margin: 0;
+    padding: 0px;
     font-size: inherit;
     cursor: pointer;
     color: #000; /* Color del texto */
@@ -75,8 +74,9 @@ header {
 #cerrarSesionBtn:hover {
     text-decoration: none;
     background-color: #FAD9C9;
-    padding: 5px; /* Color del texto al pasar el mouse sobre el botón */
+    padding: 5px;
 }
+
 
 
 /*Aquí no entiendo como desplegar la lista*/

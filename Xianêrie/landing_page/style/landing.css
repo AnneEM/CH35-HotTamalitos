@@ -43,6 +43,24 @@ button{
     font-size: 15px;
 }
 
+#cerrarSesionBtn {
+    background: none;
+    border: none;
+    height: 0px;
+    padding: 0px;
+    font-size: inherit;
+    cursor: pointer;
+    color: #000; /* Color del texto */
+    text-decoration: none; /* Otra opción: text-decoration: none; */
+}
+
+#cerrarSesionBtn:hover {
+    text-decoration: none;
+    background-color: #FAD9C9;
+    
+    height: 30px;
+}
+
 .btn--whiteline{
     color: var(--main-white);
     background-color: transparent;
