@@ -28,7 +28,7 @@
   font-weight: bolder;
 }
 
-#button-user{
+.button-user{
   --bs-btn-color: #fff;
   /* --bs-btn-bg: #2E2D28;
   --bs-btn-border-color: #2E2D28; */
