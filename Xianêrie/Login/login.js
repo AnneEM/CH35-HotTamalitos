@@ -72,7 +72,7 @@ function validarFormulario() {
 }
 
 
-////////////////funciones para crear cuenta////////////////////////
+                                    ////////////////funciones para crear cuenta////////////////////////
 
 // Función para mostrar la alerta
 function mostrarAlerta2(mensaje, tipo) {
