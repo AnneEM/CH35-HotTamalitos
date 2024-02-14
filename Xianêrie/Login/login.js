@@ -184,7 +184,7 @@ function todosLosCamposVacios() {
 function validarFormularioCrearCuenta() {
     var nombreValido = validarCampoNoVacio('nameInput--crearCuenta', 'Nombre');
     var apellidoValido = validarCampoNoVacio('apellidoInput--crearCuenta', 'Apellido');
-    var telefonoValido = validarCampoNoVacio('#phoneInput--crearCuenta', 'Telefono');
+    // var telefonoValido = validarCampoNoVacio('#phoneInput--crearCuenta', 'Telefono');
     var emailValido = validarCampoNoVacio('emailInput--crearCuenta', 'Email');
 
     // Validar que el campo de contraseña no esté vacío y la contraseña sea válida
@@ -197,11 +197,11 @@ function validarFormularioCrearCuenta() {
     var aceptoTerminosValido = validarCampoNoVacio('aceptTermYCond', 'Checkbox Acepto Términos y Condiciones');
 
     // Verificar que todas las validaciones específicas sean exitosas, incluyendo la de repetir contraseña
-    if (nombreValido && apellidoValido && telefonoValido && emailValido && contraseñaValida && repetirContraseñaValido && noSoyRobotValido && aceptoTerminosValido) {
+    if (nombreValido && apellidoValido && emailValido && contraseñaValida && repetirContraseñaValido && noSoyRobotValido && aceptoTerminosValido) {
         // Si todas las validaciones específicas son exitosas redirige a la pagina_de_usuario
         mostrarAlerta2('¡Formulario válido! Crear cuenta.', 'success');
         setTimeout(() => {
-            window.location.href = "/Xianêrie/pagina_de_usuario/index.html";
+            window.location.href = "/Xianêrie/pagina_de_usuario/pagina_usuario.html";
         }, 1500);
         return true;
     }
