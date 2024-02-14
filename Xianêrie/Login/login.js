@@ -188,7 +188,7 @@ function todosLosCamposVacios() {
 function validarFormularioCrearCuenta() {
     var nombreValido = validarCampoNoVacio('nameInput--crearCuenta', 'Nombre');
     var apellidoValido = validarCampoNoVacio('apellidoInput--crearCuenta', 'Apellido');
-    /* var telefonoValido = validarCampoNoVacio('#phoneInput--crearCuenta', 'Telefono'); */
+    // var telefonoValido = validarCampoNoVacio('#phoneInput--crearCuenta', 'Telefono');
     var emailValido = validarCampoNoVacio('emailInput--crearCuenta', 'Email');
 
     // Validar que el campo de contraseña no esté vacío y la contraseña sea válida
