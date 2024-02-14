@@ -151,7 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         pedidos.push(nuevoPedido);
-
+        
+        sessionStorage.removeItem('carrito')
         sessionStorage.setItem('idPedido', idPedido.toString());
         sessionStorage.setItem('pedidos', JSON.stringify(pedidos));
 
